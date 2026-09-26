@@ -17,4 +17,11 @@ void loop() {
   digitalWrite(13, LOW);
   delay(1000);}
 //cuenta en milisegundos
+### Mis Errores
+-Al principio intente poner el LED sin la resistencia, pero al instante el LED se quemo 
+-Tuve problemas con el codigo, ya que no sabia como hacerlo, pero al final pude ajustarlo a lo que quise.
+### Reflexion
+Quizas para algunos este proyecto es algo basico o algo tonto, pero para mi esto es solo el primer paso de lo que relamente quiero hacer en 5 años, espero 
+que el que este leyendo esto, siga todos mi articulos/reportea que hare los fines de semana y ver como progreso poco a poco para cambiar al mundo, este mensaje es tambien para mi yo del futuro, 
+para que siga adelante y no se deje influenciar por las criticas mals hacia el.
   
