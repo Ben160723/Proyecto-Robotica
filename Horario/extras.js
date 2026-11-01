@@ -109,7 +109,7 @@ function exportSalesCSV(){const cell=v=>{let s=String(v??'');if(typeof v==='stri
 
 document.addEventListener('click',async ev=>{const el=ev.target.closest('[data-action]');if(!el||el.disabled)return;const {action,id:entityId}=el.dataset;
  try{switch(action){
- case 'more-nav':openModal('Más de tu espacio',`<div class="more-grid">${[['progress','chart','Mi progreso'],['routes','route','Mi ruta de aprendizaje'],['settings','settings','Ajustes y copias']].map(([v,i,n])=>`<button data-action="view" data-view="${v}">${icon(i,24)}${n}</button>`).join('')}</div>`);break;
+ case 'more-nav':openModal('Más de tu espacio',`<div class="more-grid">${[['assistant','spark','Mi asistente'],['progress','chart','Mi progreso'],['routes','route','Mi ruta de aprendizaje'],['settings','settings','Ajustes y copias']].map(([v,i,n])=>`<button data-action="view" data-view="${v}">${icon(i,24)}${n}</button>`).join('')}</div>`);break;
  case 'habit-go-today':ui.date=today();render();break;
  case 'goal-filter':ui.goalFilter=el.dataset.filter;render();break;
  case 'goal-new':openGoal(null);break;

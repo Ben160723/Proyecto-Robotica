@@ -2,6 +2,35 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Mi asistente · local, sin claves ni pagos
+
+Abre **Mi asistente** en el menú, el botón con destellos de la barra superior o **Más → Mi asistente** en celular. Es un asistente de **comandos y sugerencias calculadas con tus datos**, sin un modelo de lenguaje como ChatGPT. No necesita una API, cuenta adicional, servidor de IA ni conexión para interpretar los comandos. No responde preguntas generales ni garantiza comprender cualquier frase; los ejemplos de la pantalla muestran las instrucciones admitidas.
+
+Puedes escribir, por ejemplo:
+
+- `Organiza la próxima semana` o `Organiza esta semana`.
+- `Programa inglés mañana a las 19:00 durante 30 minutos`.
+- `Crea hábito leer 20 minutos de lunes a viernes`.
+- `Crea meta ahorrar 500 soles para el 31 de diciembre`.
+- `Marca tomar agua hoy`.
+- `Cómo voy con mis hábitos este mes`.
+- `Qué tengo mañana`, `Quién me debe`, `Cuánto gané este mes` o `Qué productos me falta reponer`.
+- `Qué combos puedo vender` o `Vendí 2 Cable largo`, usando el nombre exacto de tu producto u oferta.
+
+**Las propuestas no se aplican al escribirlas.** Aparecen debajo de la conversación: puedes editar o quitar acciones, descartarlas o pulsar **Guardar estas acciones**. El guardado de un plan es una sola operación. Si falla, se conservan los registros anteriores. Una propuesta se rechaza si tus datos han cambiado desde que la pediste o si sus bloques se cruzan con otros. **Deshacer último plan** está disponible mientras no haya otro cambio guardado, incluida una conversación nueva; así no sobrescribe cambios posteriores.
+
+En **Mi disponibilidad** elige horas, días, duración por defecto y máximo de bloques nuevos por día. La organización semanal reparte las prácticas pendientes de Python, Robótica e Inglés entre huecos de esa semana y puede añadir revisiones de hasta dos metas pendientes y una revisión de inventario/cobros. Evita prácticas cumplidas y bloques ya programados con sus referencias. Deja cinco minutos de separación al buscar huecos. Si no cabe todo, informa cuántas actividades quedaron sin colocar, con un límite de veinte acciones por propuesta. **Esta semana** usa los días que queden hasta el domingo; **la próxima semana** usa el lunes a domingo siguiente. Las marcas de cumplimiento de prácticas se registran en Mi ruta.
+
+Los bloques llevan una fecha concreta y no crean una repetición semanal ilimitada. Usa el editor de Mi horario para reglas recurrentes u otros cambios avanzados. Las horas explícitas pueden editarse fuera de la disponibilidad sugerida, siempre que no se crucen con tu agenda. Para evitar confusiones, indica horas como `07:00`, `19:00` o `7 pm`, y fechas como `2026-12-31` o `31/12/2026`. También se admiten hoy, mañana, pasado mañana y días de la semana. Un hábito nuevo empieza hoy si solo indicas su frecuencia; puedes pedir otra fecha con `a partir de` o `desde`.
+
+Los hábitos se marcan con su fecha y programación real. No admite marcas futuras y, si varios nombres coinciden, pide elegir el hábito. Una meta de ahorro es una meta de cantidad, no un cobro ni un ingreso inventado. Puedes ajustar sus campos en la propuesta y después desde Metas.
+
+Las consultas del negocio calculan ventas, costo vendido, ganancia, cobros, caja y saldos a partir de los registros. Una ganancia puede incluir ventas aún por cobrar; el flujo de caja descuenta compras pagadas, gastos y comisiones. Los accesos de compra, venta y cobro **abren sus formularios habituales para revisar y guardar**. En una instrucción de venta, el asistente puede reconocer el nombre y la cantidad; el precio y lo cobrado se revisan en el formulario, con el precio de catálogo como punto de partida. Las ofertas comparten inventario con el resto del negocio. Los registros se eliminan o anulan desde sus propios apartados y confirmaciones.
+
+La disponibilidad y hasta **60 mensajes** se guardan en este navegador y se incluyen en tus copias JSON. **Limpiar conversación** borra los mensajes actuales y las propuestas pendientes; las copias previas conservan lo que contenían cuando se crearon. Las propuestas pendientes y la opción de deshacer son temporales: al recargar, vuelve a pedir la propuesta si todavía la necesitas. Los bloques, hábitos, marcas y metas ya guardados permanecen.
+
+Los datos actuales usan **formato 8**, que conserva y acepta las copias de las versiones 1 al 7. Exporta una copia desde Ajustes antes de actualizar. Los comandos se procesan localmente; la conversación no se envía a un proveedor de IA.
+
 ## Combos y packs
 
 En **Ventas → Combos y packs** puedes preparar ofertas con productos de tu catálogo:
@@ -136,7 +165,7 @@ Cada categoría muestra su porcentaje y su importe en soles. El cálculo reparte
 
 Exporta una copia desde **Ajustes** antes de actualizar. Cierra las pestañas de la versión anterior. Si usas el archivo, sustituye `Rumbo.html` **en la misma carpeta** y ábrelo con el mismo navegador. Si usas GitHub Pages, abre la misma dirección y recarga; el aviso **Actualizar** permite cargar la nueva versión. No hace falta borrar los datos del navegador.
 
-La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 6. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, combos y packs, papelera y su vaciado, correcciones de costo, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
+La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 7. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, combos y packs, papelera y su vaciado, correcciones de costo, tus evaluaciones, prácticas semanales y datos del asistente; usa la versión actualizada para restaurarlas.
 
 ### Registrar tus ventas de Temu
 
@@ -230,7 +259,7 @@ Exporta regularmente, especialmente antes de cambiar de teléfono o borrar datos
 ## Código y comprobaciones
 
 - `index.html` / `Rumbo.html`: aplicación completa lista para usar; el mismo contenido en dos nombres.
-- `app.js`, `extras.js`, `allocation.js`, `learning.js`, `weekly.js`, `inventory.js`, `combos.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones, `weekly` las prácticas y su historial, `inventory` la papelera y la corrección de costos por lote, y `combos` las ofertas y sus ventas con varios productos.
+- `app.js`, `extras.js`, `allocation.js`, `learning.js`, `weekly.js`, `inventory.js`, `combos.js`, `assistant.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones, `weekly` las prácticas, `inventory` la papelera y los costos, `combos` las ofertas y `assistant` los comandos y propuestas locales.
 - `exam-bank.json` / `exam-bank.js`: 140 preguntas originales, 13 plantillas por nivel y una plantilla general. El JavaScript incluye el audio codificado para el HTML autónomo.
 - `audio/`: diez MP3 de listening, sus textos y licencia de Flite. Para regenerar el banco y los audios, ejecuta opcionalmente `python create_exam_bank.py` con FFmpeg y su filtro Flite instalados; el uso normal de la app y `build.py` no requieren FFmpeg.
 - `build.py`: reconstruye ambos HTML y el caché usando solamente Python estándar: `python build.py`.
@@ -248,3 +277,5 @@ Se comprobaron también correcciones de costo con ventas parciales de varios lot
 El vaciado de papelera se probó con productos sin movimientos y con historial, búsquedas activas, cancelación, fallo de guardado, pestañas desactualizadas, recarga, importación de copia en móvil y uso sin conexión. Se comprobó la conservación de importes y saldos y la recuperación del producto al devolver unidades después del vaciado.
 
 Los combos y packs se verificaron con productos repetidos, varios lotes y céntimos de envío, stock compartido, ventas de fechas anteriores, pedidos en camino, pagos parciales y cobros posteriores, edición de receta, anulación, devolución de productos retirados, correcciones de costos, archivo, papelera, CSV, copias, carga inicial y restauración móvil sin conexión. Se comprobaron también fallos de guardado y pestañas desactualizadas.
+
+El asistente se verificó con propuestas editables, guardado explícito y deshacer, planificación sin cruces ni duplicados, disponibilidad limitada, hábitos y metas, nombres ambiguos, fechas inválidas, errores de almacenamiento, propuestas desactualizadas, resúmenes financieros y formularios sin movimientos automáticos, conversación limitada y contenido tratado como texto, copias en móvil y ejecución sin conexión. No se utilizó ni probó un proveedor de IA: este modo es un motor local de comandos y reglas.

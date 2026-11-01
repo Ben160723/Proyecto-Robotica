@@ -1,11 +1,12 @@
 {
-  "version": "7.0",
-  "dataSchema": 7,
+  "version": "8.0",
+  "dataSchema": 8,
   "result": "passed",
-  "functionalChecks": 163,
+  "functionalChecks": 186,
   "currency": "PEN",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
+  "assistantMode": "Local deterministic commands and suggestions; no language model or external AI API",
   "audioRecordingTest": "Native MediaRecorder with synthetic Web Audio; no personal microphone data",
   "suites": [
     {
@@ -38,12 +39,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T18:23:13.698Z",
+      "started": "2026-11-01T19:11:39.626Z",
       "result": "passed",
-      "finished": "2026-11-01T18:23:20.478Z"
+      "finished": "2026-11-01T19:11:51.652Z"
     },
     {
-      "started": "2026-11-01T18:22:49.515Z",
+      "started": "2026-11-01T19:11:41.335Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -67,7 +68,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:22:56.734Z"
+      "finished": "2026-11-01T19:11:50.997Z"
     },
     {
       "checks": [
@@ -103,7 +104,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:23:24.461Z"
+      "finished": "2026-11-01T19:11:58.602Z"
     },
     {
       "feature": "level assessments",
@@ -140,7 +141,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:23:31.427Z"
+      "finished": "2026-11-01T19:12:26.445Z"
     },
     {
       "feature": "weekly practices and route fixes",
@@ -166,7 +167,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:23:37.730Z"
+      "finished": "2026-11-01T19:12:32.237Z"
     },
     {
       "feature": "product trash and purchase-cost corrections",
@@ -191,7 +192,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:23:06.298Z"
+      "finished": "2026-11-01T19:12:12.902Z"
     },
     {
       "feature": "empty product trash",
@@ -210,7 +211,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:23:13.313Z"
+      "finished": "2026-11-01T19:12:15.339Z"
     },
     {
       "feature": "combos and packs",
@@ -241,13 +242,46 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:22:24.295Z"
+      "finished": "2026-11-01T19:12:07.478Z"
+    },
+    {
+      "feature": "local personal assistant",
+      "checks": [
+        "The assistant is clearly labelled local commands with no language model, payment or API key",
+        "A Spanish schedule command prepares an editable proposal and writes only after the user applies it",
+        "The latest applied plan can be undone while no later changes have been saved",
+        "Weekly planning respects availability, avoids existing blocks and does not duplicate practices already scheduled",
+        "Habit commands preserve the requested frequency and refuse duplicate active habits",
+        "A savings command creates a quantified goal and deadline without recording fictitious money movements",
+        "Habit completion is explicit, persists as a real dated mark and rejects future completion",
+        "Ambiguous habit names require choosing the intended habit rather than silently marking another one",
+        "Conflicting proposals never overwrite existing agenda blocks and can be corrected before applying",
+        "Date and time parsing rejects impossible dates, ambiguous hours and overnight blocks and handles am/pm",
+        "A failed plan save rolls back all proposed data and retries without duplicate actions",
+        "Undo cannot erase changes saved after an assistant action",
+        "A proposal becomes stale when local data changes and must be regenerated",
+        "Custom availability and daily limits are saved and unplaced weekly work is reported honestly",
+        "Business answers use real revenue, lot costs, profit, debt and cash instead of guessed financial figures",
+        "Debt and low-stock answers open the right existing forms and do not register payments or purchases by themselves",
+        "Sales commands prepare editable native drafts with quantities, and offer creation opens the real combo editor",
+        "Unsupported or destructive commands cannot become ledger mutations or arbitrary executable actions",
+        "Chat history is bounded and user content is rendered as text rather than executable HTML",
+        "Preferences and history restore on mobile, fit 390px, and commands keep working offline after reload",
+        "Older planners gain assistant defaults without ledger changes and assistant data validates during initial loading",
+        "Clearing the conversation removes pending proposals and messages while preserving the planner and business",
+        "No uncaught errors or external network requests for local assistance"
+      ],
+      "errors": [],
+      "remoteRequests": [],
+      "result": "passed",
+      "finished": "2026-11-01T19:10:12.871Z"
     }
   ],
   "artifactVerification": {
     "zipRebuildMatchesPublicFiles": true,
     "extractedPackageLocalhostAndOffline": "passed",
-    "mixedIndividualAndComboSalesAfterReload": "passed",
+    "localAssistantProposalApplyAndReload": "passed",
+    "noExternalAssistantRequests": "passed",
     "startupValidationWithoutUiState": "passed",
     "directFileURLTested": false,
     "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",

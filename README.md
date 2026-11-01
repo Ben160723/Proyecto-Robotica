@@ -74,3 +74,7 @@ En **Productos → Papelera → Vaciar papelera**, una confirmación muestra el 
 ### Combos y packs
 
 **Ventas → Combos y packs** permite crear ofertas con cantidades de uno o varios productos y un precio conjunto. Cada venta descuenta los componentes del inventario compartido, conserva su composición y calcula costo, ganancia, comisiones, cobros y saldos como una sola operación. Las recetas pueden editarse o archivarse sin reescribir ventas anteriores. Las devoluciones restituyen las unidades originales y las correcciones de costo de compra actualizan sus asignaciones por lote. Incluye disponibilidad, estimaciones, CSV y copias en formato 7, compatibles con los formatos anteriores.
+
+### Mi asistente local
+
+**Mi asistente** interpreta comandos y calcula sugerencias con tus datos, sin pagos, claves, modelo de lenguaje ni servicios externos. Puedes pedir una planificación semanal, preparar bloques, hábitos y metas, marcar hábitos y consultar progreso, existencias, combos, ganancias y cobros. Las propuestas son editables y requieren pulsar Guardar; detectan cruces y cambios posteriores. Incluye disponibilidad personal, historial local y deshacer limitado al último plan sin cambios posteriores. Las operaciones del negocio abren sus formularios para revisar los importes y guardar. Los datos usan formato 8 y aceptan las versiones anteriores.
