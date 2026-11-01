@@ -25,3 +25,14 @@ Quizas para algunos este proyecto es algo basico o algo tonto, pero para mi esto
 que el que este leyendo esto, siga todos mi articulos/reportea que hare los fines de semana y ver como progreso poco a poco para cambiar al mundo, este mensaje es tambien para mi yo del futuro, 
 para que siga adelante y no se deje influenciar por las criticas mals hacia el.
   
+
+
+## Rumbo — horario y hábitos
+
+Esta rama contiene **Rumbo**, un horario editable para celular y computadora, con hábitos diarios, gráficas semanales y mensuales y calendario de 2026 a 2051.
+
+- [Descargar la aplicación Rumbo.html](Rumbo.html?raw=true)
+- [Instrucciones y activación de la versión web](Horario/LEEME.md)
+- [Código fuente y comprobaciones](Horario/)
+
+Los datos personales se guardan en tu navegador; no se suben al repositorio. Para pasar tus avances entre dispositivos usa Exportar e Importar. La web necesita que el propietario active GitHub Pages para la rama `mi-horario`, carpeta `/ (root)`.

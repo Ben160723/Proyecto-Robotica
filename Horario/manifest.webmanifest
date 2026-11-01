@@ -1,0 +1,12 @@
+{
+  "name": "Rumbo — un día a la vez",
+  "short_name": "Rumbo",
+  "description": "Mi horario, mis hábitos y mi progreso. De 2026 a 2051.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f1",
+  "theme_color": "#173f38",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}

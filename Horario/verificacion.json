@@ -1,0 +1,30 @@
+{
+  "started": "2026-11-01T05:10:29.394Z",
+  "checks": [
+    "IndexedDB persistent storage initializes",
+    "Daily habit mark survives full reload",
+    "Weekly percentage excludes future and pre-start days",
+    "Schedule completions contribute actual block minutes",
+    "Habit frequency edits retain historical schedule and marks",
+    "Archiving pauses future expectations and retains history",
+    "Weekly recurrence respects chosen weekdays and boundaries",
+    "Editing a single recurring occurrence leaves other dates untouched",
+    "Removing future series preserves prior occurrences and exceptions",
+    "Calendar navigates through December 2051",
+    "Gregorian leap day exists in 2040",
+    "Future events persist and invalid time ranges are rejected",
+    "Future habit completion is disabled",
+    "Python, robotics and English roadmaps include persistent milestones",
+    "JSON export contains complete habits, notes, schedule and profile",
+    "Malformed import leaves existing data unchanged",
+    "Backup restores on a separate mobile browser and survives reload",
+    "All six screens fit a 390px mobile viewport",
+    "No uncaught browser errors",
+    "Hosted app reloads fully offline through its service worker",
+    "Unreadable prior data is preserved and available for recovery export",
+    "Restoring a valid backup recovers writable persistent storage"
+  ],
+  "errors": [],
+  "result": "passed",
+  "finished": "2026-11-01T05:10:33.687Z"
+}
