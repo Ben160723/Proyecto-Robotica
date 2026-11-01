@@ -1,11 +1,11 @@
 import path from 'node:path';import os from 'node:os';import {fileURLToPath} from 'node:url';
 const BASE=process.env.RUMBO_TEST_URL||'http://127.0.0.1:9012';
 const OUTPUT=path.join(os.tmpdir(),'rumbo-browser-tests');
-import {chromium} from 'playwright';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
 import assert from 'node:assert/strict';
 import fs from 'node:fs';fs.mkdirSync(OUTPUT,{recursive:true});
 const report={started:new Date().toISOString(),checks:[],errors:[]};
-const browser=await chromium.launch({headless:true,args:[]});
+const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||undefined,args:[]});
 async function newPage(width=1440){const ctx=await browser.newContext({viewport:{width,height:1000},timezoneId:'America/Cancun',acceptDownloads:true});const p=await ctx.newPage();await p.clock.install({time:new Date('2026-10-31T17:30:00-05:00')});p.on('pageerror',e=>report.errors.push(e.message));await p.goto(`${BASE}/Rumbo.html`);await p.waitForSelector('.hero');return p;}
 const p=await newPage();const go=async v=>p.locator(`.sidebar [data-action="view"][data-view="${v}"]`).click();const saved=()=>p.waitForFunction(()=>!saving);const ok=name=>{report.checks.push(name);console.log('PASS',name);};
 try{

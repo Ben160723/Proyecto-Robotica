@@ -37,6 +37,15 @@ Esta rama contiene **Rumbo**, un horario editable para celular y computadora, co
 
 Los datos personales se guardan en tu navegador; no se suben al repositorio. Para pasar tus avances entre dispositivos usa Exportar e Importar. La web necesita que el propietario active GitHub Pages para la rama `mi-horario`, carpeta `/ (root)`.
 
+### Rumbo 9 · Imágenes para organizar tu negocio y horario
+
+**Mi asistente → Leer imagen** extrae texto de fotos y capturas con OCR local incluido. Prepara filas editables de productos, compras, ventas individuales o combos y bloques de horario. Cada importación requiere revisar un resumen antes de guardarse; respeta el inventario compartido, los costos por lote, cobros y cruces de horario. Admite fotos pequeñas opcionales para productos y detecta imágenes idénticas ya importadas. No identifica objetos por apariencia ni inventa datos que faltan. Funciona sin claves ni servicios de IA externos, también sin conexión tras cargar la aplicación.
+
+- [Descargar el ZIP actualizado](Rumbo-proyecto.zip?raw=true)
+- [Instrucciones de imágenes y actualización](Horario/LEEME.md)
+
+Exporta una copia JSON antes de actualizar; se conservan y migran los formatos anteriores a la versión 9.
+
 ### Rumbo 2 · Metas y ventas en soles
 
 Se añadieron metas personales, listas de pasos y objetivos de ganancia. Ventas incorpora productos, existencias, compras de Temu en camino, costos por lote, cobros pendientes, gastos, ganancias, caja, exportación CSV y el círculo del inventario por vender. Los hábitos ahora explican las fechas futuras y muestran un botón visible para volver a hoy y marcar.

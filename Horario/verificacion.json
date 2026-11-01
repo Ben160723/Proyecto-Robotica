@@ -1,12 +1,13 @@
 {
-  "version": "8.0",
-  "dataSchema": 8,
+  "version": "9.0",
+  "dataSchema": 9,
   "result": "passed",
-  "functionalChecks": 186,
+  "functionalChecks": 211,
   "currency": "PEN",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
-  "assistantMode": "Local deterministic commands and suggestions; no language model or external AI API",
+  "assistantMode": "Local deterministic commands, suggestions and offline OCR; no language model or external AI API",
+  "imageRecognition": "Tesseract.js Spanish printed-text OCR with embedded WASM and language data, real synthetic PNG fixtures, offline. No appearance recognition.",
   "audioRecordingTest": "Native MediaRecorder with synthetic Web Audio; no personal microphone data",
   "suites": [
     {
@@ -39,12 +40,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T19:11:39.626Z",
+      "started": "2026-11-01T19:41:21.748Z",
       "result": "passed",
-      "finished": "2026-11-01T19:11:51.652Z"
+      "finished": "2026-11-01T19:41:32.948Z"
     },
     {
-      "started": "2026-11-01T19:11:41.335Z",
+      "started": "2026-11-01T19:41:21.716Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -68,7 +69,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:11:50.997Z"
+      "finished": "2026-11-01T19:41:30.783Z"
     },
     {
       "checks": [
@@ -104,7 +105,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:11:58.602Z"
+      "finished": "2026-11-01T19:41:32.667Z"
     },
     {
       "feature": "level assessments",
@@ -141,7 +142,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:12:26.445Z"
+      "finished": "2026-11-01T19:42:15.159Z"
     },
     {
       "feature": "weekly practices and route fixes",
@@ -167,7 +168,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:12:32.237Z"
+      "finished": "2026-11-01T19:41:41.286Z"
     },
     {
       "feature": "product trash and purchase-cost corrections",
@@ -192,7 +193,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:12:12.902Z"
+      "finished": "2026-11-01T19:43:43.914Z"
     },
     {
       "feature": "empty product trash",
@@ -211,7 +212,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:12:15.339Z"
+      "finished": "2026-11-01T19:41:50.319Z"
     },
     {
       "feature": "combos and packs",
@@ -242,7 +243,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:12:07.478Z"
+      "finished": "2026-11-01T19:42:07.969Z"
     },
     {
       "feature": "local personal assistant",
@@ -274,17 +275,53 @@
       "errors": [],
       "remoteRequests": [],
       "result": "passed",
-      "finished": "2026-11-01T19:10:12.871Z"
+      "finished": "2026-11-01T19:41:59.671Z"
+    },
+    {
+      "feature": "offline image OCR and reviewed imports",
+      "checks": [
+        "The assistant exposes image input and explains local OCR and appearance-recognition limits",
+        "A real synthetic PNG is read by the bundled Spanish WASM worker offline without changing stored data",
+        "Review is mandatory; approving a photo creates only the catalog entry and optional small thumbnail, without phantom stock",
+        "Photos and fingerprints survive reload, display in Products and prevent repeated-image imports by default",
+        "Manual lists separate from images and edited text cannot silently save stale parsed rows",
+        "Ambiguous totals, inconsistent rows and number separators require correction; numeric model names are preserved",
+        "An uncertain OCR row starts excluded and can be corrected and explicitly included",
+        "Paid purchases allocate a shared shipping cent exactly and add received stock only after approval",
+        "Unknown purchases need a manually chosen resale price; pending units cannot be sold",
+        "Sales must match an existing product or combo and cannot invent stock from image text",
+        "A multi-row preview shares FIFO stock across products and combos and rejects overselling atomically",
+        "Approved individual and combo sales preserve FIFO costs, discounts, fees, partial payments and real customer balances",
+        "A failed storage transaction rolls back every movement and import marker and retains the editable draft for one clean retry",
+        "A local change invalidates a prepared image plan instead of being overwritten",
+        "An older browser tab cannot commit an image import over newer saved data",
+        "A real timetable screenshot becomes reviewed dated blocks with explicit weekday and time associations",
+        "Overlapping timetable blocks are rejected and a grid row without a day remains excluded for manual correction",
+        "Weekly imports retain explicit weekdays, start date and chosen end date without replacing the existing schedule",
+        "Image content is rendered as text and cannot execute HTML, assistant commands or destructive ledger operations",
+        "Unsupported image types and oversized inputs are rejected with a usable error",
+        "An image with no readable text offers a manual product-and-photo draft without guessing identity or price",
+        "Cancelling OCR terminates the operation without recording data",
+        "Version-8 data migrates during initial loading without business changes, and external product-photo URLs are rejected",
+        "Photos, financial history and import markers restore on mobile; review fits 390px and actual OCR works after offline reload",
+        "No uncaught browser errors, external model requests or image uploads"
+      ],
+      "errors": [],
+      "remoteRequests": [],
+      "result": "passed",
+      "finished": "2026-11-01T19:46:31.771Z"
     }
   ],
   "artifactVerification": {
     "zipRebuildMatchesPublicFiles": true,
     "extractedPackageLocalhostAndOffline": "passed",
-    "localAssistantProposalApplyAndReload": "passed",
-    "noExternalAssistantRequests": "passed",
+    "offlineOCRFromExtractedZip": "passed",
+    "extractedPackageImageImportChecks": 25,
+    "noExternalImageRequests": "passed",
     "startupValidationWithoutUiState": "passed",
     "directFileURLTested": false,
     "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",
-    "externalServicesRequired": false
+    "externalServicesRequired": false,
+    "publicHtmlSHA256": "555f2932d6f547ff1714bf4aed9b899f0a78b6af14c7b6b62ad6d8b2139d30ff"
   }
 }

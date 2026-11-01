@@ -1,8 +1,8 @@
 import path from 'node:path';import os from 'node:os';import {fileURLToPath} from 'node:url';
 const BASE=process.env.RUMBO_TEST_URL||'http://127.0.0.1:9012';
 const OUTPUT=path.join(os.tmpdir(),'rumbo-browser-tests');
-import {chromium} from 'playwright';import fs from 'node:fs';fs.mkdirSync(OUTPUT,{recursive:true});import assert from 'node:assert/strict';
-const result={feature:'profit allocation',checks:[],errors:[]};const ok=n=>{result.checks.push(n);console.log('PASS',n);};const browser=await chromium.launch({headless:true,args:[]});
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');import fs from 'node:fs';fs.mkdirSync(OUTPUT,{recursive:true});import assert from 'node:assert/strict';
+const result={feature:'profit allocation',checks:[],errors:[]};const ok=n=>{result.checks.push(n);console.log('PASS',n);};const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||undefined,args:[]});
 async function open(width=1440){const ctx=await browser.newContext({viewport:{width,height:1000},timezoneId:'America/Lima',acceptDownloads:true});const p=await ctx.newPage();p.on('pageerror',e=>result.errors.push(e.message));p.on('dialog',d=>d.accept());await p.clock.install({time:new Date('2026-11-01T13:00:00-05:00')});await p.goto(`${BASE}/Rumbo.html`);await p.waitForSelector('.hero');return p;}
 const p=await open();const saved=()=>p.waitForFunction(()=>!saving);const allocation=async()=>{await p.locator('.sidebar [data-view=business]').click();await p.locator('[data-action=business-tab][data-tab=allocation]').click();};const fill=async values=>{for(const [k,v]of Object.entries(values))await p.locator(`#profit-allocation-form [name=${k}]`).fill(String(v));};
 try{

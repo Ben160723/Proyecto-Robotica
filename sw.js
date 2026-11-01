@@ -1,4 +1,4 @@
-const CACHE='rumbo-d7b47b6b0f4e';
+const CACHE='rumbo-555f2932d6f5';
 const ASSETS=['./','./index.html','./Rumbo.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('rumbo-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});

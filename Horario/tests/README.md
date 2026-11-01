@@ -24,6 +24,7 @@ node Horario/tests/productos-costos.mjs
 node Horario/tests/vaciar-papelera.mjs
 node Horario/tests/combos.mjs
 node Horario/tests/asistente.mjs
+node Horario/tests/imagenes.mjs
 ```
 
 `RUMBO_TEST_URL` permite cambiar la dirección del servidor. Los archivos temporales se escriben en la carpeta `rumbo-browser-tests` del directorio temporal del sistema. En el ZIP autónomo, sirve la carpeta descomprimida en lugar de `Horario` y usa las rutas de `tests/`.
@@ -41,3 +42,5 @@ La lógica de estas suites se ejecutó en el entorno administrado usando su Chro
 `combos.mjs` prueba recetas con varios productos y packs de un mismo producto; cantidades, lotes, envíos y stock compartido; fechas, cobros, edición de recetas, devoluciones, correcciones de costo, archivo, papelera, CSV, carga inicial, copias en móvil, uso sin conexión y fallos de guardado.
 
 `asistente.mjs` prueba comandos locales, propuestas y guardado, deshacer, conflictos y duplicados, planificación y disponibilidad, fechas, hábitos ambiguos y futuros, metas, resúmenes financieros y formularios, fallos de guardado y propuestas desactualizadas, historial limitado, contenido escapado, migración, móvil y uso sin conexión. Comprueba que el asistente no haga peticiones a servicios externos. No usa un modelo de lenguaje ni una API de IA.
+
+`imagenes.mjs` genera capturas sintéticas y ejecuta el motor OCR WASM real sin conexión. Comprueba revisión obligatoria, fotos opcionales, duplicados y listas manuales, precios ambiguos, compras y envío exacto en céntimos, existencias compartidas con combos, descuentos y cobros parciales, conflictos de horario y repetición semanal, cancelación y límites, fotos sin texto, contenido no ejecutable, migración, copias móviles y OCR después de recargar sin conexión. Verifica fallos de guardado y pestañas desactualizadas. Todas las suites admiten `PLAYWRIGHT_MODULE` y `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. No se usan imágenes personales. Las dependencias OCR locales y licencias están en `vendor/ocr`; `build.py` verifica sus huellas y regenera `ocr-assets.js` con `prepare_ocr.py` sin conexión.

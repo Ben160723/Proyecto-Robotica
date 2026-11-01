@@ -2,6 +2,45 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Imágenes · productos, compras, ventas y horario
+
+Abre **Mi asistente → Leer imagen**. También hay un botón **Desde imagen** en Productos, Compras / pedidos, Ventas y cobros y Mi horario.
+
+1. Elige qué vas a registrar: **Productos**, **Compras**, **Ventas** u **Horario**.
+2. Sube una foto o captura JPG, PNG o WebP de hasta 12 MB. El lector OCR extrae texto impreso en este dispositivo; el motor y el idioma español vienen incluidos, sin claves, servicios de IA, cargas de imágenes ni descargas de modelos. Puedes girar la imagen, volver a leerla o cancelar. En un teléfono lento puede tardar más. Las imágenes se reducen a un máximo de 2400 píxeles por lado para la lectura.
+3. Corrige el texto y pulsa **Preparar filas**. Si el texto no es legible, pulsa **Añadir fila manual** y usa la imagen como referencia. El lector no reconoce un producto solo por su apariencia ni deduce precios o cantidades de una foto sin texto. Una cuadrícula compleja, texto manuscrito, columnas ambiguas o errores de lectura requieren correcciones.
+4. Revisa las filas que vas a incluir. Las ambiguas empiezan desmarcadas. Comprueba las fechas, la moneda, cantidades y precios. Pulsa **Revisar resumen**, marca la revisión y luego **Guardar**. Preparar y revisar no cambia tus registros.
+
+Se recomienda una fila por línea, con `;` entre columnas:
+
+```text
+Productos: producto;precio de venta
+Cable USB;20.00
+
+Compras o ventas: producto;cantidad;precio unitario
+Cable USB;2;10.00
+
+Horario: día o fecha;inicio;fin;actividad
+Lunes;09:00;10:00;Inglés
+2026-11-05;21:00;21:30;Python
+```
+
+**Productos** crea entradas nuevas sin existencias. Puedes guardar la imagen como una foto pequeña del producto; aparece en el catálogo y se incluye en las copias JSON. Se guarda solo si marcas esa opción. Los nombres existentes se editan desde Productos para evitar duplicarlos; puedes quitar una foto guardada desde su editor.
+
+**Compras** vincula cada fila con un producto del catálogo o permite crear uno nuevo, cuyo precio de reventa debes indicar. El costo de compra y el precio de venta son campos separados. Confirma que las compras ya están pagadas y si están recibidas o en camino. El envío o extras de toda la compra se introduce por separado y se distribuye por cantidad de unidades conservando cada céntimo. Los pedidos en camino no habilitan ventas. La fecha indicada se usa también como recepción si eliges “Ya recibido”; para una compra y recepción en fechas diferentes, regístrala pendiente y recibe después desde Compras.
+
+**Ventas** exige elegir un producto o combo existente, mantiene el inventario compartido y usa los costos reales de los lotes recibidos. Cada fila tiene precio unitario o por oferta, descuento y comisión/entrega total. Los cobros empiezan como pendientes: elige todo cobrado o un importe por fila. Si queda un saldo, indica un cliente o referencia. La revisión rechaza la operación completa si cualquier fila intenta vender unidades que ya consume otra. No registra cobros de una venta anterior: usa su botón **Cobrar** para eso.
+
+**Horario** necesita una fecha o días explícitos y horas de inicio y fin por actividad. Sin repetición, un día de semana se coloca en su siguiente aparición desde la fecha de referencia (incluye ese mismo día). **Repetir cada semana** conserva los días indicados desde la fecha inicial, con fecha final opcional. Comprueba los cruces durante todo el periodo; no reemplaza otros bloques. Las horas deben estar en formato de 24 horas y los bloques que cruzan medianoche se separan en dos.
+
+Los importes se registran en la moneda actual del negocio, **PEN por defecto**. El lector no convierte dólares a soles ni decide si un importe es unitario o total cuando faltan datos. Tampoco aplica descuentos, impuestos, envíos o comisiones que aparezcan en el texto automáticamente. Corrígelos en las filas y campos correspondientes antes de aprobar.
+
+El guardado de cada revisión es una sola operación: si falla, no se registra ninguna fila y se conserva el borrador para reintentar. Los planes se rechazan si cambian tus datos o si otra pestaña guardó algo más reciente. Se mantiene un historial de hasta 1000 importaciones con una huella de la imagen para advertir repeticiones exactas del mismo apartado. Un recorte o foto diferente tiene otra huella; revisa siempre tus movimientos. Puedes confirmar expresamente una operación distinta con la misma imagen. Los registros aceptados se pueden corregir o anular desde sus apartados habituales.
+
+La imagen original y el texto OCR son temporales: desaparecen al cerrar o recargar. Solo se guardan los registros aprobados, el nombre y huella de la imagen y, opcionalmente, una foto reducida del producto. No hay sincronización automática entre dispositivos. Para trasladar datos, exporta/importa una copia JSON.
+
+El formato actual es **9** y admite copias de las versiones 1 a 8. **Exporta una copia antes de actualizar y cierra las pestañas antiguas.** Conserva la misma dirección y navegador, o importa la copia en la nueva ubicación. El HTML incluye el OCR para poder trabajar sin conexión; en la web, abre Rumbo una vez con internet y espera a que termine de cargar. Se verificó en Chromium de escritorio y una ventana móvil de 390 píxeles; no se probó en un teléfono físico. La política del navegador administrado impidió probar la apertura directa `file://`; la carpeta del ZIP se verificó servida por HTTP local y sin conexión después de cargarla.
+
 ## Mi asistente · local, sin claves ni pagos
 
 Abre **Mi asistente** en el menú, el botón con destellos de la barra superior o **Más → Mi asistente** en celular. Es un asistente de **comandos y sugerencias calculadas con tus datos**, sin un modelo de lenguaje como ChatGPT. No necesita una API, cuenta adicional, servidor de IA ni conexión para interpretar los comandos. No responde preguntas generales ni garantiza comprender cualquier frase; los ejemplos de la pantalla muestran las instrucciones admitidas.
@@ -29,7 +68,7 @@ Las consultas del negocio calculan ventas, costo vendido, ganancia, cobros, caja
 
 La disponibilidad y hasta **60 mensajes** se guardan en este navegador y se incluyen en tus copias JSON. **Limpiar conversación** borra los mensajes actuales y las propuestas pendientes; las copias previas conservan lo que contenían cuando se crearon. Las propuestas pendientes y la opción de deshacer son temporales: al recargar, vuelve a pedir la propuesta si todavía la necesitas. Los bloques, hábitos, marcas y metas ya guardados permanecen.
 
-Los datos actuales usan **formato 8**, que conserva y acepta las copias de las versiones 1 al 7. Exporta una copia desde Ajustes antes de actualizar. Los comandos se procesan localmente; la conversación no se envía a un proveedor de IA.
+Los comandos se procesan localmente; la conversación no se envía a un proveedor de IA. La versión con lectura de imágenes usa el formato 9 descrito arriba.
 
 ## Combos y packs
 
