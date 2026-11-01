@@ -22,6 +22,7 @@ node Horario/tests/rutas.mjs
 node Horario/tests/semanales.mjs
 node Horario/tests/productos-costos.mjs
 node Horario/tests/vaciar-papelera.mjs
+node Horario/tests/combos.mjs
 ```
 
 `RUMBO_TEST_URL` permite cambiar la dirección del servidor. Los archivos temporales se escriben en la carpeta `rumbo-browser-tests` del directorio temporal del sistema. En el ZIP autónomo, sirve la carpeta descomprimida en lugar de `Horario` y usa las rutas de `tests/`.
@@ -35,3 +36,5 @@ La lógica de estas suites se ejecutó en el entorno administrado usando su Chro
 `productos-costos.mjs` admite las mismas variables. Prueba la papelera recuperable, protección del inventario, pedidos cancelados, saldos de clientes y devoluciones; correcciones de costo por lote con envíos de céntimos, asignaciones FIFO e historial; errores de guardado, pestañas desactualizadas, copias en móvil y recuperación del almacenamiento local ilegible.
 
 `vaciar-papelera.mjs` usa las mismas variables y comprueba el vaciado completo, productos sin movimientos e históricos, filtros, confirmación y cancelación, conservación de saldos, fallos de guardado, pestañas desactualizadas, devolución posterior, migración, restauración móvil y uso sin conexión.
+
+`combos.mjs` prueba recetas con varios productos y packs de un mismo producto; cantidades, lotes, envíos y stock compartido; fechas, cobros, edición de recetas, devoluciones, correcciones de costo, archivo, papelera, CSV, carga inicial, copias en móvil, uso sin conexión y fallos de guardado.

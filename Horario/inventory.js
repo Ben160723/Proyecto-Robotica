@@ -27,13 +27,13 @@ function openPurchaseEdit(pid){const p=state.business.purchases.find(p=>p.id===p
 async function savePurchaseCost(form){const before=clone(state);try{const edits=readCostEdits(form),reason=String(new FormData(form).get('costReason')||'').trim();if(reason.length>500)throw Error('El motivo es demasiado largo.');const b=correctedBusiness(edits,reason,true);validateExtensions({...state,business:b});state.business=b;await businessCommit(before,form,edits.length?'Costo de compra corregido. Inversión y ganancias actualizadas.':'Costo de compra guardado.');}catch(e){form.querySelector('.form-error').textContent=e.message;}}
 function productTrashBlockers(pid){const s=stockInfo(pid),open=state.business.purchases.filter(p=>p.productId===pid&&!p.voided&&(p.status==='pending'||freeRanges(p).length));return {quantity:s.quantity,pending:s.pending,blocked:!!(s.quantity||s.pending||open.length),purchases:open};}
 function productTrashPlan(){
- const all=state.business.products.filter(p=>p.deleted&&!p.purged),linked=new Set([...state.business.purchases,...state.business.sales].map(m=>m.productId));
+ const all=state.business.products.filter(p=>p.deleted&&!p.purged),linked=new Set([...state.business.purchases.map(m=>m.productId),...state.business.sales.flatMap(s=>saleProducts(s).map(i=>i.productId)),...(state.business.combos||[]).flatMap(c=>c.components.map(i=>i.productId))]);
  return {all,removable:all.filter(p=>!linked.has(p.id)),historical:all.filter(p=>linked.has(p.id))};
 }
 function openEmptyProductTrash(){
  const plan=productTrashPlan();if(!plan.all.length){toast('La papelera ya está vacía.');return;}
  const ids=plan.all.map(p=>p.id),selected=new Set(ids);
- confirmation('¿Vaciar toda la papelera?',`Se retirarán ${ids.length} productos de toda la papelera, aunque la búsqueda muestre menos.\n\n${plan.removable.length} sin movimientos: se borrarán definitivamente.\n${plan.historical.length} con compras o ventas: saldrán de la papelera conservando sus registros contables.\n\nNo podrás recuperarlos desde la papelera. Si una devolución reintegra unidades, el producto volverá a aparecer.`,()=>ledgerAction(()=>{
+ confirmation('¿Vaciar toda la papelera?',`Se retirarán ${ids.length} productos de toda la papelera, aunque la búsqueda muestre menos.\n\n${plan.removable.length} sin movimientos ni referencias en ofertas: se borrarán definitivamente.\n${plan.historical.length} con historial o referencias en ofertas: saldrán de la papelera conservando sus registros contables.\n\nNo podrás recuperarlos desde la papelera. Si una devolución reintegra unidades, el producto volverá a aparecer.`,()=>ledgerAction(()=>{
   const current=productTrashPlan();if(current.all.length!==ids.length||current.all.some(p=>!selected.has(p.id)))throw Error('La papelera cambió. Revisa su contenido y vuelve a intentarlo.');
   if(current.all.some(p=>productTrashBlockers(p.id).blocked))throw Error('Hay productos con inventario o pedidos pendientes; resuélvelos antes de vaciar la papelera.');
   const remove=new Set(current.removable.map(p=>p.id)),at=new Date().toISOString();

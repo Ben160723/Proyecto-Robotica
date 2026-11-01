@@ -70,3 +70,7 @@ Se reforzó el guardado del archivado y la recuperación de copias locales ilegi
 ### Vaciar papelera
 
 En **Productos → Papelera → Vaciar papelera**, una confirmación muestra el total que se retirará, incluidos los resultados ocultos por la búsqueda. Los productos sin movimientos se borran; los que tienen compras o ventas salen de la papelera conservando sus registros contables y saldos. Una devolución con unidades recupera el producto para mostrar sus existencias. El cambio es atómico y las copias usan formato 6, compatible con los formatos anteriores.
+
+### Combos y packs
+
+**Ventas → Combos y packs** permite crear ofertas con cantidades de uno o varios productos y un precio conjunto. Cada venta descuenta los componentes del inventario compartido, conserva su composición y calcula costo, ganancia, comisiones, cobros y saldos como una sola operación. Las recetas pueden editarse o archivarse sin reescribir ventas anteriores. Las devoluciones restituyen las unidades originales y las correcciones de costo de compra actualizan sus asignaciones por lote. Incluye disponibilidad, estimaciones, CSV y copias en formato 7, compatibles con los formatos anteriores.

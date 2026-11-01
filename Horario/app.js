@@ -1,5 +1,5 @@
 'use strict';
-const FIRST=2026,LAST=2051,SCHEMA=6;
+const FIRST=2026,LAST=2051,SCHEMA=7;
 const DAY=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
 const MONTH=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 const CAT={python:{name:'Python',color:'#648dbe',emoji:'⌘'},robotica:{name:'Robótica',color:'#c48b58',emoji:'⚙'},ingles:{name:'Inglés',color:'#9c81b4',emoji:'Aa'},personal:{name:'Personal',color:'#699477',emoji:'✦'},descanso:{name:'Descanso',color:'#a5a471',emoji:'☾'}};
@@ -61,7 +61,7 @@ function seedRoutes(){return [
 function validDate(s){if(typeof s!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(s))return false;return key(dateObj(s))===s&&s>='1900-01-01'&&s<='2200-12-31';}
 function validate(raw){
  const fail=message=>{throw Error(message);};const str=(v,n=500)=>typeof v==='string'&&v.length<=n;const ident=v=>str(v,100)&&!['__proto__','constructor','prototype'].includes(v)&&/^[a-zA-Z0-9_-]+$/.test(v);const days=v=>Array.isArray(v)&&v.length>0&&v.length<=7&&new Set(v).size===v.length&&v.every(x=>Number.isInteger(x)&&x>=0&&x<=6);
- if(!raw||![1,2,3,4,5,6].includes(raw.schemaVersion))fail('La copia no corresponde a esta versión de Rumbo.');
+ if(!raw||![1,2,3,4,5,6,7].includes(raw.schemaVersion))fail('La copia no corresponde a esta versión de Rumbo.');
  if(!Array.isArray(raw.events)||raw.events.length>10000||!Array.isArray(raw.habits)||raw.habits.length>200||!Array.isArray(raw.routes)||raw.routes.length>30)fail('La estructura de la copia no es válida.');
  const ids=new Set();for(const e of raw.events){if(!ident(e.id)||ids.has(e.id)||!str(e.title,120)||!e.title.trim()||!CAT[e.category]||!['once','weekly'].includes(e.repeat)||!validDate(e.startDate)||(e.endDate&&!validDate(e.endDate))||!/^([01]\d|2[0-3]):[0-5]\d$/.test(e.start)||!/^([01]\d|2[0-3]):[0-5]\d$/.test(e.end)||minutes(e.start)<0||minutes(e.end)>1439||minutes(e.end)<=minutes(e.start)||!days(e.days)||!str(e.notes??'',1000))fail('Hay un bloque de horario no válido.');ids.add(e.id);}
  const hids=new Set();for(const h of raw.habits){if(!ident(h.id)||hids.has(h.id)||!str(h.name,90)||!h.name.trim()||!str(h.emoji,16)||!str(h.note??'',300)||!Array.isArray(h.rules)||h.rules.length>10000||!h.rules.length)fail('Hay un hábito no válido.');for(const rule of h.rules)if(!validDate(rule.from)||!days(rule.days)||typeof rule.active!=='boolean')fail('El historial de un hábito no es válido.');hids.add(h.id);}

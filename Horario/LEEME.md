@@ -2,12 +2,37 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Combos y packs
+
+En **Ventas → Combos y packs** puedes preparar ofertas con productos de tu catálogo:
+
+1. Pulsa **Nuevo combo o pack** y escribe el nombre y el precio conjunto.
+2. Elige **Combo** para dos o más productos diferentes, o **Pack** para uno o varios productos con las cantidades que prefieras; por ejemplo, tres unidades del mismo producto.
+3. Selecciona cada producto e indica cuántas unidades lleva **una oferta**. Usa **Añadir producto** para más componentes, hasta veinte. Cada producto se incluye una sola vez; para repetir unidades cambia su cantidad.
+4. Revisa la disponibilidad, el precio por separado y el costo y resultado estimados. Pulsa **Guardar oferta**.
+
+Crear una oferta no crea inventario, no lo reserva y no registra una compra ni una venta. Puedes preparar la receta aunque todavía falten existencias. Las ventas individuales, combos y packs **comparten las mismas unidades**. La disponibilidad muestra cuántas ofertas completas puedes armar, limitada por el producto del que tengas menos unidades en relación con su cantidad requerida. Los productos archivados o retirados y los pedidos todavía en camino no habilitan una venta.
+
+Pulsa **Vender combo** o **Vender pack** en su tarjeta. También hay un acceso **Vender combo o pack** en Ventas y cobros y en el formulario de venta individual. Indica cantidad de ofertas, precio por oferta, descuento total, comisiones o entrega de toda la venta, fecha y lo cobrado. Si queda un saldo, indica el cliente o una referencia. La vista previa muestra las unidades físicas que saldrán de cada producto, el total, costo, resultado y saldo.
+
+Se guarda **una sola venta** con todos sus componentes. El precio de venta no se duplica por cada producto. El costo se calcula a partir de las unidades de los lotes recibidos más antiguos disponibles de cada componente, incluido el envío de compra y sus céntimos. Una venta puede usar varios lotes del mismo producto. Si falta alguna unidad para la fecha seleccionada, se rechaza toda la venta; no se descuenta solo una parte.
+
+La composición, las cantidades por oferta, el nombre y el precio de cada venta quedan registrados. **Editar la receta o el precio de una oferta afecta a ventas nuevas**. Cambiar el nombre del producto no reescribe el nombre registrado de los componentes en ventas anteriores. Corregir un costo de compra sí recalcula los costos de las ventas que usaron ese lote, como sucede con las ventas individuales, y conserva el historial de correcciones.
+
+Los combos y packs participan en el resumen de ventas, ganancias, cobros, caja, inventario, reparto y metas ligadas a ganancias. El círculo del inventario cuenta las **unidades físicas** vendidas, no solo el número de ofertas. Puedes cobrar un saldo en Ventas y cobros sin volver a descontar existencias. El CSV lleva una fila por venta, con tipo de oferta, composición registrada y cantidad de unidades físicas.
+
+**Anular y devolver unidades** revierte la venta completa y devuelve cada componente a sus lotes originales, incluso si la receta se editó después. Hazlo únicamente cuando hayas recibido todos los productos y devuelto los cobros. Este flujo no registra devoluciones parciales de una oferta. Si un producto estaba retirado, reaparece para mostrar las unidades devueltas.
+
+Puedes **Archivar** y **Retomar** ofertas; sus ventas anteriores se conservan. Cuando un producto de una receta se retira del catálogo, la oferta aparece sin disponibilidad y permite editar su composición. Vaciar la papelera conserva los registros de producto usados por recetas para evitar referencias rotas, aunque todavía no tengan compras ni ventas.
+
+Las copias JSON incluyen recetas, ventas, composición e importes. El formato actual es **7** y acepta los formatos anteriores del 1 al 6. Exporta una copia desde Ajustes antes de actualizar y usa el archivo actualizado para restaurar una copia nueva.
+
 ## Novedad · Vaciar papelera
 
 En **Ventas → Productos → Papelera** aparece el botón **Vaciar papelera**, desactivado cuando no hay productos. Antes de guardar muestra el total de toda la papelera, incluso si la búsqueda solo está mostrando parte de la lista.
 
-- Los productos **sin compras ni ventas** se borran definitivamente.
-- Los productos **con movimientos**, aunque estén anulados, salen de la papelera y conservan el registro necesario para sus compras, ventas, costos, ganancias y saldos de clientes. Ya no se recuperan desde la papelera.
+- Los productos **sin compras, ventas ni referencias en ofertas** se borran definitivamente.
+- Los productos **con movimientos o usados por recetas de ofertas**, aunque estén anulados o archivados, salen de la papelera conservando sus registros y referencias. Ya no se recuperan desde la papelera.
 
 Puedes cancelar la confirmación antes de aplicar el cambio. Si necesitas poder volver al estado anterior después de vaciarla, exporta primero una copia JSON desde Ajustes. Una devolución que reintegre unidades recupera automáticamente el producto con historial para mostrar su inventario.
 
@@ -111,7 +136,7 @@ Cada categoría muestra su porcentaje y su importe en soles. El cálculo reparte
 
 Exporta una copia desde **Ajustes** antes de actualizar. Cierra las pestañas de la versión anterior. Si usas el archivo, sustituye `Rumbo.html` **en la misma carpeta** y ábrelo con el mismo navegador. Si usas GitHub Pages, abre la misma dirección y recarga; el aviso **Actualizar** permite cargar la nueva versión. No hace falta borrar los datos del navegador.
 
-La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 5. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, papelera y su vaciado, correcciones de costo, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
+La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 6. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, combos y packs, papelera y su vaciado, correcciones de costo, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
 
 ### Registrar tus ventas de Temu
 
@@ -205,7 +230,7 @@ Exporta regularmente, especialmente antes de cambiar de teléfono o borrar datos
 ## Código y comprobaciones
 
 - `index.html` / `Rumbo.html`: aplicación completa lista para usar; el mismo contenido en dos nombres.
-- `app.js`, `extras.js`, `allocation.js`, `learning.js`, `weekly.js`, `inventory.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones, `weekly` las prácticas y su historial, e `inventory` la papelera y la corrección de costos por lote.
+- `app.js`, `extras.js`, `allocation.js`, `learning.js`, `weekly.js`, `inventory.js`, `combos.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones, `weekly` las prácticas y su historial, `inventory` la papelera y la corrección de costos por lote, y `combos` las ofertas y sus ventas con varios productos.
 - `exam-bank.json` / `exam-bank.js`: 140 preguntas originales, 13 plantillas por nivel y una plantilla general. El JavaScript incluye el audio codificado para el HTML autónomo.
 - `audio/`: diez MP3 de listening, sus textos y licencia de Flite. Para regenerar el banco y los audios, ejecuta opcionalmente `python create_exam_bank.py` con FFmpeg y su filtro Flite instalados; el uso normal de la app y `build.py` no requieren FFmpeg.
 - `build.py`: reconstruye ambos HTML y el caché usando solamente Python estándar: `python build.py`.
@@ -221,3 +246,5 @@ Las prácticas semanales se comprobaron con recarga, edición de marcas, indepen
 Se comprobaron también correcciones de costo con ventas parciales de varios lotes, céntimos de envío, ventas anuladas, cantidades devueltas, recálculo de ganancias y caja, historial de cambios, fallos de guardado y pestañas desactualizadas. Se probaron productos vacíos, pedidos cancelados y productos agotados con cobros pendientes en la papelera, recuperación automática al devolver una venta, copias en otro contexto móvil y recuperación del texto local original cuando una copia es ilegible.
 
 El vaciado de papelera se probó con productos sin movimientos y con historial, búsquedas activas, cancelación, fallo de guardado, pestañas desactualizadas, recarga, importación de copia en móvil y uso sin conexión. Se comprobó la conservación de importes y saldos y la recuperación del producto al devolver unidades después del vaciado.
+
+Los combos y packs se verificaron con productos repetidos, varios lotes y céntimos de envío, stock compartido, ventas de fechas anteriores, pedidos en camino, pagos parciales y cobros posteriores, edición de receta, anulación, devolución de productos retirados, correcciones de costos, archivo, papelera, CSV, copias, carga inicial y restauración móvil sin conexión. Se comprobaron también fallos de guardado y pestañas desactualizadas.

@@ -1,8 +1,8 @@
 {
-  "version": "6.0",
-  "dataSchema": 6,
+  "version": "7.0",
+  "dataSchema": 7,
   "result": "passed",
-  "functionalChecks": 140,
+  "functionalChecks": 163,
   "currency": "PEN",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
@@ -38,12 +38,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T18:02:18.520Z",
+      "started": "2026-11-01T18:23:13.698Z",
       "result": "passed",
-      "finished": "2026-11-01T18:02:24.987Z"
+      "finished": "2026-11-01T18:23:20.478Z"
     },
     {
-      "started": "2026-11-01T18:02:03.062Z",
+      "started": "2026-11-01T18:22:49.515Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -67,7 +67,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:02:10.691Z"
+      "finished": "2026-11-01T18:22:56.734Z"
     },
     {
       "checks": [
@@ -103,7 +103,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:02:28.728Z"
+      "finished": "2026-11-01T18:23:24.461Z"
     },
     {
       "feature": "level assessments",
@@ -140,7 +140,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:02:44.330Z"
+      "finished": "2026-11-01T18:23:31.427Z"
     },
     {
       "feature": "weekly practices and route fixes",
@@ -166,7 +166,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:02:50.553Z"
+      "finished": "2026-11-01T18:23:37.730Z"
     },
     {
       "feature": "product trash and purchase-cost corrections",
@@ -191,7 +191,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:02:18.089Z"
+      "finished": "2026-11-01T18:23:06.298Z"
     },
     {
       "feature": "empty product trash",
@@ -210,14 +210,45 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T18:03:53.169Z"
+      "finished": "2026-11-01T18:23:13.313Z"
+    },
+    {
+      "feature": "combos and packs",
+      "checks": [
+        "The dedicated Combos y packs tab guides an empty catalog to create products first",
+        "A combo stores distinct product quantities, rejects duplicates, estimates capacity and reserves no inventory when created",
+        "Selling two combos is one financial record that consumes six units and calculates shipping cents, discount, fees, profit, cash and debt correctly",
+        "A combo sale with insufficient component stock is rejected without a partial inventory movement",
+        "Collecting a combo balance changes cash and debt without creating another sale or consuming stock again",
+        "Editing the offer name, price or recipe leaves earlier sale names, composition, amounts and allocations intact",
+        "Individual and combo sales share stock; cancelling an edited, retired combo restores every original component and its exact lot units",
+        "Purchase-cost corrections recalculate bundle allocations, including voided bundles, while historical component names remain readable",
+        "A pack can contain multiple units of a single product and preserves the remaining fractional shipping cents",
+        "Two packs using the same product cannot double-count shared inventory after one of them sells",
+        "Backdated bundle sales use stock received by the chosen sale date, not today’s stock",
+        "Incoming purchases do not make a combo sellable until the components are received",
+        "A component can span several FIFO purchase lots without duplicate allocations or lost shipping cents",
+        "A failed recipe save restores the catalog, keeps the draft and retries without duplicate offers",
+        "A bundle sale is atomic across components and rolls back inventory, debt and revenue together on save failure",
+        "Offers can be archived and resumed without changing earlier sales or balances",
+        "Backup validation checks recipe references, snapshot quantities, per-product allocations and real lot costs",
+        "Emptying product trash retains product records referenced by offer recipes and marks those offers unavailable",
+        "CSV exports one row per sale with bundle type, saved composition and physical unit counts",
+        "Recipes and multi-product sales restore on mobile, fit 390px and survive offline reload",
+        "An older individual-sale planner migrates without creating offers or changing its ledger",
+        "A stale tab cannot overwrite newer records with a multi-product sale",
+        "No uncaught errors in recipe creation, sales, returns, corrections, trash, backups or offline use"
+      ],
+      "errors": [],
+      "result": "passed",
+      "finished": "2026-11-01T18:22:24.295Z"
     }
   ],
   "artifactVerification": {
     "zipRebuildMatchesPublicFiles": true,
     "extractedPackageLocalhostAndOffline": "passed",
-    "emptyTrashAndReload": "passed",
-    "customerCollectionAfterEmptying": "passed",
+    "mixedIndividualAndComboSalesAfterReload": "passed",
+    "startupValidationWithoutUiState": "passed",
     "directFileURLTested": false,
     "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",
     "externalServicesRequired": false
