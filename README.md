@@ -36,3 +36,11 @@ Esta rama contiene **Rumbo**, un horario editable para celular y computadora, co
 - [Código fuente y comprobaciones](Horario/)
 
 Los datos personales se guardan en tu navegador; no se suben al repositorio. Para pasar tus avances entre dispositivos usa Exportar e Importar. La web necesita que el propietario active GitHub Pages para la rama `mi-horario`, carpeta `/ (root)`.
+
+### Rumbo 2 · Metas y ventas en soles
+
+Se añadieron metas personales, listas de pasos y objetivos de ganancia. Ventas incorpora productos, existencias, compras de Temu en camino, costos por lote, cobros pendientes, gastos, ganancias, caja, exportación CSV y el círculo del inventario por vender. Los hábitos ahora explican las fechas futuras y muestran un botón visible para volver a hoy y marcar.
+
+La actualización convierte los datos de la versión 1 sin borrar horario, hábitos ni rutas. Antes de sustituir el archivo, exporta una copia y cierra las pestañas antiguas. Mantén la misma ubicación y navegador para conservar el almacenamiento; si cambias de dirección, usa Importar copia. No borres los datos del navegador para actualizar.
+
+[Guía completa de uso y actualización](Horario/LEEME.md) · [48 comprobaciones de funcionamiento](Horario/verificacion.json)

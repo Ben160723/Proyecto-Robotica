@@ -1,30 +1,88 @@
 {
-  "started": "2026-11-01T05:10:29.394Z",
-  "checks": [
-    "IndexedDB persistent storage initializes",
-    "Daily habit mark survives full reload",
-    "Weekly percentage excludes future and pre-start days",
-    "Schedule completions contribute actual block minutes",
-    "Habit frequency edits retain historical schedule and marks",
-    "Archiving pauses future expectations and retains history",
-    "Weekly recurrence respects chosen weekdays and boundaries",
-    "Editing a single recurring occurrence leaves other dates untouched",
-    "Removing future series preserves prior occurrences and exceptions",
-    "Calendar navigates through December 2051",
-    "Gregorian leap day exists in 2040",
-    "Future events persist and invalid time ranges are rejected",
-    "Future habit completion is disabled",
-    "Python, robotics and English roadmaps include persistent milestones",
-    "JSON export contains complete habits, notes, schedule and profile",
-    "Malformed import leaves existing data unchanged",
-    "Backup restores on a separate mobile browser and survives reload",
-    "All six screens fit a 390px mobile viewport",
-    "No uncaught browser errors",
-    "Hosted app reloads fully offline through its service worker",
-    "Unreadable prior data is preserved and available for recovery export",
-    "Restoring a valid backup recovers writable persistent storage"
-  ],
-  "errors": [],
+  "version": 2,
   "result": "passed",
-  "finished": "2026-11-01T05:10:33.687Z"
+  "functionalChecks": 48,
+  "currency": "PEN",
+  "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
+  "physicalAndroidOrIOSTested": false,
+  "suites": [
+    {
+      "version": 2,
+      "checks": [
+        "Existing version-1 data migrates without losing habits, schedule, routes, notes or profile",
+        "Future-date problem has an explicit explanation; return to today enables marking and saves through reload",
+        "Quantitative goals accept persistent progress updates",
+        "Checklist goals compute progress from completed steps",
+        "Business-linked goals store their monetary target in cents",
+        "Product purchase records quantity, unit cost and allocated shipping in PEN",
+        "A partial sale decreases inventory circle and calculates actual cost, margin, receivable and cash separately",
+        "Collecting a balance does not create another sale or subtract more inventory",
+        "General business expenses reduce net profit and cash",
+        "An incoming Temu order counts as paid investment but cannot be sold yet",
+        "Receiving a purchase adds stock without duplicating the investment",
+        "FIFO allocation across lots preserves distinct costs and updates business-linked goals",
+        "Overselling is rejected without creating a transaction",
+        "Full cancellation restores original units and costs, removes cash and reverses auto-goal completion",
+        "Changing the catalog price does not rewrite previous sale prices",
+        "Selling the final unit empties the inventory ring; final cash matches net profit after all stock is sold",
+        "Inventory, expenses, payments and sales survive a complete reload",
+        "Cent allocation is exact, including shipping remainders and large quantities",
+        "Sales CSV is downloadable with currency, cost, collection and result columns",
+        "Version-2 backups include all business movements and goals",
+        "A complete business backup restores on an independent mobile browser",
+        "All new mobile screens fit 390 pixels; wide data tables scroll inside their panel",
+        "An inconsistent cost/inventory backup is rejected without losing current records",
+        "Updated version and business records reload offline",
+        "No uncaught browser errors"
+      ],
+      "errors": [],
+      "started": "2026-11-01T05:55:31.201Z",
+      "result": "passed",
+      "finished": "2026-11-01T05:55:37.306Z"
+    },
+    {
+      "started": "2026-11-01T05:55:28.243Z",
+      "checks": [
+        "IndexedDB persistent storage initializes",
+        "Daily habit mark survives full reload",
+        "Weekly percentage excludes future and pre-start days",
+        "Schedule completions contribute actual block minutes",
+        "Habit frequency edits retain historical schedule and marks",
+        "Archiving pauses future expectations and retains history",
+        "Weekly recurrence respects chosen weekdays and boundaries",
+        "Editing a single recurring occurrence leaves other dates untouched",
+        "Removing future series preserves prior occurrences and exceptions",
+        "Calendar navigates through December 2051",
+        "Gregorian leap day exists in 2040",
+        "Future events persist and invalid time ranges are rejected",
+        "Future habit completion is disabled",
+        "Python, robotics and English roadmaps include persistent milestones",
+        "JSON export contains complete habits, notes, schedule and profile",
+        "Malformed import leaves existing data unchanged",
+        "Backup restores on a separate mobile browser and survives reload",
+        "All six screens fit a 390px mobile viewport",
+        "No uncaught browser errors"
+      ],
+      "errors": [],
+      "result": "passed",
+      "finished": "2026-11-01T05:55:33.319Z"
+    },
+    {
+      "checks": [
+        "Stale tabs cannot overwrite newer committed data; the financial form stays open and the attempted transaction is rolled back",
+        "Reloading a stale tab retrieves the latest saved data",
+        "Alternative localStorage mode saves and reloads with its write token intact",
+        "Failed financial writes preserve the form, roll back the entry, and can be retried without duplicate purchases"
+      ],
+      "errors": [],
+      "version": 2,
+      "result": "passed"
+    }
+  ],
+  "sourceSha256": {
+    "app.js": "e2a630d98e40d4afe05115232e5c82124b04251d5676b3c0b357f2ff54bd96a3",
+    "extras.js": "9233e21683b084e9269dfe458f91c97a9c05ae99f6497b20ca2c76c88ef6d51d",
+    "style.css": "b3338bec9cf653282b6b1808c880dbebf180c5b13aa61fd5e1bd005ef2f9679d",
+    "extras.css": "c1e3891847fbd0647bd65959e0c2fe22b514d0d93e35128fdf86caa4706188ef"
+  }
 }

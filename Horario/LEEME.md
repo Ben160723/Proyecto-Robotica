@@ -2,6 +2,47 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Novedades de la versión 2
+
+- **Hábitos más claros:** si eliges una fecha futura, se explica el motivo y aparece **Volver a hoy**. El botón **Marcar como hecho** reemplaza el círculo vacío. Los días de la semana muestran también su número de fecha.
+- **Metas:** objetivos por cantidades (ahorro, libros, sesiones…), listas de pasos y metas ligadas a la ganancia neta del negocio. Incluyen fecha objetivo, progreso, archivo y recuperación.
+- **Ventas:** productos, precios, compras, inventario, ventas, cobros pendientes y gastos del negocio, inicialmente en **soles peruanos (PEN)**.
+
+### Actualizar sin perder tus datos
+
+Exporta una copia desde **Ajustes** antes de actualizar. Cierra las pestañas de la versión anterior. Si usas el archivo, sustituye `Rumbo.html` **en la misma carpeta** y ábrelo con el mismo navegador. Si usas GitHub Pages, abre la misma dirección y recarga; el aviso **Actualizar** permite cargar la nueva versión. No hace falta borrar los datos del navegador.
+
+La versión 2 convierte automáticamente el formato anterior, conservando horario, hábitos, marcas, notas, perfil y rutas. También acepta copias JSON de la versión 1. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas y los movimientos del negocio; usa la versión actualizada para restaurarlas.
+
+### Registrar tus ventas de Temu
+
+1. En **Ventas → Productos**, crea el producto, su precio de venta y el aviso de pocas existencias. Puedes indicar la compra inicial: cantidad, costo por unidad y envío/impuestos del lote.
+2. Usa **Compras / pedidos** para registrar más lotes. Las compras se consideran pagadas: suman a la inversión. Un pedido **en camino** no añade unidades disponibles hasta pulsar **Recibir**.
+3. Al **Registrar venta**, elige producto, cantidad, precio unitario, descuento total y comisiones/entrega que pagaste. El inventario baja automáticamente. Si te pagaron solo una parte, indica lo cobrado y una referencia del cliente.
+4. En **Ventas y cobros**, registra los pagos posteriores. Cobrar un saldo no crea otra venta ni vuelve a descontar unidades.
+5. Registra los gastos generales —por ejemplo publicidad o empaque— en **Gastos**. No repitas un envío o comisión ya incluido en compras o ventas.
+
+El círculo muestra el **costo del inventario recibido que falta vender**. Baja con cada unidad vendida y llega a cero cuando se agotan esas unidades. La inversión en pedidos todavía en camino aparece por separado; no son existencias recibidas. Comprar otro lote puede hacer subir el inventario y el círculo otra vez.
+
+Las cantidades financieras se guardan en céntimos enteros. El envío de una compra se distribuye entre sus unidades, conservando exactamente el total incluso cuando sobra un céntimo. Para cada venta se toman las unidades disponibles de los lotes recibidos más antiguos; los lotes del mismo día conservan su orden de registro. Cambiar el precio sugerido no altera los costos ni precios de las ventas anteriores.
+
+- **Ventas acumuladas:** cantidades vendidas por sus precios, menos descuentos, estén cobradas o pendientes.
+- **Ganancia neta:** ventas menos el costo de las unidades vendidas, comisiones y gastos generales. Puede ser negativa e incluir ventas aún por cobrar.
+- **Dinero cobrado:** pagos que ya registraste.
+- **Capital por recuperar:** compras y gastos que los cobros todavía no cubren; nunca es menor que cero.
+- **Saldo de caja:** cobros menos compras pagadas, comisiones y gastos. Puede ser negativo mientras parte del dinero está en inventario.
+- **Pendiente de cobrar:** ventas menos cobros registrados.
+
+El precio de venta lo decides tú: vender todo no garantiza una ganancia si el precio no cubre los costos. Los resultados se calculan con tus importes, no con una rentabilidad supuesta.
+
+Los registros son **manuales**. No se conecta con Temu, no compra productos y no publica anuncios. Las alertas de pocas existencias, los pedidos en camino, los saldos de clientes, las gráficas mensuales y la exportación CSV ayudan a llevar el control.
+
+Para corregir una venta, puedes **Anular y devolver unidades**: el movimiento se conserva como anulado, se restauran sus unidades originales y se retiran sus importes de los resultados. Hazlo solo si recuperaste los productos y devolviste lo cobrado. Si quedaron gastos sin reembolso, regístralos como gastos. Una compra solo se puede anular con reembolso si no tiene unidades asignadas a ventas vigentes. Los gastos también se conservan como anulados.
+
+La moneda se puede corregir desde el botón **PEN** de Ventas. Cambiarla no convierte los números con un tipo de cambio; cambia su unidad. El CSV incluye explícitamente la moneda.
+
+Los formularios financieros esperan la confirmación del guardado. Si falla, conservan los campos y no dejan duplicado el movimiento al reintentar. Una pestaña desactualizada no puede sobrescribir una versión más reciente de los datos: se pide recargar. Esto no añade sincronización entre dispositivos; para eso siguen utilizándose las copias JSON.
+
 ## Empezar en la computadora
 
 1. Descarga **Rumbo.html** y guárdalo en una carpeta que vayas a conservar.
@@ -33,6 +74,8 @@ Una vez publicada, puedes guardar la web en la pantalla de inicio desde el menú
 - **Mis hábitos:** nombre, icono, frase personal, días y fecha de inicio. Los cambios de frecuencia se aplican desde hoy y conservan la programación anterior. Puedes archivar y retomar hábitos.
 - **Mi progreso:** gráficas semanales y mensuales, mapa de cumplimiento del mes, desglose por hábito, minutos y bloques completados.
 - **Mi ruta:** las rutas de Python, robótica e inglés proporcionadas, con metas editables y pruebas de progreso. Puedes añadir tus siguientes metas.
+- **Metas:** objetivos personales independientes, con cantidades, pasos o ganancias del negocio.
+- **Ventas:** inventario y cuentas de tu reventa, con pedidos, cobros, gastos y exportación CSV.
 - **Ajustes y copias:** personalización, exportación, importación y hasta siete copias locales diarias.
 
 ## Cómo se calcula el avance
@@ -63,7 +106,7 @@ Exporta regularmente, especialmente antes de cambiar de teléfono o borrar datos
 ## Código y comprobaciones
 
 - `index.html` / `Rumbo.html`: aplicación completa lista para usar; el mismo contenido en dos nombres.
-- `app.js`, `style.css`, `index.template.html`: fuentes editables.
+- `app.js`, `extras.js`, `style.css`, `extras.css`, `index.template.html`: fuentes editables. Los archivos `extras` incorporan metas y el registro de ventas.
 - `build.py`: reconstruye ambos HTML y el caché usando solamente Python estándar: `python build.py`.
 - `manifest.webmanifest`, `icon.svg`, `sw.js`: versión web con acceso directo y caché sin conexión.
 - `verificacion.json`: resultados de las pruebas ejecutadas en Chromium con tamaños de escritorio y celular.
