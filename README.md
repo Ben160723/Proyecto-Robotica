@@ -66,3 +66,7 @@ Se corrigieron listening `null%` y transcripciones vacías en rutas técnicas, e
 En Productos, cada fila incorpora una papelera recuperable para productos sin inventario ni pedidos pendientes. Sus movimientos y cobros siguen en el historial; si una devolución restaura unidades, el producto reaparece. El lápiz del producto permite corregir el costo unitario y envío de cada lote; Compras / pedidos también tiene un lápiz por compra. La vista previa y el historial de correcciones explican cómo cambian inversión, inventario, costo de ventas anteriores, ganancias, caja y reparto, conservando cantidades, precios de venta y cobros.
 
 Se reforzó el guardado del archivado y la recuperación de copias locales ilegibles. Los datos usan formato 5 y conservan las copias anteriores.
+
+### Vaciar papelera
+
+En **Productos → Papelera → Vaciar papelera**, una confirmación muestra el total que se retirará, incluidos los resultados ocultos por la búsqueda. Los productos sin movimientos se borran; los que tienen compras o ventas salen de la papelera conservando sus registros contables y saldos. Una devolución con unidades recupera el producto para mostrar sus existencias. El cambio es atómico y las copias usan formato 6, compatible con los formatos anteriores.

@@ -2,6 +2,17 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Novedad · Vaciar papelera
+
+En **Ventas → Productos → Papelera** aparece el botón **Vaciar papelera**, desactivado cuando no hay productos. Antes de guardar muestra el total de toda la papelera, incluso si la búsqueda solo está mostrando parte de la lista.
+
+- Los productos **sin compras ni ventas** se borran definitivamente.
+- Los productos **con movimientos**, aunque estén anulados, salen de la papelera y conservan el registro necesario para sus compras, ventas, costos, ganancias y saldos de clientes. Ya no se recuperan desde la papelera.
+
+Puedes cancelar la confirmación antes de aplicar el cambio. Si necesitas poder volver al estado anterior después de vaciarla, exporta primero una copia JSON desde Ajustes. Una devolución que reintegre unidades recupera automáticamente el producto con historial para mostrar su inventario.
+
+El vaciado se guarda como una sola operación: si falla el almacenamiento o hay cambios más recientes en otra pestaña, no se conserva un vaciado parcial. Las copias actuales usan **formato 6**, conservan este estado y aceptan los formatos anteriores del 1 al 5.
+
 ## Novedades de la versión 5 · Productos y costos de compra
 
 En **Ventas → Productos**, cada fila tiene una **papelera** junto al lápiz. Puedes retirar productos sin unidades disponibles ni pedidos vigentes pendientes y recuperarlos con **Papelera → Recuperar producto**. Las compras anuladas, ventas, saldos pendientes e historial de costos se conservan. Retirar un producto del catálogo no anula sus movimientos ni modifica las cuentas.
@@ -100,7 +111,7 @@ Cada categoría muestra su porcentaje y su importe en soles. El cálculo reparte
 
 Exporta una copia desde **Ajustes** antes de actualizar. Cierra las pestañas de la versión anterior. Si usas el archivo, sustituye `Rumbo.html` **en la misma carpeta** y ábrelo con el mismo navegador. Si usas GitHub Pages, abre la misma dirección y recarga; el aviso **Actualizar** permite cargar la nueva versión. No hace falta borrar los datos del navegador.
 
-La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 4. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, papelera y correcciones de costo, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
+La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 5. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, papelera y su vaciado, correcciones de costo, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
 
 ### Registrar tus ventas de Temu
 
@@ -208,3 +219,5 @@ También se probaron las evaluaciones de los 13 niveles, el rechazo de 60% exact
 Las prácticas semanales se comprobaron con recarga, edición de marcas, independencia de rutas, cambio de nivel, conservación de consignas anteriores, extremos del calendario, cambio de horario estacional, CSV, migración de formato 3, errores de almacenamiento y restauración en un contexto móvil independiente. Se verificaron también fallos de inicio del grabador, cancelación de un permiso pendiente y subida de archivos sin MIME o que no contienen audio válido.
 
 Se comprobaron también correcciones de costo con ventas parciales de varios lotes, céntimos de envío, ventas anuladas, cantidades devueltas, recálculo de ganancias y caja, historial de cambios, fallos de guardado y pestañas desactualizadas. Se probaron productos vacíos, pedidos cancelados y productos agotados con cobros pendientes en la papelera, recuperación automática al devolver una venta, copias en otro contexto móvil y recuperación del texto local original cuando una copia es ilegible.
+
+El vaciado de papelera se probó con productos sin movimientos y con historial, búsquedas activas, cancelación, fallo de guardado, pestañas desactualizadas, recarga, importación de copia en móvil y uso sin conexión. Se comprobó la conservación de importes y saldos y la recuperación del producto al devolver unidades después del vaciado.

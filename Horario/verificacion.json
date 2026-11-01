@@ -1,12 +1,12 @@
 {
-  "version": "5.0",
-  "dataSchema": 5,
+  "version": "6.0",
+  "dataSchema": 6,
   "result": "passed",
-  "functionalChecks": 129,
+  "functionalChecks": 140,
   "currency": "PEN",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
-  "audioRecordingTest": "Native MediaRecorder with a synthetic Web Audio signal; no personal microphone data",
+  "audioRecordingTest": "Native MediaRecorder with synthetic Web Audio; no personal microphone data",
   "suites": [
     {
       "version": 2,
@@ -38,12 +38,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T17:50:15.190Z",
+      "started": "2026-11-01T18:02:18.520Z",
       "result": "passed",
-      "finished": "2026-11-01T17:50:23.882Z"
+      "finished": "2026-11-01T18:02:24.987Z"
     },
     {
-      "started": "2026-11-01T17:50:14.882Z",
+      "started": "2026-11-01T18:02:03.062Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -67,7 +67,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T17:50:22.217Z"
+      "finished": "2026-11-01T18:02:10.691Z"
     },
     {
       "checks": [
@@ -103,7 +103,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T17:50:28.361Z"
+      "finished": "2026-11-01T18:02:28.728Z"
     },
     {
       "feature": "level assessments",
@@ -140,7 +140,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T17:51:05.924Z"
+      "finished": "2026-11-01T18:02:44.330Z"
     },
     {
       "feature": "weekly practices and route fixes",
@@ -166,7 +166,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T17:51:11.873Z"
+      "finished": "2026-11-01T18:02:50.553Z"
     },
     {
       "feature": "product trash and purchase-cost corrections",
@@ -191,14 +191,33 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T17:50:31.318Z"
+      "finished": "2026-11-01T18:02:18.089Z"
+    },
+    {
+      "feature": "empty product trash",
+      "checks": [
+        "Empty trash has a visible disabled button; the action is confined to the trash view",
+        "A mixed trash fixture contains two unused products, a sold-out product with a balance and a cancelled purchase",
+        "The confirmation covers the whole trash despite a search filter; cancelling makes no changes",
+        "A failed bulk save rolls back deletions and retained records together and leaves the app usable",
+        "Emptying removes unused products, retires historical products, empties the list and leaves active products untouched",
+        "Investment, profit, cash, sales, purchases and outstanding balances are identical after emptying",
+        "The emptied state survives reload, JSON restore on mobile and offline use without recovering retired products in the trash",
+        "Returning a sale recovers a retired product when it restores stock, so inventory cannot become invisible",
+        "Format-5 backups migrate without ledger changes and invalid retired/active combinations are rejected",
+        "A stale tab cannot commit a bulk deletion over a newer saved planner",
+        "No uncaught errors during bulk deletion, rollback, migration, returns or offline restore"
+      ],
+      "errors": [],
+      "result": "passed",
+      "finished": "2026-11-01T18:03:53.169Z"
     }
   ],
   "artifactVerification": {
     "zipRebuildMatchesPublicFiles": true,
     "extractedPackageLocalhostAndOffline": "passed",
-    "purchaseCostCorrectionAndReload": "passed",
-    "trashInventoryGuard": "passed",
+    "emptyTrashAndReload": "passed",
+    "customerCollectionAfterEmptying": "passed",
     "directFileURLTested": false,
     "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",
     "externalServicesRequired": false
