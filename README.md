@@ -54,3 +54,9 @@ En **Ventas → Repartir ganancias** puedes ver lo invertido y ajustar el plan i
 **Mi ruta** incluye exámenes de 10 preguntas y dos mini pruebas en cada uno de los 13 niveles de Python, Robótica e Inglés A1–C1. Para abrir el siguiente nivel necesitas **más de 60% en el examen y en la prueba práctica/oral**, por separado; en Inglés también más de 60% en listening en el mismo examen aprobado. Un 60% exacto no aprueba.
 
 El listening lleva diez audios originales incluidos sin conexión. Para speaking puedes grabarte, subir un audio o documentar una revisión externa. Las rúbricas de speaking y proyectos son **manuales**; la app no evalúa la pronunciación ni ejecuta el código. Las prácticas son originales y orientativas, sin afiliación a PUCP o ICPNA. Incluye borradores, historial, explicaciones, repasos en el horario y calificaciones CSV. Los datos pasan a formato 3 sin perder los registros anteriores. Las copias JSON guardan el avance; descarga los archivos de voz por separado.
+
+### Rumbo 4 · Prácticas semanales y correcciones
+
+Cada ruta añade tres prácticas semanales de unos 25 minutos en total, adaptadas a un nivel disponible: Python, Robótica e Inglés con escritura, listening y speaking. Permite notas, marcas corregibles, programación en el horario, gráfico de ocho semanas y exportación CSV. Los registros conservan el nivel y sus consignas originales al avanzar o editar una meta. Hay cuatro bloques rotativos por nivel y se mantiene el requisito de más de 60% en las evaluaciones para avanzar.
+
+Se corrigieron listening `null%` y transcripciones vacías en rutas técnicas, el mensaje de la última etapa, fallos de inicio del grabador y la subida de audio sin MIME desde el celular. Las copias pasan a formato 4 y conservan los datos de versiones anteriores.

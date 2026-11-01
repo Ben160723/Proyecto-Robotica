@@ -2,6 +2,28 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Novedades de la versión 4 · Prácticas semanales
+
+Al entrar en **Mi ruta**, cada ruta muestra **tres prácticas cortas para la semana**, con unos **25 minutos orientativos en total**. Puedes repartirlas entre varios días y elegir uno de tus niveles disponibles antes de guardar el primer resultado.
+
+- **Python:** una predicción o diseño, un ejercicio para ejecutar en tu propio Python y una explicación de resultados y mejoras.
+- **Robótica:** diseño y comprobación en equipo o simulador, con observaciones y una reflexión. Las consignas distinguen las pruebas simuladas del trabajo físico.
+- **Inglés:** escritura, un listening con audio y transcripción incluidos y una intervención oral breve adecuada al nivel. La práctica oral semanal no exige subir un archivo ni recibir una nota.
+
+Hay cuatro bloques que se repiten por nivel; al regresar a un bloque, usa otros datos o mejora tu solución anterior. Son actividades para aprender y mantener constancia, no cuatro exámenes distintos. Las instrucciones, el nivel y el nombre de la meta quedan conservados al guardar el primer resultado de esa semana. Avanzar de nivel o editar una meta no cambia lo que ya registraste.
+
+Pulsa **Abrir práctica**, escribe tus resultados o dudas y, cuando la hayas realizado, marca **Hice la práctica y comprobé el resultado**. Puedes guardar notas sin completarla, corregir las notas o retirar una marca. Este registro es **manual** y no cambia las calificaciones ni abre el siguiente nivel: para eso se mantienen las evaluaciones con más de 60%.
+
+Las flechas y el selector de fecha permiten revisar semanas desde enero de 2026 hasta diciembre de 2051. Las semanas van de lunes a domingo; las de los extremos pueden contener solo una parte de días dentro del calendario. Puedes guardar planes de semanas futuras, pero no marcarlas todavía. **Esta semana** vuelve al período actual.
+
+El gráfico muestra hasta ocho semanas anteriores a la seleccionada, incluida esta. Cada barra indica prácticas realizadas de tres posibles. **Sin registro** distingue una semana que todavía no guardaste. Pulsa una barra para consultar esa semana. **Exportar prácticas CSV** incluye el nivel, las consignas por título, los minutos orientativos, las marcas manuales y las notas. Los minutos no son una medición de tiempo realmente trabajado.
+
+**Al horario** prepara un bloque editable con la duración e instrucciones de la práctica; debes guardar ese formulario para añadirlo a tu agenda. Completar el bloque del horario y completar la práctica son registros independientes.
+
+También se corrigieron porcentajes de listening que aparecían como `null%` en las rutas técnicas, enlaces a transcripciones vacías y el mensaje al terminar la última etapa. El grabador libera el micrófono si falla el inicio o se cierra el formulario mientras llega el permiso. La revisión espera al procesamiento del audio. Las subidas aceptan audios válidos de celular sin un tipo MIME informado, comprueban que se puedan abrir y conservan el audio anterior si el nuevo archivo no se puede reproducir.
+
+Las prácticas, notas y marcas están incluidas en la copia JSON. La versión actual usa **formato 4** y conserva automáticamente los datos de las versiones 1, 2 y 3, incluidas tus evaluaciones y ventas. Antes de actualizar, exporta una copia desde Ajustes, cierra la versión anterior y usa el mismo navegador y ubicación, o importa esa copia en la nueva ubicación.
+
 ## Novedades de la versión 3 · Evaluaciones por nivel
 
 En **Mi ruta** tienes los cuatro niveles de Python, los cuatro de Robótica y los cinco de Inglés (A1–C1). Cada nivel incluye un examen original de **10 preguntas**, dos mini pruebas de tres preguntas y una prueba práctica con rúbrica. Las mini pruebas reutilizan conceptos y preguntas del banco para practicar; no son exámenes adicionales de certificación.
@@ -57,7 +79,7 @@ Cada categoría muestra su porcentaje y su importe en soles. El cálculo reparte
 
 Exporta una copia desde **Ajustes** antes de actualizar. Cierra las pestañas de la versión anterior. Si usas el archivo, sustituye `Rumbo.html` **en la misma carpeta** y ábrelo con el mismo navegador. Si usas GitHub Pages, abre la misma dirección y recarga; el aviso **Actualizar** permite cargar la nueva versión. No hace falta borrar los datos del navegador.
 
-La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 y 2. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio y tus evaluaciones; usa la versión actualizada para restaurarlas.
+La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1, 2 y 3. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
 
 ### Registrar tus ventas de Temu
 
@@ -118,7 +140,7 @@ Una vez publicada, puedes guardar la web en la pantalla de inicio desde el menú
 - **Mi horario:** vistas semanales y mensuales, bloques editables, horarios recurrentes y excepciones por fecha. Si dos bloques coinciden, te lo avisa y te permite decidir.
 - **Mis hábitos:** nombre, icono, frase personal, días y fecha de inicio. Los cambios de frecuencia se aplican desde hoy y conservan la programación anterior. Puedes archivar y retomar hábitos.
 - **Mi progreso:** gráficas semanales y mensuales, mapa de cumplimiento del mes, desglose por hábito, minutos y bloques completados.
-- **Mi ruta:** Python, robótica e inglés, con exámenes, mini pruebas, proyectos y speaking, historial y desbloqueo al superar 60%. Puedes editar las metas y añadir niveles.
+- **Mi ruta:** Python, robótica e inglés, con prácticas semanales, notas y gráfico, exámenes, mini pruebas, proyectos y speaking, historial y desbloqueo al superar 60%. Puedes editar las metas y añadir niveles.
 - **Metas:** objetivos personales independientes, con cantidades, pasos o ganancias del negocio.
 - **Ventas:** inventario y cuentas de tu reventa, con pedidos, cobros, gastos y exportación CSV.
 - **Ajustes y copias:** personalización, exportación, importación y hasta siete copias locales diarias.
@@ -151,7 +173,7 @@ Exporta regularmente, especialmente antes de cambiar de teléfono o borrar datos
 ## Código y comprobaciones
 
 - `index.html` / `Rumbo.html`: aplicación completa lista para usar; el mismo contenido en dos nombres.
-- `app.js`, `extras.js`, `allocation.js`, `learning.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones.
+- `app.js`, `extras.js`, `allocation.js`, `learning.js`, `weekly.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones y los archivos `weekly` las prácticas y su historial.
 - `exam-bank.json` / `exam-bank.js`: 140 preguntas originales, 13 plantillas por nivel y una plantilla general. El JavaScript incluye el audio codificado para el HTML autónomo.
 - `audio/`: diez MP3 de listening, sus textos y licencia de Flite. Para regenerar el banco y los audios, ejecuta opcionalmente `python create_exam_bank.py` con FFmpeg y su filtro Flite instalados; el uso normal de la app y `build.py` no requieren FFmpeg.
 - `build.py`: reconstruye ambos HTML y el caché usando solamente Python estándar: `python build.py`.
@@ -161,3 +183,5 @@ Exporta regularmente, especialmente antes de cambiar de teléfono o borrar datos
 Se probaron persistencia tras recargar, porcentajes, cambios históricos de frecuencia, excepciones semanales, edición y eliminación, calendario hasta 2051, 29 de febrero de 2040, exportación/importación en dos navegadores independientes, seis vistas a 390 px, recarga sin conexión y recuperación de datos no legibles. No se ejecutaron pruebas en dispositivos físicos iOS o Android; la revisión móvil se realizó con el tamaño de pantalla de un celular en Chromium.
 
 También se probaron las evaluaciones de los 13 niveles, el rechazo de 60% exacto, las rúbricas, la condición separada de listening, borradores, reproducción de los MP3 incluidos, grabación MediaRecorder con una señal sintética, subida/descarga/eliminación de audio, migración de copias, uso sin conexión y fallos de guardado. No se evaluó una voz humana ni se validó pedagógicamente una certificación MCER. El ZIP extraído se reconstruyó y se probó mediante localhost y caché sin conexión; la política del Chromium administrado impidió comprobar la apertura directa con una dirección file://.
+
+Las prácticas semanales se comprobaron con recarga, edición de marcas, independencia de rutas, cambio de nivel, conservación de consignas anteriores, extremos del calendario, cambio de horario estacional, CSV, migración de formato 3, errores de almacenamiento y restauración en un contexto móvil independiente. Se verificaron también fallos de inicio del grabador, cancelación de un permiso pendiente y subida de archivos sin MIME o que no contienen audio válido.

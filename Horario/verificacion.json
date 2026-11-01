@@ -1,12 +1,12 @@
 {
-  "version": "3.0",
-  "dataSchema": 3,
+  "version": "4.0",
+  "dataSchema": 4,
   "result": "passed",
-  "functionalChecks": 94,
+  "functionalChecks": 112,
   "currency": "PEN",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
-  "audioRecordingTest": "Native MediaRecorder with a synthetic Web Audio signal, not a human microphone",
+  "audioRecordingTest": "Native MediaRecorder with a synthetic Web Audio signal, plus startup failure, cancelled permission and invalid-file tests",
   "suites": [
     {
       "version": 2,
@@ -38,12 +38,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T06:45:49.346Z",
+      "started": "2026-11-01T07:03:42.401Z",
       "result": "passed",
-      "finished": "2026-11-01T06:45:58.036Z"
+      "finished": "2026-11-01T07:03:50.553Z"
     },
     {
-      "started": "2026-11-01T06:45:50.541Z",
+      "started": "2026-11-01T07:03:44.176Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -67,7 +67,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T06:45:57.405Z"
+      "finished": "2026-11-01T07:03:50.553Z"
     },
     {
       "checks": [
@@ -103,7 +103,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T06:46:03.041Z"
+      "finished": "2026-11-01T07:03:55.158Z"
     },
     {
       "feature": "level assessments",
@@ -140,12 +140,39 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T06:46:29.366Z"
+      "finished": "2026-11-01T07:04:21.981Z"
+    },
+    {
+      "feature": "weekly practices and route fixes",
+      "checks": [
+        "Every route offers three short practices for an available level without creating empty stored weeks",
+        "A completion and its notes survive reload, appear in the weekly graph and do not unlock exams",
+        "Notes can be saved before finishing, and a completion can be corrected without losing the rest of the week",
+        "A saved week keeps its original level; a new week suggests the next available level and allows choosing an earlier one",
+        "Editing a route title or assessment cannot rewrite already saved weekly instructions and results",
+        "Python, Robotics and English keep separate weekly records; English practice includes a playable offline listening clip and transcript",
+        "A practice can be scheduled as an editable short agenda block with its instructions",
+        "Future weeks permit planning but no completion; failed writes preserve fields and disabled controls and retry safely",
+        "Weekly navigation reaches both calendar boundaries and four-week rotations remain stable across daylight-saving changes",
+        "Weekly notes render as text and CSV export quotes multiline fields and neutralizes spreadsheet formulas",
+        "Backup validation preserves weekly records and rejects duplicated route/week entries",
+        "Version-3 data migrates to format 4 without losing exams, financial records or habits",
+        "Technical routes no longer show a null listening percentage or an empty transcripts panel",
+        "A recorder startup error releases the microphone stream and restores a usable recording button",
+        "Closing the oral form while microphone permission is pending does not leave a recording or live stream behind",
+        "Valid phone audio with an empty MIME type can be uploaded; an undecodable fake MP3 leaves the previous recording intact",
+        "Weekly records restore on a separate mobile context, fit 390px and survive an offline reload",
+        "No uncaught errors across weekly practices, route fixes, recording failures or backup restore"
+      ],
+      "errors": [],
+      "result": "passed",
+      "finished": "2026-11-01T07:02:45.532Z"
     }
   ],
   "artifactVerification": {
     "zipRebuildMatchesPublicFiles": true,
     "extractedPackageLocalhostAndOffline": "passed",
+    "weeklyCompletionAndReloadInExtractedPackage": "passed",
     "directFileURLTested": false,
     "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",
     "networkServicesRequiredForListening": false
