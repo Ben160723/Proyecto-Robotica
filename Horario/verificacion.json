@@ -1,11 +1,12 @@
 {
-  "version": "9.0",
-  "dataSchema": 9,
+  "version": "10.0",
+  "dataSchema": 10,
   "result": "passed",
-  "functionalChecks": 211,
-  "currency": "PEN",
+  "functionalChecks": 227,
+  "currency": "PEN original with optional exchange-rate display",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
+  "currencyConversion": "Manual quote in original currency per one display-currency unit; rational BigInt display rounding. Original integer-cent records, input fields and CSV stay in the original currency. No external quote API.",
   "assistantMode": "Local deterministic commands, suggestions and offline OCR; no language model or external AI API",
   "imageRecognition": "Tesseract.js Spanish printed-text OCR with embedded WASM and language data, real synthetic PNG fixtures, offline. No appearance recognition.",
   "audioRecordingTest": "Native MediaRecorder with synthetic Web Audio; no personal microphone data",
@@ -40,12 +41,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T19:41:21.748Z",
+      "started": "2026-11-01T20:11:00.275Z",
       "result": "passed",
-      "finished": "2026-11-01T19:41:32.948Z"
+      "finished": "2026-11-01T20:11:10.636Z"
     },
     {
-      "started": "2026-11-01T19:41:21.716Z",
+      "started": "2026-11-01T20:11:00.277Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -69,7 +70,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:41:30.783Z"
+      "finished": "2026-11-01T20:11:09.022Z"
     },
     {
       "checks": [
@@ -105,7 +106,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:41:32.667Z"
+      "finished": "2026-11-01T20:11:10.597Z"
     },
     {
       "feature": "level assessments",
@@ -142,7 +143,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:42:15.159Z"
+      "finished": "2026-11-01T20:11:54.991Z"
     },
     {
       "feature": "weekly practices and route fixes",
@@ -168,7 +169,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:41:41.286Z"
+      "finished": "2026-11-01T20:11:19.881Z"
     },
     {
       "feature": "product trash and purchase-cost corrections",
@@ -193,7 +194,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:43:43.914Z"
+      "finished": "2026-11-01T20:11:29.871Z"
     },
     {
       "feature": "empty product trash",
@@ -212,7 +213,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:41:50.319Z"
+      "finished": "2026-11-01T20:11:29.735Z"
     },
     {
       "feature": "combos and packs",
@@ -243,7 +244,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T19:42:07.969Z"
+      "finished": "2026-11-01T20:11:54.760Z"
     },
     {
       "feature": "local personal assistant",
@@ -275,7 +276,7 @@
       "errors": [],
       "remoteRequests": [],
       "result": "passed",
-      "finished": "2026-11-01T19:41:59.671Z"
+      "finished": "2026-11-01T20:11:39.531Z"
     },
     {
       "feature": "offline image OCR and reviewed imports",
@@ -309,19 +310,43 @@
       "errors": [],
       "remoteRequests": [],
       "result": "passed",
-      "finished": "2026-11-01T19:46:31.771Z"
+      "finished": "2026-11-01T20:11:57.794Z"
+    },
+    {
+      "feature": "exchange-rate conversion without ledger rounding or relabelling",
+      "checks": [
+        "Changing to dollars requires an explicit rate and never assumes parity or invents a current quote",
+        "S/10 previews and displays as USD2.63 at 3.80 PEN per USD while originals, FIFO costs, shipping cents, sales, debts and cash stay exact",
+        "The manual rate, quote date and converted business and profit-allocation displays persist through reload",
+        "Switching back and forth reuses the saved quote and never accumulates currency-rounding changes",
+        "Invalid rates are blocked and cancelling an edited rate leaves the saved conversion untouched",
+        "Decimal rates and signed half-cent rounding use integer arithmetic, including values beyond floating-point cent precision",
+        "Editing product notes while viewing dollars keeps price and original lot costs intact and labels inputs in PEN",
+        "A new sale entered in its explicitly labelled original currency records real payment and inventory correctly under the converted view",
+        "Image import summaries and CSV keep explicit PEN amounts and cannot silently reinterpret dollars as soles",
+        "Financial assistant answers identify the converted currency, exact manual quote and original ledger currency",
+        "A failed conversion save restores the previous quote and preserves the edited form for retry",
+        "Local changes and newer writes from another tab cannot be overwritten by a stale currency dialog",
+        "Older backups migrate without guessing or rewriting a currency, and malformed quote metadata is rejected without UI state",
+        "JSON transfer preserves original records and quotes, the dialog fits mobile, and conversions persist offline",
+        "A previous wrong dollar label can be corrected explicitly to original soles and then converted, without guessing old data provenance",
+        "The quote direction also supports dollar originals converted to soles, with no external requests or uncaught errors"
+      ],
+      "errors": [],
+      "remoteRequests": [],
+      "result": "passed",
+      "finished": "2026-11-01T20:11:26.419Z"
     }
   ],
   "artifactVerification": {
     "zipRebuildMatchesPublicFiles": true,
-    "extractedPackageLocalhostAndOffline": "passed",
-    "offlineOCRFromExtractedZip": "passed",
-    "extractedPackageImageImportChecks": 25,
-    "noExternalImageRequests": "passed",
-    "startupValidationWithoutUiState": "passed",
+    "extractedPackageCurrencyChecks": 16,
+    "extractedPackageOriginalLedgerPreserved": "passed",
+    "extractedPackageLocalhostAndOfflineCurrencyConversion": "passed",
+    "noExternalExchangeRateRequests": "passed",
     "directFileURLTested": false,
     "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",
     "externalServicesRequired": false,
-    "publicHtmlSHA256": "555f2932d6f547ff1714bf4aed9b899f0a78b6af14c7b6b62ad6d8b2139d30ff"
+    "publicHtmlSHA256": "a2a03160f9c250834229acdfd261614b08c8161b00ccc5dd8a7fdca9be8da851"
   }
 }

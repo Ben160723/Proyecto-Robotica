@@ -2,6 +2,20 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Monedas y conversión con tipo de cambio
+
+En **Ventas**, pulsa el botón de moneda (por ejemplo, **PEN**) y elige **Mostrar importes en → Dólares (USD)**. Introduce cuántos soles equivale **1 dólar** y la fecha de esa tasa. Verás un ejemplo con tus productos antes de pulsar **Guardar conversión**.
+
+Por ejemplo, **si tú indicas 1 USD = 3.80 PEN**, un producto de **S/10.00 se muestra como US$2.63** (`10 ÷ 3.80`). Es un ejemplo de cálculo, no una cotización actual. Usa el cambio de tu banco o casa de cambio; Rumbo guarda la tasa manualmente y no consulta una cotización de internet. Puedes ajustarla cuando necesites.
+
+La conversión se aplica a precios, costos, existencias valorizadas, combos, ventas, cobros, gastos, ganancias, reparto y metas ligadas al negocio. El aviso de Ventas muestra la tasa y su fecha. La moneda original y sus importes exactos se conservan, incluidos los céntimos del envío, costos FIFO, cobros e historial de correcciones. Volver a **Mostrar importes en → Soles (PEN)** recupera sus valores originales; puedes alternar monedas sin acumular redondeos. Cada moneda conserva la última tasa introducida respecto a la moneda original.
+
+**Los formularios de registro y edición, las importaciones por imagen y el CSV usan la moneda original**, indicada en los campos. Por ejemplo, si registraste en PEN y ves USD, al editar un producto de S/10 el campo sigue mostrando `10.00 PEN`; su equivalente de `2.63 USD` aparece en la vista. Las estimaciones en los formularios identifican la moneda convertida. Los importes de la vista se redondean a dos decimales; sus totales se calculan desde los originales, por lo que sumar equivalentes redondeados por unidad o categoría puede diferir en algunos céntimos. Esta vista no registra operaciones de compra de divisas, comisiones bancarias ni ganancias por diferencias de cambio.
+
+Si la versión anterior cambió la etiqueta a USD aunque habías escrito precios en soles, abre **Corregir una moneda seleccionada por error**, elige **PEN** como moneda original y confirma que tus números se introdujeron en soles. Después elige USD como moneda de visualización e introduce la tasa. Esta corrección es explícita: Rumbo no adivina en qué moneda introdujiste los registros anteriores.
+
+La tasa, su fecha y la moneda de visualización se guardan en el navegador y las copias JSON. Funcionan sin conexión. Un fallo al guardar conserva la configuración anterior y el formulario para reintentar; los cambios más recientes de otra pestaña se protegen. El formato actual es **10**, compatible con copias de las versiones **1 a 9**. Exporta una copia antes de actualizar, cierra las pestañas antiguas y conserva la misma dirección y navegador, o importa la copia en la nueva ubicación.
+
 ## Imágenes · productos, compras, ventas y horario
 
 Abre **Mi asistente → Leer imagen**. También hay un botón **Desde imagen** en Productos, Compras / pedidos, Ventas y cobros y Mi horario.
@@ -39,7 +53,7 @@ El guardado de cada revisión es una sola operación: si falla, no se registra n
 
 La imagen original y el texto OCR son temporales: desaparecen al cerrar o recargar. Solo se guardan los registros aprobados, el nombre y huella de la imagen y, opcionalmente, una foto reducida del producto. No hay sincronización automática entre dispositivos. Para trasladar datos, exporta/importa una copia JSON.
 
-El formato actual es **9** y admite copias de las versiones 1 a 8. **Exporta una copia antes de actualizar y cierra las pestañas antiguas.** Conserva la misma dirección y navegador, o importa la copia en la nueva ubicación. El HTML incluye el OCR para poder trabajar sin conexión; en la web, abre Rumbo una vez con internet y espera a que termine de cargar. Se verificó en Chromium de escritorio y una ventana móvil de 390 píxeles; no se probó en un teléfono físico. La política del navegador administrado impidió probar la apertura directa `file://`; la carpeta del ZIP se verificó servida por HTTP local y sin conexión después de cargarla.
+La versión con imágenes acepta copias anteriores; el formato actual con conversión es el **10**, descrito arriba. **Exporta una copia antes de actualizar y cierra las pestañas antiguas.** Conserva la misma dirección y navegador, o importa la copia en la nueva ubicación. El HTML incluye el OCR para poder trabajar sin conexión; en la web, abre Rumbo una vez con internet y espera a que termine de cargar. Se verificó en Chromium de escritorio y una ventana móvil de 390 píxeles; no se probó en un teléfono físico. La política del navegador administrado impidió probar la apertura directa `file://`; la carpeta del ZIP se verificó servida por HTTP local y sin conexión después de cargarla.
 
 ## Mi asistente · local, sin claves ni pagos
 
@@ -68,7 +82,7 @@ Las consultas del negocio calculan ventas, costo vendido, ganancia, cobros, caja
 
 La disponibilidad y hasta **60 mensajes** se guardan en este navegador y se incluyen en tus copias JSON. **Limpiar conversación** borra los mensajes actuales y las propuestas pendientes; las copias previas conservan lo que contenían cuando se crearon. Las propuestas pendientes y la opción de deshacer son temporales: al recargar, vuelve a pedir la propuesta si todavía la necesitas. Los bloques, hábitos, marcas y metas ya guardados permanecen.
 
-Los comandos se procesan localmente; la conversación no se envía a un proveedor de IA. La versión con lectura de imágenes usa el formato 9 descrito arriba.
+Los comandos se procesan localmente; la conversación no se envía a un proveedor de IA. Usa el formato actual descrito arriba para restaurar tus copias.
 
 ## Combos y packs
 
@@ -204,7 +218,7 @@ Cada categoría muestra su porcentaje y su importe en soles. El cálculo reparte
 
 Exporta una copia desde **Ajustes** antes de actualizar. Cierra las pestañas de la versión anterior. Si usas el archivo, sustituye `Rumbo.html` **en la misma carpeta** y ábrelo con el mismo navegador. Si usas GitHub Pages, abre la misma dirección y recarga; el aviso **Actualizar** permite cargar la nueva versión. No hace falta borrar los datos del navegador.
 
-La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 7. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, combos y packs, papelera y su vaciado, correcciones de costo, tus evaluaciones, prácticas semanales y datos del asistente; usa la versión actualizada para restaurarlas.
+La versión actual migra automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 9. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, combos y packs, papelera y su vaciado, correcciones de costo, tus evaluaciones, prácticas semanales, datos del asistente, importaciones de imágenes y preferencias de conversión; usa la versión actualizada para restaurarlas.
 
 ### Registrar tus ventas de Temu
 
@@ -231,7 +245,7 @@ Los registros son **manuales**. No se conecta con Temu, no compra productos y no
 
 Para corregir una venta, puedes **Anular y devolver unidades**: el movimiento se conserva como anulado, se restauran sus unidades originales y se retiran sus importes de los resultados. Hazlo solo si recuperaste los productos y devolviste lo cobrado. Si quedaron gastos sin reembolso, regístralos como gastos. Una compra solo se puede anular con reembolso si no tiene unidades asignadas a ventas vigentes. Los gastos también se conservan como anulados.
 
-La moneda se puede corregir desde el botón **PEN** de Ventas. Cambiarla no convierte los números con un tipo de cambio; cambia su unidad. El CSV incluye explícitamente la moneda.
+Desde el botón de moneda de Ventas puedes convertir la vista usando un tipo de cambio manual. Los formularios y CSV conservan la moneda original de registro. Consulta **Monedas y conversión con tipo de cambio** al inicio para convertir importes o corregir una etiqueta anterior.
 
 Los formularios financieros esperan la confirmación del guardado. Si falla, conservan los campos y no dejan duplicado el movimiento al reintentar. Una pestaña desactualizada no puede sobrescribir una versión más reciente de los datos: se pide recargar. Esto no añade sincronización entre dispositivos; para eso siguen utilizándose las copias JSON.
 

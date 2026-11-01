@@ -37,6 +37,10 @@ Esta rama contiene **Rumbo**, un horario editable para celular y computadora, co
 
 Los datos personales se guardan en tu navegador; no se suben al repositorio. Para pasar tus avances entre dispositivos usa Exportar e Importar. La web necesita que el propietario active GitHub Pages para la rama `mi-horario`, carpeta `/ (root)`.
 
+### Rumbo 10 · Conversión entre soles y dólares
+
+El botón de moneda de Ventas convierte precios y resultados usando un **tipo de cambio manual**, con vista previa y fecha. Por ejemplo, con `1 USD = 3.80 PEN`, `S/10.00` se muestra como `US$2.63`. La tasa del ejemplo no es una cotización actual. Los registros originales se conservan para que alternar monedas no redondee compras, cobros ni costos FIFO. Los formularios, importaciones por imagen y CSV mantienen esa moneda original, indicada en sus campos. Incluye corrección explícita de etiquetas equivocadas de versiones anteriores. [Descargar ZIP actualizado](Rumbo-proyecto.zip?raw=true).
+
 ### Rumbo 9 · Imágenes para organizar tu negocio y horario
 
 **Mi asistente → Leer imagen** extrae texto de fotos y capturas con OCR local incluido. Prepara filas editables de productos, compras, ventas individuales o combos y bloques de horario. Cada importación requiere revisar un resumen antes de guardarse; respeta el inventario compartido, los costos por lote, cobros y cruces de horario. Admite fotos pequeñas opcionales para productos y detecta imágenes idénticas ya importadas. No identifica objetos por apariencia ni inventa datos que faltan. Funciona sin claves ni servicios de IA externos, también sin conexión tras cargar la aplicación.
@@ -44,7 +48,7 @@ Los datos personales se guardan en tu navegador; no se suben al repositorio. Par
 - [Descargar el ZIP actualizado](Rumbo-proyecto.zip?raw=true)
 - [Instrucciones de imágenes y actualización](Horario/LEEME.md)
 
-Exporta una copia JSON antes de actualizar; se conservan y migran los formatos anteriores a la versión 9.
+Exporta una copia JSON antes de actualizar; el formato 10 conserva y acepta copias de las versiones 1 a 9.
 
 ### Rumbo 2 · Metas y ventas en soles
 

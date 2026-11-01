@@ -3,8 +3,8 @@ import hashlib
 from prepare_ocr import build_ocr_assets
 root=Path(__file__).parent
 build_ocr_assets(root)
-css=(root/'style.css').read_text()+'\n'+(root/'extras.css').read_text()+'\n'+(root/'allocation.css').read_text()+'\n'+(root/'learning.css').read_text()+'\n'+(root/'weekly.css').read_text()+'\n'+(root/'inventory.css').read_text()+'\n'+(root/'combos.css').read_text()+'\n'+(root/'assistant.css').read_text()+'\n'+(root/'images.css').read_text()
-js="'use strict';\n"+(root/'vendor/ocr/fflate.min.js').read_text()+'\n'+(root/'ocr-assets.js').read_text()+'\n'+(root/'app.js').read_text()+'\n'+(root/'exam-bank.js').read_text()+'\n'+(root/'learning.js').read_text()+'\n'+(root/'weekly.js').read_text()+'\n'+(root/'allocation.js').read_text()+'\n'+(root/'combos.js').read_text()+'\n'+(root/'inventory.js').read_text()+'\n'+(root/'assistant.js').read_text()+'\n'+(root/'images.js').read_text()+'\n'+(root/'extras.js').read_text()
+css=(root/'style.css').read_text()+'\n'+(root/'extras.css').read_text()+'\n'+(root/'allocation.css').read_text()+'\n'+(root/'learning.css').read_text()+'\n'+(root/'weekly.css').read_text()+'\n'+(root/'inventory.css').read_text()+'\n'+(root/'combos.css').read_text()+'\n'+(root/'assistant.css').read_text()+'\n'+(root/'images.css').read_text()+'\n'+(root/'currency.css').read_text()
+js="'use strict';\n"+(root/'vendor/ocr/fflate.min.js').read_text()+'\n'+(root/'ocr-assets.js').read_text()+'\n'+(root/'app.js').read_text()+'\n'+(root/'exam-bank.js').read_text()+'\n'+(root/'learning.js').read_text()+'\n'+(root/'weekly.js').read_text()+'\n'+(root/'allocation.js').read_text()+'\n'+(root/'combos.js').read_text()+'\n'+(root/'inventory.js').read_text()+'\n'+(root/'assistant.js').read_text()+'\n'+(root/'images.js').read_text()+'\n'+(root/'currency.js').read_text()+'\n'+(root/'extras.js').read_text()
 html=(root/'index.template.html').read_text().replace('/* APP_CSS */',css).replace('/* APP_JS */',js)
 (root/'Rumbo.html').write_text(html)
 (root/'index.html').write_text(html)
