@@ -4,6 +4,29 @@ Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a c
 
 ## Novedades de la versión 2
 
+### Ventas → Repartir ganancias
+
+Este apartado añade un **plan editable** para organizar las ganancias. El punto de partida es:
+
+| Destino | Porcentaje inicial |
+| --- | ---: |
+| Reinversión en el negocio | 50% |
+| Ahorro personal | 20% |
+| Reserva del negocio | 20% |
+| Diversión | 10% |
+
+Puedes cambiar los cuatro porcentajes, con hasta dos decimales. Deben sumar **100%**. Pulsa **Guardar porcentajes** para conservarlos. El botón del plan inicial solo carga un borrador; no reemplaza lo guardado hasta confirmar con Guardar.
+
+Se muestran por separado **la inversión en compras**, **la ganancia neta acumulada** y **la ganancia disponible en caja**. La base del reparto es:
+
+`máximo(0, mínimo(ganancia neta, saldo de caja))`
+
+El saldo de caja ya descuenta las compras pagadas, las comisiones y los gastos generales. Este criterio conservador evita repartir capital recuperado o ganancias que aún no tienen efectivo disponible. Si el resultado es cero o negativo, los importes propuestos son cero y puedes guardar el plan para cuando haya ganancias.
+
+Cada categoría muestra su porcentaje y su importe en soles. El cálculo reparte los céntimos sobrantes de forma determinista para que los cuatro importes sumen exactamente la base, incluso con porcentajes decimales. Si registras compras, ventas, gastos o cobros, se recalculan los importes usando los porcentajes guardados.
+
+**Es una planificación, no una transferencia de dinero.** Guardar porcentajes no crea gastos, retiros, fondos separados ni movimientos en cuentas bancarias. Este apartado no lleva el control de retiros personales ya realizados. El plan se conserva en las copias JSON y se recupera al importar; las copias anteriores reciben los porcentajes iniciales sin perder productos ni ventas.
+
 - **Hábitos más claros:** si eliges una fecha futura, se explica el motivo y aparece **Volver a hoy**. El botón **Marcar como hecho** reemplaza el círculo vacío. Los días de la semana muestran también su número de fecha.
 - **Metas:** objetivos por cantidades (ahorro, libros, sesiones…), listas de pasos y metas ligadas a la ganancia neta del negocio. Incluyen fecha objetivo, progreso, archivo y recuperación.
 - **Ventas:** productos, precios, compras, inventario, ventas, cobros pendientes y gastos del negocio, inicialmente en **soles peruanos (PEN)**.
@@ -106,7 +129,7 @@ Exporta regularmente, especialmente antes de cambiar de teléfono o borrar datos
 ## Código y comprobaciones
 
 - `index.html` / `Rumbo.html`: aplicación completa lista para usar; el mismo contenido en dos nombres.
-- `app.js`, `extras.js`, `style.css`, `extras.css`, `index.template.html`: fuentes editables. Los archivos `extras` incorporan metas y el registro de ventas.
+- `app.js`, `extras.js`, `allocation.js`, `style.css`, `extras.css`, `allocation.css`, `index.template.html`: fuentes editables. Los archivos `extras` incorporan metas y ventas; los archivos `allocation` añaden la planificación del reparto de ganancias.
 - `build.py`: reconstruye ambos HTML y el caché usando solamente Python estándar: `python build.py`.
 - `manifest.webmanifest`, `icon.svg`, `sw.js`: versión web con acceso directo y caché sin conexión.
 - `verificacion.json`: resultados de las pruebas ejecutadas en Chromium con tamaños de escritorio y celular.

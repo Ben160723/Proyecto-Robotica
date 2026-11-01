@@ -43,4 +43,8 @@ Se añadieron metas personales, listas de pasos y objetivos de ganancia. Ventas 
 
 La actualización convierte los datos de la versión 1 sin borrar horario, hábitos ni rutas. Antes de sustituir el archivo, exporta una copia y cierra las pestañas antiguas. Mantén la misma ubicación y navegador para conservar el almacenamiento; si cambias de dirección, usa Importar copia. No borres los datos del navegador para actualizar.
 
-[Guía completa de uso y actualización](Horario/LEEME.md) · [48 comprobaciones de funcionamiento](Horario/verificacion.json)
+[Guía completa de uso y actualización](Horario/LEEME.md) · [65 comprobaciones de funcionamiento](Horario/verificacion.json)
+
+### Repartir ganancias
+
+En **Ventas → Repartir ganancias** puedes ver lo invertido y ajustar el plan inicial de **50% reinversión, 20% ahorro personal, 20% reserva del negocio y 10% diversión**. Los porcentajes deben sumar 100% y los cuatro importes conservan exactamente los céntimos de la ganancia disponible en caja. El plan se guarda y se incluye en las copias JSON. Es una propuesta de organización: no crea transferencias ni retiros.

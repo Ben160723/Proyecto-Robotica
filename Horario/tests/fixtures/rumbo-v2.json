@@ -1,0 +1,643 @@
+{
+  "schemaVersion": 2,
+  "goals": [
+    {
+      "id": "4160bbfe-6a26-499e-8832-2347a135e8a9",
+      "title": "Leer diez libros",
+      "mode": "number",
+      "target": 10,
+      "current": 8,
+      "unit": "libros",
+      "steps": [],
+      "category": "personal",
+      "deadline": "",
+      "notes": "",
+      "archived": false,
+      "createdAt": "2026-11-01",
+      "completedAt": null
+    },
+    {
+      "id": "6b638f46-e91b-4187-b057-bb7bb210e524",
+      "title": "Construir una estación",
+      "mode": "checklist",
+      "target": 3,
+      "current": 0,
+      "unit": "pasos",
+      "steps": [
+        {
+          "id": "1c0ab09c-63cb-4953-a0ff-6cc87dc105c1",
+          "title": "Armar el circuito",
+          "done": true
+        },
+        {
+          "id": "b8de9e3b-9d06-43e3-841a-7128c93380ae",
+          "title": "Leer el sensor",
+          "done": true
+        },
+        {
+          "id": "145f6952-eecd-4c94-b2d6-8911fd9bbec6",
+          "title": "Mostrar los datos",
+          "done": false
+        }
+      ],
+      "category": "personal",
+      "deadline": "",
+      "notes": "",
+      "archived": false,
+      "createdAt": "2026-11-01",
+      "completedAt": null
+    },
+    {
+      "id": "0c1f1c5c-cf96-4c1b-8da2-b3346fcc6297",
+      "title": "Ganar veinte soles",
+      "mode": "business",
+      "target": 2000,
+      "current": 0,
+      "unit": "PEN",
+      "steps": [],
+      "category": "personal",
+      "deadline": "",
+      "notes": "",
+      "archived": false,
+      "createdAt": "2026-11-01",
+      "completedAt": "2026-11-01"
+    }
+  ],
+  "business": {
+    "currency": "PEN",
+    "products": [
+      {
+        "id": "09871fd4-47ee-4a58-a4d3-b319e1491163",
+        "archived": false,
+        "name": "Soporte para celular",
+        "price": 1200,
+        "lowStock": 3,
+        "notes": ""
+      }
+    ],
+    "purchases": [
+      {
+        "id": "3a00ac98-e35e-48e9-bfcc-911ad2603e17",
+        "productId": "09871fd4-47ee-4a58-a4d3-b319e1491163",
+        "quantity": 10,
+        "unitCost": 500,
+        "extraCost": 1000,
+        "date": "2026-11-01",
+        "status": "received",
+        "receivedDate": "2026-11-01",
+        "expectedDate": "",
+        "notes": "Compra inicial",
+        "voided": false
+      },
+      {
+        "id": "37af293c-1c55-411d-b0d4-596198e157a1",
+        "productId": "09871fd4-47ee-4a58-a4d3-b319e1491163",
+        "quantity": 2,
+        "unitCost": 400,
+        "extraCost": 0,
+        "date": "2026-11-01",
+        "status": "received",
+        "receivedDate": "2026-11-01",
+        "expectedDate": "",
+        "notes": "",
+        "voided": false
+      }
+    ],
+    "sales": [
+      {
+        "id": "8f4cd677-349c-463f-b73f-37e1887c5f23",
+        "productId": "09871fd4-47ee-4a58-a4d3-b319e1491163",
+        "quantity": 2,
+        "unitPrice": 1000,
+        "discount": 0,
+        "fees": 100,
+        "date": "2026-11-01",
+        "customer": "Ana",
+        "notes": "",
+        "allocations": [
+          {
+            "purchaseId": "3a00ac98-e35e-48e9-bfcc-911ad2603e17",
+            "start": 0,
+            "quantity": 2,
+            "cost": 1200
+          }
+        ],
+        "payments": [
+          {
+            "id": "20aa94d4-2ee9-4003-be0f-4143dfc55061",
+            "date": "2026-11-01",
+            "amount": 1000
+          },
+          {
+            "id": "33d7e012-b715-4ff7-8b23-9c61a784a271",
+            "date": "2026-11-01",
+            "amount": 1000
+          }
+        ],
+        "voided": false
+      },
+      {
+        "id": "cce6592b-dfe2-419d-81d8-3ecb8b50dc14",
+        "productId": "09871fd4-47ee-4a58-a4d3-b319e1491163",
+        "quantity": 9,
+        "unitPrice": 1000,
+        "discount": 100,
+        "fees": 0,
+        "date": "2026-11-01",
+        "customer": "",
+        "notes": "",
+        "allocations": [
+          {
+            "purchaseId": "3a00ac98-e35e-48e9-bfcc-911ad2603e17",
+            "start": 2,
+            "quantity": 8,
+            "cost": 4800
+          },
+          {
+            "purchaseId": "37af293c-1c55-411d-b0d4-596198e157a1",
+            "start": 0,
+            "quantity": 1,
+            "cost": 400
+          }
+        ],
+        "payments": [
+          {
+            "id": "6ff0e467-04aa-4fa0-a514-0d18541ccd68",
+            "date": "2026-11-01",
+            "amount": 8900
+          }
+        ],
+        "voided": true
+      },
+      {
+        "id": "a6c00eff-8c21-4297-9c3f-e045f484e825",
+        "productId": "09871fd4-47ee-4a58-a4d3-b319e1491163",
+        "quantity": 10,
+        "unitPrice": 1200,
+        "discount": 0,
+        "fees": 0,
+        "date": "2026-11-01",
+        "customer": "",
+        "notes": "",
+        "allocations": [
+          {
+            "purchaseId": "3a00ac98-e35e-48e9-bfcc-911ad2603e17",
+            "start": 2,
+            "quantity": 8,
+            "cost": 4800
+          },
+          {
+            "purchaseId": "37af293c-1c55-411d-b0d4-596198e157a1",
+            "start": 0,
+            "quantity": 2,
+            "cost": 800
+          }
+        ],
+        "payments": [
+          {
+            "id": "18b73497-6f35-40fe-9b86-0b6fa8a404e8",
+            "date": "2026-11-01",
+            "amount": 12000
+          }
+        ],
+        "voided": false
+      }
+    ],
+    "expenses": [
+      {
+        "id": "2e27e562-2da4-4277-b14e-4da541dd1cbd",
+        "title": "Empaque",
+        "amount": 200,
+        "date": "2026-11-01",
+        "notes": "",
+        "voided": false
+      }
+    ]
+  },
+  "createdAt": "2026-10-31T22:30:00.051Z",
+  "updatedAt": "2026-11-01T18:00:03.949Z",
+  "lastExportAt": "2026-11-01T18:00:04.364Z",
+  "profile": {
+    "name": "Mi rumbo"
+  },
+  "events": [
+    {
+      "id": "fe65cd72-1e65-4751-b15f-aadedd83984b",
+      "title": "Python · aprender haciendo",
+      "start": "17:00",
+      "end": "17:45",
+      "category": "python",
+      "repeat": "weekly",
+      "days": [
+        0,
+        2,
+        4
+      ],
+      "startDate": "2026-10-31",
+      "endDate": "",
+      "notes": "Un concepto, un ejercicio y una pequeña mejora."
+    },
+    {
+      "id": "fec86953-ed78-4332-b651-971bc9a2c8a8",
+      "title": "Robótica · manos a la obra",
+      "start": "17:00",
+      "end": "18:00",
+      "category": "robotica",
+      "repeat": "weekly",
+      "days": [
+        1,
+        3
+      ],
+      "startDate": "2026-10-31",
+      "endDate": "",
+      "notes": "Circuitos, sensores o una parte de tu proyecto."
+    },
+    {
+      "id": "45fb288d-d132-49f4-a992-1c7df387ef87",
+      "title": "Inglés · práctica diaria",
+      "start": "18:15",
+      "end": "18:40",
+      "category": "ingles",
+      "repeat": "weekly",
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "startDate": "2026-10-31",
+      "endDate": "",
+      "notes": "Escuchar, hablar o leer. Alterna para mantenerlo interesante."
+    },
+    {
+      "id": "a57ecc6f-f96b-47d6-bd3a-2880027717ab",
+      "title": "Mi proyecto de robótica",
+      "start": "10:00",
+      "end": "11:00",
+      "category": "robotica",
+      "repeat": "weekly",
+      "days": [
+        5
+      ],
+      "startDate": "2026-10-31",
+      "endDate": "",
+      "notes": "Una sesión libre para construir algo propio."
+    },
+    {
+      "id": "a3ce34c5-a485-437a-8e5c-598dc6a2347d",
+      "title": "Revisar y preparar mi semana",
+      "start": "18:00",
+      "end": "18:20",
+      "category": "personal",
+      "repeat": "weekly",
+      "days": [
+        6
+      ],
+      "startDate": "2026-10-31",
+      "endDate": "",
+      "notes": "Revisa tus avances y ajusta el horario con calma."
+    },
+    {
+      "title": "Práctica de sensores",
+      "start": "19:00",
+      "end": "20:00",
+      "category": "python",
+      "notes": "",
+      "id": "fdaaf062-6ca1-4178-9d99-8f746a4f50b9",
+      "repeat": "weekly",
+      "days": [
+        0,
+        2
+      ],
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-08"
+    },
+    {
+      "title": "Mi gran proyecto futuro",
+      "start": "14:00",
+      "end": "15:00",
+      "category": "python",
+      "notes": "",
+      "id": "143d3afd-8443-40bd-a4fe-70f6a08de282",
+      "repeat": "once",
+      "days": [
+        6
+      ],
+      "startDate": "2051-12-31",
+      "endDate": ""
+    }
+  ],
+  "overrides": {
+    "fdaaf062-6ca1-4178-9d99-8f746a4f50b9|2026-11-04": {
+      "title": "Sensores: sesión especial",
+      "start": "20:00",
+      "end": "20:45",
+      "category": "python",
+      "notes": ""
+    }
+  },
+  "habits": [
+    {
+      "id": "227bf996-2a72-4265-a2e0-4c77233a6d6d",
+      "name": "Tomar agua",
+      "emoji": "💧",
+      "note": "Escuchar a mi cuerpo",
+      "archived": false,
+      "rules": [
+        {
+          "from": "2026-10-31",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "e616c11b-f6a6-4cad-a059-b00d7e164611",
+      "name": "Moverme un poco",
+      "emoji": "🌿",
+      "note": "Una pausa activa también cuenta",
+      "archived": false,
+      "rules": [
+        {
+          "from": "2026-10-31",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "fe39ab7b-db7f-4180-9dea-c46c71d24b5c",
+      "name": "Leer 15 minutos",
+      "emoji": "📖",
+      "note": "Unas páginas, una nueva idea",
+      "archived": false,
+      "rules": [
+        {
+          "from": "2026-10-31",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "aebd7f7f-e045-44a9-b3c0-967dd296d71c",
+      "name": "Cuidar mi descanso",
+      "emoji": "🌙",
+      "note": "Prepararme para descansar bien",
+      "archived": false,
+      "rules": [
+        {
+          "from": "2026-10-31",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "232a7eba-0770-4c62-8c90-136ea2e728df",
+      "name": "Practicar inglés",
+      "emoji": "🗣️",
+      "note": "Un poco cada día",
+      "archived": false,
+      "rules": [
+        {
+          "from": "2026-10-31",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": "a9c09479-fa63-4c99-8cab-dfeb3bd147ae",
+      "name": "Respirar antes de empezar",
+      "emoji": "🌱",
+      "note": "",
+      "archived": true,
+      "rules": [
+        {
+          "from": "2026-10-29",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "active": true
+        },
+        {
+          "from": "2026-10-31",
+          "days": [
+            5
+          ],
+          "active": false
+        }
+      ]
+    }
+  ],
+  "habitLogs": {
+    "2026-10-31": {
+      "227bf996-2a72-4265-a2e0-4c77233a6d6d": true
+    },
+    "2026-10-29": {
+      "a9c09479-fa63-4c99-8cab-dfeb3bd147ae": true
+    },
+    "2026-11-01": {
+      "227bf996-2a72-4265-a2e0-4c77233a6d6d": true
+    }
+  },
+  "eventLogs": {
+    "2026-10-31": {
+      "45fb288d-d132-49f4-a992-1c7df387ef87": true
+    }
+  },
+  "notes": {
+    "2026-10-31": "Aprendí una cosa nueva."
+  },
+  "routes": [
+    {
+      "id": "python",
+      "name": "Programación con Python",
+      "emoji": "⌘",
+      "goal": "Desarrollar software, analizar datos científicos y programar tu propio robot.",
+      "steps": [
+        {
+          "id": "8988a974-b758-450a-8ede-11bae792b124",
+          "title": "Básico",
+          "period": "0–3 meses",
+          "topics": "Variables, condicionales, bucles for y while, listas y funciones.",
+          "goal": "Crear 10 programas pequeños sin copiar soluciones completas.",
+          "done": true,
+          "completedAt": "2026-10-31"
+        },
+        {
+          "id": "77394ae3-f69a-4dd8-9c1a-dc7c12fad0e0",
+          "title": "Intermedio",
+          "period": "4–9 meses",
+          "topics": "Archivos CSV, manejo de errores, diccionarios, NumPy, pandas, Matplotlib y Git.",
+          "goal": "Construir un programa que lea datos de calidad del agua y genere gráficas automáticamente.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "30bb154e-45d9-4d09-b46e-cbc790ff4b6d",
+          "title": "Competente",
+          "period": "10–18 meses",
+          "topics": "Programación orientada a objetos, bases de datos, APIs, pruebas y Streamlit.",
+          "goal": "Crear una aplicación que reciba, almacene y muestre mediciones de sensores.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "5748439a-94f9-475f-a6a4-3c5369bbd4d9",
+          "title": "Avanzado",
+          "period": "19–36+ meses",
+          "topics": "Arquitectura de software, algoritmos, estadística aplicada y fundamentos de aprendizaje automático.",
+          "goal": "Desarrollar un sistema documentado que detecte anomalías en los datos y sea reproducible.",
+          "done": false,
+          "completedAt": null
+        }
+      ]
+    },
+    {
+      "id": "robotica",
+      "name": "Robótica y electrónica",
+      "emoji": "⚙",
+      "goal": "Diseñar un sistema robótico capaz de tomar mediciones confiables del agua.",
+      "steps": [
+        {
+          "id": "7f875d74-f194-4780-9fe6-e9d890c7752b",
+          "title": "Fundamentos",
+          "period": "0–3 meses",
+          "topics": "Voltaje, corriente, circuitos básicos, microcontroladores, entradas y salidas.",
+          "goal": "Simular un circuito y programar un ESP32 para obtener lecturas sencillas.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "b2cf7564-2e02-4f6d-b5ac-5a64f66e6b85",
+          "title": "Sensores",
+          "period": "4–9 meses",
+          "topics": "MicroPython, comunicación entre dispositivos, adquisición de datos y calibración.",
+          "goal": "Construir una estación fija que mida temperatura y otro parámetro de calidad del agua, y registre los resultados.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "fed6e28d-5998-47cf-8c94-b8e07d24259d",
+          "title": "Integración",
+          "period": "10–18 meses",
+          "topics": "Control de motores, comunicación inalámbrica, ubicación y protección de componentes electrónicos.",
+          "goal": "Construir una plataforma flotante controlada a distancia que envíe mediciones a una aplicación.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "538a80c2-f304-477d-931a-907fe7daf3c2",
+          "title": "Robótica avanzada",
+          "period": "19–36+ meses",
+          "topics": "Control automático, navegación, integración de múltiples sensores y evaluación experimental.",
+          "goal": "Desarrollar AQUA-SENTINEL con desplazamiento semiautónomo y validar sus mediciones frente a instrumentos de referencia.",
+          "done": false,
+          "completedAt": null
+        }
+      ]
+    },
+    {
+      "id": "ingles",
+      "name": "Inglés · de A1 a C1",
+      "emoji": "Aa",
+      "goal": "Estudiar, investigar, participar en entrevistas y presentar proyectos en inglés. B2 es una excelente primera meta; cada beca establece sus requisitos.",
+      "steps": [
+        {
+          "id": "28f1e6cf-e8b7-47a7-8684-ae8df99ea3f2",
+          "title": "A1 · Principiante",
+          "period": "A mi ritmo",
+          "topics": "Presentaciones, verbos básicos, preguntas y vocabulario cotidiano.",
+          "goal": "Presentarte y hablar de tus estudios durante 1 minuto.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "ba56a067-1114-43ab-aae9-1dd86fb011ff",
+          "title": "A2 · Elemental",
+          "period": "A mi ritmo",
+          "topics": "Pasado, futuro, conversaciones habituales y descripciones.",
+          "goal": "Explicar durante 2–3 minutos qué estudias y qué quieres construir.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "549e7211-8d20-4000-8472-a63bb9a0c5bf",
+          "title": "B1 · Intermedio",
+          "period": "A mi ritmo",
+          "topics": "Conversaciones prolongadas, opiniones y comprensión de textos sencillos.",
+          "goal": "Presentar AQUA-SENTINEL durante 5 minutos y contestar preguntas simples.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "b2bed657-4eab-4c85-88bd-eafcebce6049",
+          "title": "B2 · Intermedio alto",
+          "period": "A mi ritmo",
+          "topics": "Inglés académico, debates, lectura técnica y presentaciones.",
+          "goal": "Explicar una investigación durante 10 minutos y responder preguntas.",
+          "done": false,
+          "completedAt": null
+        },
+        {
+          "id": "31f5cd55-ca2c-4403-b147-94af54f760a4",
+          "title": "C1 · Avanzado",
+          "period": "A mi ritmo",
+          "topics": "Lectura científica compleja, argumentación y escritura académica.",
+          "goal": "Defender un proyecto de investigación con soltura ante una audiencia internacional.",
+          "done": false,
+          "completedAt": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+// Allocation is a saved planning preference. It never changes the sales ledger
+// or represents a transfer, expense, withdrawal or separate bank balance.
+const PROFIT_BUCKETS=[
+ {key:'reinvest',name:'Reinversión',icon:'shop',color:'#36795a',hint:'Para comprar más productos o mejorar el negocio.'},
+ {key:'savings',name:'Mi ahorro',icon:'target',color:'#688fb7',hint:'Para tus metas personales de mediano y largo plazo.'},
+ {key:'reserve',name:'Reserva del negocio',icon:'shield',color:'#c38d57',hint:'Para imprevistos, devoluciones y gastos del negocio.'},
+ {key:'fun',name:'Diversión',icon:'sun',color:'#9d81b4',hint:'Para disfrutar una parte de lo que has ganado.'}
+];
+function keepBusinessTabVisible(){const tabs=document.querySelector('.business-tabs'),active=tabs?.querySelector('.active');if(tabs&&active){const a=active.getBoundingClientRect(),b=tabs.getBoundingClientRect();tabs.scrollLeft+=a.left-b.left-(tabs.clientWidth-a.width)/2;}}
+function defaultProfitAllocation(){return {reinvest:5000,savings:2000,reserve:2000,fun:1000};}
+function validateProfitAllocation(value){
+ if(!value||typeof value!=='object'||Array.isArray(value))throw Error('El plan de reparto de ganancias no es válido.');
+ const clean={};for(const {key}of PROFIT_BUCKETS){const n=value[key];if(!Number.isInteger(n)||n<0||n>10000)throw Error('Cada porcentaje del plan debe estar entre 0% y 100%, con hasta dos decimales.');clean[key]=n;}
+ if(Object.values(clean).reduce((n,v)=>n+v,0)!==10000)throw Error('Los porcentajes del plan de reparto deben sumar exactamente 100%.');return clean;
+}
+function profitAllocationBase(stats=salesStats()){
+ // The cash balance already deducts every paid purchase, sales fees and general
+ // expense. The profit cap prevents recovered principal from being distributed.
+ const available=Math.max(0,Math.min(stats.netProfit,stats.cashBalance));
+ return {stats,available:Number.isSafeInteger(available)?available:0};
+}
+function splitProfit(cents,policy){
+ validateProfitAllocation(policy);if(!Number.isSafeInteger(cents)||cents<0)throw Error('El importe disponible no es válido.');
+ const rows=PROFIT_BUCKETS.map((bucket,index)=>{const raw=BigInt(cents)*BigInt(policy[bucket.key]);return {...bucket,index,cents:Number(raw/10000n),remainder:Number(raw%10000n),bp:policy[bucket.key]};});
+ let remaining=cents-rows.reduce((n,r)=>n+r.cents,0);for(const r of [...rows].sort((a,b)=>b.remainder-a.remainder||a.index-b.index)){if(!remaining)break;r.cents++;remaining--;}
+ return rows;
+}
+function percentText(bp){return new Intl.NumberFormat('es-PE',{maximumFractionDigits:2}).format(bp/100)+'%';}
+function allocationRing(rows,available,valid=true){const r=81,c=2*Math.PI*r;let offset=0;return `<div class="allocation-donut"><svg viewBox="0 0 210 210" role="img" aria-label="${valid?'Plan de reparto: '+rows.map(r=>r.name+' '+percentText(r.bp)).join(', '):'Plan incompleto: los porcentajes deben sumar 100%'}"><circle cx="105" cy="105" r="${r}" fill="none" stroke="#e9eee4" stroke-width="17"/>${valid?rows.filter(row=>row.bp>0).map(row=>{const length=c*row.bp/10000;const shape=`<circle cx="105" cy="105" r="${r}" fill="none" stroke="${row.color}" stroke-width="17" stroke-dasharray="${length} ${c-length}" stroke-dashoffset="${-offset}" transform="rotate(-90 105 105)"/>`;offset+=length;return shape;}).join(''):''}</svg><div class="allocation-donut-center"><small>PARA REPARTIR</small><strong>${money(available)}</strong><span>${valid?'Según tu plan':'Ajusta el total a 100%'}</span></div></div>`;}
+function allocationReason(stats,available){
+ if(available>0&&available<stats.netProfit)return 'El plan usa la parte de la ganancia neta que ya está disponible en caja. El resto sigue pendiente de cobro o comprometido con compras y gastos.';
+ if(available>0)return 'Puedes usar este plan como referencia para organizar la ganancia neta disponible. Ajusta los porcentajes a tus próximas compras y metas.';
+ if(stats.netProfit<=0)return 'Todavía no hay ganancia neta positiva para repartir. Puedes guardar tus porcentajes ahora; los importes se calcularán cuando haya ganancia disponible.';
+ return 'Ya registraste ganancia neta, pero todavía no queda caja positiva disponible después de las compras y los gastos. Al registrar nuevos cobros, el plan volverá a calcular lo que puedes repartir.';
+}
+function renderProfitAllocation(){const {stats,available}=profitAllocationBase(),policy=state.business.profitAllocation||defaultProfitAllocation(),rows=splitProfit(available,policy);return `
+ <section class="allocation-intro"><div><span class="chip">MI PLAN · ${state.business.currency}</span><h2>Que tus ganancias tengan un propósito.</h2><p>Organiza una parte para crecer, otra para cuidarte y otra para disfrutar.</p></div>${icon('leaf',34)}</section>
+ <div class="business-stats allocation-stats"><div class="stat"><div class="stat-top">Inversión en compras</div><strong>${money(stats.invested)}</strong><small>Incluye envío y pedidos pagados en camino</small></div><div class="stat"><div class="stat-top">Ganancia neta acumulada</div><strong class="${stats.netProfit<0?'negative':''}">${money(stats.netProfit)}</strong><small>Ventas menos costo vendido, comisiones y gastos</small></div><div class="stat available-profit"><div class="stat-top">Ganancia disponible en caja</div><strong>${money(available)}</strong><small>La base de este reparto</small></div></div>
+ <div class="allocation-layout"><section class="panel allocation-plan"><div class="panel-head"><div><h2>Tu reparto, de un vistazo</h2><p>Importes calculados con tu saldo actual</p></div></div><div id="allocation-ring">${allocationRing(rows,available)}</div><div class="allocation-legend">${rows.map(row=>`<div><span><i style="background:${row.color}"></i>${row.name}</span><strong data-plan-percent="${row.key}">${percentText(row.bp)}</strong></div>`).join('')}</div><div class="allocation-base-note"><strong>Capital por recuperar: ${money(stats.capitalRemaining)}</strong><span>${allocationReason(stats,available)}</span></div></section>
+ <section class="panel allocation-editor"><div class="panel-head"><div><h2>¿Cómo quieres repartirla?</h2><p>Plan inicial editable: 50 / 20 / 20 / 10</p></div></div><form id="profit-allocation-form"><div class="allocation-fields">${rows.map(row=>`<article class="allocation-bucket"><div class="bucket-top"><span class="bucket-icon" style="color:${row.color};background:${row.color}14">${icon(row.icon,19)}</span><label for="allocation-${row.key}">${row.name}</label><strong data-allocation-amount="${row.key}">${money(row.cents)}</strong></div><p>${row.hint}</p><div class="bucket-input"><input type="number" id="allocation-${row.key}" name="${row.key}" value="${row.bp/100}" required min="0" max="100" step="0.01" inputmode="decimal" aria-describedby="allocation-total"><span>% de la ganancia disponible</span></div></article>`).join('')}</div><div class="allocation-editor-footer"><div id="allocation-total" class="allocation-total" role="status" aria-live="polite">${icon('check',15)}Los porcentajes suman 100%.</div><div class="form-error" role="alert"></div><div class="action-row"><button class="btn secondary" type="button" data-action="allocation-reset">Usar 50 / 20 / 20 / 10</button><button class="btn" type="submit">Guardar porcentajes</button></div><small>Los cambios se guardan al pulsar el botón.</small></div></form></section></div>
+ <div class="allocation-help"><div>${icon('shield',19)}<p><strong>Primero, el capital y los gastos.</strong> La base es el menor importe positivo entre la ganancia neta y el saldo de caja. Así, las ventas por cobrar y el capital recuperado no se tratan como ganancia disponible.</p></div><div>${icon('edit',19)}<p><strong>Este es un plan.</strong> Guardar porcentajes no mueve dinero ni registra gastos, retiros o saldos separados. Los importes se recalculan con tus compras, ventas y cobros; el plan no lleva el control de retiros personales ya realizados.</p></div></div>`;}
+function readProfitAllocation(form){const fd=new FormData(form),policy={};for(const bucket of PROFIT_BUCKETS)policy[bucket.key]=readCents(fd.get(bucket.key),`El porcentaje de ${bucket.name.toLowerCase()}`);return validateProfitAllocation(policy);}
+function previewProfitAllocation(){const form=document.querySelector('#profit-allocation-form');if(!form)return;const {available}=profitAllocationBase();let policy=null,rows=[],message='',valid=false;
+ try{const fd=new FormData(form),draft={};for(const bucket of PROFIT_BUCKETS){const raw=String(fd.get(bucket.key)).trim();if(!raw)throw Error('Completa los cuatro porcentajes.');const n=readCents(raw,'Cada porcentaje');if(n>10000)throw Error('Cada porcentaje debe estar entre 0% y 100%.');draft[bucket.key]=n;}const sum=Object.values(draft).reduce((n,v)=>n+v,0);if(sum!==10000){message=`Suman ${percentText(sum)}. ${sum<10000?'Falta asignar '+percentText(10000-sum):'Reduce '+percentText(sum-10000)} para completar el 100%.`;policy=draft;}else{policy=draft;rows=splitProfit(available,policy);valid=true;message='Los porcentajes suman 100%.';}}
+ catch(e){message=e.message;}
+ form.querySelector('[type=submit]').disabled=!valid;const status=form.querySelector('#allocation-total');status.textContent=message;status.classList.toggle('invalid',!valid);form.querySelector('.form-error').textContent='';
+ document.querySelector('#allocation-ring').innerHTML=allocationRing(rows,available,valid);
+ for(const bucket of PROFIT_BUCKETS){const row=rows.find(r=>r.key===bucket.key);form.querySelector(`[data-allocation-amount="${bucket.key}"]`).textContent=row?money(row.cents):'—';document.querySelector(`[data-plan-percent="${bucket.key}"]`).textContent=policy?percentText(policy[bucket.key]):'—';}
+}
+async function saveProfitAllocation(form){let draft;try{draft=readProfitAllocation(form);}catch(e){form.querySelector('.form-error').textContent=e.message;return;}const previous=clone(state.business.profitAllocation||defaultProfitAllocation()),app=document.querySelector('#app');app.inert=true;
+ try{state.business.profitAllocation=draft;const saved=await persist();if(saved){toast('Porcentajes guardados. El plan se actualizará con tus resultados.');return;}state.business.profitAllocation=previous;render();const retry=document.querySelector('#profit-allocation-form');if(retry){for(const bucket of PROFIT_BUCKETS)retry.elements[bucket.key].value=draft[bucket.key]/100;previewProfitAllocation();retry.querySelector('.form-error').textContent=storageError+' Tus porcentajes siguen aquí para que puedas reintentar.';}}
+ finally{app.inert=false;}
+}
+document.addEventListener('input',event=>{if(event.target.closest('#profit-allocation-form'))previewProfitAllocation();});
+document.addEventListener('submit',event=>{if(event.target.getAttribute('id')==='profit-allocation-form'){event.preventDefault();saveProfitAllocation(event.target);}});
+document.addEventListener('click',event=>{if(event.target.closest('[data-action="allocation-reset"]')){const form=document.querySelector('#profit-allocation-form');if(form){const defaults=defaultProfitAllocation();for(const bucket of PROFIT_BUCKETS)form.elements[bucket.key].value=defaults[bucket.key]/100;previewProfitAllocation();toast('Plan inicial cargado. Pulsa Guardar porcentajes para conservarlo.');}}});
