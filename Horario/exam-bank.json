@@ -1,0 +1,2715 @@
+{
+  "python-basic": {
+    "key": "python-basic",
+    "route": "python",
+    "label": "Python · Básico",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "¿Qué valor imprime este programa?",
+        "options": [
+          "5",
+          "3",
+          "2",
+          "32"
+        ],
+        "correct": 0,
+        "why": "El operador += suma 2 al valor anterior de x.",
+        "skill": "variables",
+        "code": "x = 3\nx += 2\nprint(x)",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q1"
+      },
+      {
+        "stem": "¿Cuántas veces se ejecuta print?",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "No termina"
+        ],
+        "correct": 0,
+        "why": "range(1, 4) produce 1, 2 y 3; el límite final se excluye.",
+        "skill": "bucles",
+        "code": "for i in range(1, 4):\n    print(i)",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q2"
+      },
+      {
+        "stem": "¿Qué condición selecciona números pares?",
+        "options": [
+          "n % 2 == 0",
+          "n / 2 == 0",
+          "n * 2 == 0",
+          "n == 2"
+        ],
+        "correct": 0,
+        "why": "El residuo de dividir un número par entre 2 es cero.",
+        "skill": "condiciones",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q3"
+      },
+      {
+        "stem": "¿Qué devuelve la función al llamarla con 4?",
+        "options": [
+          "8",
+          "4",
+          "None",
+          "16"
+        ],
+        "correct": 0,
+        "why": "return entrega el doble de x a quien llama la función.",
+        "skill": "funciones",
+        "code": "def doble(x):\n    return x * 2",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q4"
+      },
+      {
+        "stem": "¿Cuál es el primer elemento de valores?",
+        "options": [
+          "10",
+          "20",
+          "30",
+          "No existe"
+        ],
+        "correct": 0,
+        "why": "Los índices de las listas comienzan en cero.",
+        "skill": "listas",
+        "code": "valores = [10, 20, 30]\nprint(valores[0])",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q5"
+      },
+      {
+        "stem": "input devuelve \"12\". ¿Cómo puedes sumarle 3 como número?",
+        "options": [
+          "int(entrada) + 3",
+          "entrada + \"3\"",
+          "entrada + 3",
+          "len(entrada) + 3"
+        ],
+        "correct": 0,
+        "why": "input devuelve texto; int convierte un entero escrito como texto.",
+        "skill": "tipos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q6"
+      },
+      {
+        "stem": "¿Qué imprime el programa?",
+        "options": [
+          "6",
+          "3",
+          "7",
+          "123"
+        ],
+        "correct": 0,
+        "why": "Se acumulan 1 + 2 + 3.",
+        "skill": "bucles",
+        "code": "suma = 0\nfor x in [1, 2, 3]:\n    suma += x\nprint(suma)",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q7"
+      },
+      {
+        "stem": "¿Qué cambio evita que este while sea infinito?",
+        "options": [
+          "Añadir i += 1 dentro del bucle",
+          "Añadir i = 0 dentro del bucle",
+          "Cambiar print(i) por print(0)",
+          "Borrar la condición"
+        ],
+        "correct": 0,
+        "why": "La variable de control debe avanzar hasta que deje de cumplirse la condición.",
+        "skill": "depuración",
+        "code": "i = 0\nwhile i < 3:\n    print(i)",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q8"
+      },
+      {
+        "stem": "¿Qué se imprime?",
+        "options": [
+          "Frío",
+          "Templado",
+          "Calor",
+          "Las tres palabras"
+        ],
+        "correct": 0,
+        "why": "Solo se ejecuta la primera rama cuya condición es verdadera.",
+        "skill": "condiciones",
+        "code": "t = 8\nif t < 10:\n    print(\"Frío\")\nelif t < 25:\n    print(\"Templado\")\nelse:\n    print(\"Calor\")",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q9"
+      },
+      {
+        "stem": "¿Qué es mejor para reutilizar una conversión de temperatura?",
+        "options": [
+          "Una función con un parámetro y un valor de retorno",
+          "Copiar la misma fórmula en diez lugares",
+          "Cambiar siempre una variable global sin explicación",
+          "Escribir el resultado de una sola entrada"
+        ],
+        "correct": 0,
+        "why": "Una función encapsula la operación y permite probar distintas entradas.",
+        "skill": "diseño",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-basic-q10"
+      }
+    ],
+    "minis": [
+      [
+        "python-basic-q1",
+        "python-basic-q2",
+        "python-basic-q3"
+      ],
+      [
+        "python-basic-q4",
+        "python-basic-q5",
+        "python-basic-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Crea una función celsius_a_fahrenheit(c). Comprueba 0 → 32, 20 → 68 y −10 → 14. Añade un pequeño programa que lea una temperatura y explique el resultado. Pega el código y los resultados de tus pruebas; ejecútalo en tu propio Python.",
+      "criteria": [
+        "Funcionamiento: cumple la tarea y explica qué partes funcionan.",
+        "Pruebas: muestra entradas, resultados y al menos un caso de error.",
+        "Diseño: organiza la solución y documenta sus decisiones.",
+        "Comprensión: explica límites, mejoras y lo que aprendió."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "python-data": {
+    "key": "python-data",
+    "route": "python",
+    "label": "Python · Intermedio",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "Un campo CSV contiene \"23.5\". ¿Qué necesitas para calcular su media?",
+        "options": [
+          "Convertir los campos válidos a números",
+          "Concatenar todos los campos",
+          "Cambiar las comas del archivo por espacios",
+          "Calcular len de cada campo"
+        ],
+        "correct": 0,
+        "why": "Los campos del CSV son texto; valida y convierte antes de operar.",
+        "skill": "CSV",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q1"
+      },
+      {
+        "stem": "¿Qué excepción corresponde normalmente a float(\"agua\")?",
+        "options": [
+          "ValueError",
+          "IndexError",
+          "KeyError",
+          "ZeroDivisionError"
+        ],
+        "correct": 0,
+        "why": "El texto no tiene una representación numérica válida.",
+        "skill": "errores",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q2"
+      },
+      {
+        "stem": "¿Qué devuelve este acceso al diccionario?",
+        "options": [
+          "0",
+          "KeyError",
+          "None",
+          "\"temperatura\""
+        ],
+        "correct": 0,
+        "why": "get permite indicar un valor por defecto cuando no existe la clave.",
+        "skill": "diccionarios",
+        "code": "dato = {}\nprint(dato.get(\"temperatura\", 0))",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q3"
+      },
+      {
+        "stem": "¿Qué hace pandas.read_csv(\"mediciones.csv\")?",
+        "options": [
+          "Lee un archivo CSV y crea un DataFrame",
+          "Guarda una imagen del archivo",
+          "Convierte automáticamente cualquier dato corrupto en correcto",
+          "Envía los datos a GitHub"
+        ],
+        "correct": 0,
+        "why": "read_csv carga la tabla; aún debes revisar tipos y datos faltantes.",
+        "skill": "pandas",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q4"
+      },
+      {
+        "stem": "¿Cuál es el resultado de la operación?",
+        "options": [
+          "[2, 4, 6]",
+          "[1, 2, 3, 1, 2, 3]",
+          "[1, 4, 9]",
+          "Un error de longitud"
+        ],
+        "correct": 0,
+        "why": "La multiplicación de un array NumPy por un escalar actúa elemento a elemento.",
+        "skill": "NumPy",
+        "code": "import numpy as np\na = np.array([1, 2, 3])\nprint(a * 2)",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q5"
+      },
+      {
+        "stem": "¿Qué ejes son adecuados para ver cómo cambia la temperatura?",
+        "options": [
+          "Tiempo en X y temperatura con unidad en Y",
+          "Número de archivo en ambos ejes",
+          "Temperatura en X y el nombre del autor en Y",
+          "Cualquier eje, sin etiquetas"
+        ],
+        "correct": 0,
+        "why": "La gráfica temporal necesita orden, etiquetas y unidades interpretables.",
+        "skill": "gráficas",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q6"
+      },
+      {
+        "stem": "¿Qué hace git add antes de un commit?",
+        "options": [
+          "Prepara cambios seleccionados para el commit",
+          "Publica siempre todo el repositorio",
+          "Borra el historial remoto",
+          "Instala las dependencias de Python"
+        ],
+        "correct": 0,
+        "why": "add actualiza el área de preparación; commit registra y push publica.",
+        "skill": "Git",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q7"
+      },
+      {
+        "stem": "¿Cómo debes tratar un valor de sensor sospechoso?",
+        "options": [
+          "Conservar el dato original, marcarlo y documentar el criterio",
+          "Borrarlo siempre sin dejar registro",
+          "Sustituirlo por el valor que esperabas",
+          "Ocultar toda la columna"
+        ],
+        "correct": 0,
+        "why": "La trazabilidad permite revisar si fue un fallo o un fenómeno real.",
+        "skill": "calidad de datos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q8"
+      },
+      {
+        "stem": "¿Qué conviene hacer con filas sin una medición necesaria?",
+        "options": [
+          "Definir y documentar una política antes de calcular",
+          "Suponer que todos los valores faltantes son cero",
+          "Cambiar todos por la media sin indicarlo",
+          "Considerarlas mediciones perfectas"
+        ],
+        "correct": 0,
+        "why": "Un dato faltante no equivale a cero y su tratamiento puede cambiar el análisis.",
+        "skill": "validación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q9"
+      },
+      {
+        "stem": "¿Qué debe incluir un registro útil de calidad del agua?",
+        "options": [
+          "Fecha/hora, valor, unidad e identificación del sensor",
+          "Solo el número redondeado",
+          "Solo el nombre del archivo",
+          "La contraseña del equipo"
+        ],
+        "correct": 0,
+        "why": "El contexto permite interpretar, comparar y rastrear las mediciones.",
+        "skill": "registro",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-data-q10"
+      }
+    ],
+    "minis": [
+      [
+        "python-data-q1",
+        "python-data-q2",
+        "python-data-q3"
+      ],
+      [
+        "python-data-q4",
+        "python-data-q5",
+        "python-data-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Lee un CSV con fecha, temperatura y una columna adicional de calidad del agua. Valida tipos, informa filas inválidas, calcula un resumen y genera una gráfica con unidades. Conserva el CSV original. Adjunta código, resultados y dos pruebas, una con un dato inválido.",
+      "criteria": [
+        "Funcionamiento: cumple la tarea y explica qué partes funcionan.",
+        "Pruebas: muestra entradas, resultados y al menos un caso de error.",
+        "Diseño: organiza la solución y documenta sus decisiones.",
+        "Comprensión: explica límites, mejoras y lo que aprendió."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "python-app": {
+    "key": "python-app",
+    "route": "python",
+    "label": "Python · Competente",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "¿Qué aporta una clase Sensor bien diseñada?",
+        "options": [
+          "Agrupar estado y comportamiento relacionados",
+          "Evitar para siempre escribir pruebas",
+          "Hacer que toda variable sea global",
+          "Sustituir cualquier base de datos"
+        ],
+        "correct": 0,
+        "why": "Una clase puede representar una entidad con responsabilidades claras.",
+        "skill": "POO",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q1"
+      },
+      {
+        "stem": "¿Cómo se insertan valores de forma segura en SQLite?",
+        "options": [
+          "Con parámetros de la consulta",
+          "Concatenando directamente el texto del usuario",
+          "Guardando la consulta en una imagen",
+          "Desactivando los errores SQL"
+        ],
+        "correct": 0,
+        "why": "Los parámetros separan los datos de la estructura de la consulta.",
+        "skill": "bases de datos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q2"
+      },
+      {
+        "stem": "Una API devuelve HTTP 200. ¿Qué debes hacer después?",
+        "options": [
+          "Validar la estructura y los valores del contenido",
+          "Suponer que toda medición es físicamente válida",
+          "Borrar las pruebas",
+          "Reintentar indefinidamente"
+        ],
+        "correct": 0,
+        "why": "El éxito HTTP no garantiza que el contenido cumpla tu esquema o dominio.",
+        "skill": "APIs",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q3"
+      },
+      {
+        "stem": "¿Cuál es una prueba unitaria útil?",
+        "options": [
+          "Verificar una conversión conocida y un caso de entrada inválida",
+          "Comprobar únicamente que el archivo existe",
+          "Desactivar la aserción si falla",
+          "Probar solo con datos aleatorios sin criterio"
+        ],
+        "correct": 0,
+        "why": "Las pruebas deben comprobar un comportamiento y sus límites.",
+        "skill": "pruebas",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q4"
+      },
+      {
+        "stem": "¿Qué separarías de la interfaz Streamlit?",
+        "options": [
+          "Las funciones de validación y almacenamiento",
+          "Todos los mensajes de texto",
+          "La fecha de cada dato",
+          "Las etiquetas de los botones"
+        ],
+        "correct": 0,
+        "why": "Separar lógica de negocio e interfaz facilita pruebas y mantenimiento.",
+        "skill": "arquitectura",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q5"
+      },
+      {
+        "stem": "¿Qué evita registrar dos veces el mismo paquete reenviado?",
+        "options": [
+          "Una clave de idempotencia o identificador único del paquete",
+          "Cambiar el color del botón",
+          "Eliminar la fecha",
+          "Guardar siempre una fila extra"
+        ],
+        "correct": 0,
+        "why": "Los reintentos de red no deberían duplicar un mismo hecho.",
+        "skill": "integridad",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q6"
+      },
+      {
+        "stem": "¿Para qué sirve una transacción de base de datos?",
+        "options": [
+          "Aplicar de forma coherente cambios que deben completarse juntos",
+          "Aumentar la tensión del sensor",
+          "Evitar cualquier fallo de hardware",
+          "Convertir texto en gráficos"
+        ],
+        "correct": 0,
+        "why": "Una transacción protege operaciones que necesitan consistencia conjunta.",
+        "skill": "transacciones",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q7"
+      },
+      {
+        "stem": "¿Cómo documentarías la fecha de una medición entre equipos?",
+        "options": [
+          "Con una zona horaria explícita y un formato consistente",
+          "Como texto ambiguo 01/02/03",
+          "Solo con el día del mes",
+          "Usando la hora de visualización sin guardar la original"
+        ],
+        "correct": 0,
+        "why": "La zona horaria y el formato evitan confundir o desordenar registros.",
+        "skill": "datos temporales",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q8"
+      },
+      {
+        "stem": "¿Qué haces si la conexión al sensor falla temporalmente?",
+        "options": [
+          "Muestras el estado y limitas reintentos sin inventar datos",
+          "Inventas una medición para completar la gráfica",
+          "Ocultas todos los errores",
+          "Bloqueas para siempre la aplicación"
+        ],
+        "correct": 0,
+        "why": "Los fallos deben distinguirse de mediciones reales y manejarse con límites.",
+        "skill": "resiliencia",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q9"
+      },
+      {
+        "stem": "¿Qué describe mejor una prueba de integración?",
+        "options": [
+          "Verificar que API, validación y base de datos trabajan juntas",
+          "Revisar únicamente el color del menú",
+          "Cambiar el nombre de una función",
+          "Comprobar la ortografía de un comentario"
+        ],
+        "correct": 0,
+        "why": "La integración comprueba la colaboración real entre componentes.",
+        "skill": "pruebas",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-app-q10"
+      }
+    ],
+    "minis": [
+      [
+        "python-app-q1",
+        "python-app-q2",
+        "python-app-q3"
+      ],
+      [
+        "python-app-q4",
+        "python-app-q5",
+        "python-app-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Crea una pequeña aplicación que reciba mediciones, las valide, las guarde en SQLite y las muestre. Evita duplicar un paquete reenviado. Incluye una prueba de validación y una de integración. Describe qué pasa cuando la entrada o la conexión fallan.",
+      "criteria": [
+        "Funcionamiento: cumple la tarea y explica qué partes funcionan.",
+        "Pruebas: muestra entradas, resultados y al menos un caso de error.",
+        "Diseño: organiza la solución y documenta sus decisiones.",
+        "Comprensión: explica límites, mejoras y lo que aprendió."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "python-advanced": {
+    "key": "python-advanced",
+    "route": "python",
+    "label": "Python · Avanzado",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "¿Cómo evitas fuga de información al evaluar un modelo temporal?",
+        "options": [
+          "Separando entrenamiento y evaluación de acuerdo con el tiempo",
+          "Usando los mismos registros para entrenar y evaluar",
+          "Calculando todos los parámetros con los datos futuros",
+          "Eligiendo solo ejemplos que acierta"
+        ],
+        "correct": 0,
+        "why": "El futuro no debe informar al modelo que se está evaluando sobre el pasado.",
+        "skill": "aprendizaje automático",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q1"
+      },
+      {
+        "stem": "¿Qué complejidad tiene la búsqueda binaria en una lista ordenada?",
+        "options": [
+          "O(log n)",
+          "O(n²)",
+          "O(n!)",
+          "Siempre O(1)"
+        ],
+        "correct": 0,
+        "why": "En cada paso se reduce aproximadamente a la mitad el intervalo.",
+        "skill": "algoritmos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q2"
+      },
+      {
+        "stem": "¿Qué describe la mediana absoluta de desviaciones (MAD)?",
+        "options": [
+          "Una medida de dispersión resistente a valores extremos",
+          "Una garantía de que no existen errores",
+          "La media de las etiquetas de texto",
+          "El número de columnas de un CSV"
+        ],
+        "correct": 0,
+        "why": "La MAD usa la mediana y es menos sensible a valores extremos que la varianza.",
+        "skill": "estadística",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q3"
+      },
+      {
+        "stem": "Antes de optimizar un proceso lento, ¿qué conviene hacer?",
+        "options": [
+          "Medir y perfilar dónde consume tiempo y memoria",
+          "Reescribir todo sin medir",
+          "Eliminar las pruebas",
+          "Comprar siempre otro sensor"
+        ],
+        "correct": 0,
+        "why": "La medición permite dirigir la optimización al cuello de botella real.",
+        "skill": "rendimiento",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q4"
+      },
+      {
+        "stem": "¿Qué hace reproducible un experimento?",
+        "options": [
+          "Versiones, datos identificables, parámetros y pasos documentados",
+          "Solo una captura de pantalla final",
+          "Cambiar las entradas sin registrarlo",
+          "Guardar únicamente la conclusión"
+        ],
+        "correct": 0,
+        "why": "Otras personas necesitan poder reconstruir las condiciones del resultado.",
+        "skill": "reproducibilidad",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q5"
+      },
+      {
+        "stem": "¿Qué puede indicar deriva en los datos?",
+        "options": [
+          "Un cambio sostenido de su distribución respecto a la referencia",
+          "Que todos los valores sean enteros",
+          "Que un archivo tenga otro nombre",
+          "Una garantía de mejor precisión"
+        ],
+        "correct": 0,
+        "why": "Los cambios del entorno pueden hacer que un modelo deje de representar el sistema.",
+        "skill": "monitoreo",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q6"
+      },
+      {
+        "stem": "¿Qué debes revisar al reducir falsas alarmas?",
+        "options": [
+          "Si también aumentan los eventos reales que no detectas",
+          "Solo que haya menos mensajes",
+          "El color de la gráfica",
+          "Que se eliminen todas las alertas"
+        ],
+        "correct": 0,
+        "why": "La precisión y la sensibilidad implican compromisos que deben medirse.",
+        "skill": "evaluación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q7"
+      },
+      {
+        "stem": "¿Qué valida un esquema de datos?",
+        "options": [
+          "Campos, tipos y restricciones esperadas",
+          "La verdad física de cualquier medición",
+          "La ausencia de toda incertidumbre",
+          "Que nunca habrá fallos de red"
+        ],
+        "correct": 0,
+        "why": "El esquema comprueba estructura y reglas explícitas, no sustituye validación experimental.",
+        "skill": "contratos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q8"
+      },
+      {
+        "stem": "Para procesar un archivo mayor que la memoria disponible, ¿qué ayuda?",
+        "options": [
+          "Procesarlo por bloques o como flujo",
+          "Cargarlo varias veces simultáneamente",
+          "Convertir todas sus filas en capturas",
+          "Desactivar el manejo de errores"
+        ],
+        "correct": 0,
+        "why": "El procesamiento incremental evita exigir memoria para todo el conjunto a la vez.",
+        "skill": "arquitectura",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q9"
+      },
+      {
+        "stem": "¿Qué documento ayuda a revisar un detector de anomalías?",
+        "options": [
+          "Criterios, métricas, límites conocidos y un procedimiento reproducible",
+          "Solo la palabra \"inteligente\"",
+          "Una lista de aciertos sin fallos",
+          "Un archivo sin versiones"
+        ],
+        "correct": 0,
+        "why": "Los límites y los fallos son parte de una evaluación honesta.",
+        "skill": "documentación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "python-advanced-q10"
+      }
+    ],
+    "minis": [
+      [
+        "python-advanced-q1",
+        "python-advanced-q2",
+        "python-advanced-q3"
+      ],
+      [
+        "python-advanced-q4",
+        "python-advanced-q5",
+        "python-advanced-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Desarrolla un detector de anomalías para mediciones. Separa datos de entrenamiento y prueba temporalmente, documenta un criterio de referencia y calcula falsas alarmas y eventos no detectados. Entrega código, pruebas, versiones y un procedimiento reproducible.",
+      "criteria": [
+        "Funcionamiento: cumple la tarea y explica qué partes funcionan.",
+        "Pruebas: muestra entradas, resultados y al menos un caso de error.",
+        "Diseño: organiza la solución y documenta sus decisiones.",
+        "Comprensión: explica límites, mejoras y lo que aprendió."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "robot-basic": {
+    "key": "robot-basic",
+    "route": "robotica",
+    "label": "Robótica · Fundamentos",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "Con 5 V, un LED que cae 2 V y una resistencia de 220 Ω en serie, la corriente aproximada es:",
+        "options": [
+          "14 mA",
+          "1 A",
+          "220 A",
+          "0 mA"
+        ],
+        "correct": 0,
+        "why": "La corriente ideal aproximada es (5 − 2) / 220 = 0,0136 A.",
+        "skill": "electricidad",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q1"
+      },
+      {
+        "stem": "¿Cuál es el propósito de la resistencia en serie con un LED?",
+        "options": [
+          "Limitar la corriente",
+          "Crear energía adicional",
+          "Convertir cualquier señal a Wi-Fi",
+          "Guardar el programa"
+        ],
+        "correct": 0,
+        "why": "La limitación de corriente protege al LED y al circuito.",
+        "skill": "circuitos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q2"
+      },
+      {
+        "stem": "Un GPIO de ESP32 trabaja a 3,3 V. ¿Cómo conectas una señal de 5 V no tolerada?",
+        "options": [
+          "Con adaptación de nivel apropiada",
+          "Directamente porque ambos usan cables",
+          "Aumentando la duración del programa",
+          "Unión directa al terminal positivo"
+        ],
+        "correct": 0,
+        "why": "La tensión de entrada debe respetar las especificaciones del microcontrolador.",
+        "skill": "alimentación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q3"
+      },
+      {
+        "stem": "¿Qué puede pasar con una entrada digital flotante?",
+        "options": [
+          "Lecturas inestables o indeterminadas",
+          "Siempre lee cero con certeza",
+          "Duplica la memoria",
+          "Aumenta la resistencia del LED"
+        ],
+        "correct": 0,
+        "why": "Una resistencia pull-up o pull-down define un estado cuando no hay señal activa.",
+        "skill": "entradas",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q4"
+      },
+      {
+        "stem": "Para medir corriente con un multímetro, normalmente se conecta:",
+        "options": [
+          "En serie con la carga y en el rango correcto",
+          "En paralelo como si midiera voltaje",
+          "Entre cualquier GPIO y la antena",
+          "Sin seleccionar función"
+        ],
+        "correct": 0,
+        "why": "La medición de corriente requiere una conexión y un rango apropiados.",
+        "skill": "medición",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q5"
+      },
+      {
+        "stem": "¿Qué describe PWM?",
+        "options": [
+          "Una señal digital que modifica su ciclo de trabajo",
+          "Una tensión analógica perfectamente constante por sí sola",
+          "Un tipo de archivo de Python",
+          "Un reemplazo universal de la batería"
+        ],
+        "correct": 0,
+        "why": "El ciclo de trabajo determina la fracción de tiempo en estado alto.",
+        "skill": "señales",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q6"
+      },
+      {
+        "stem": "¿Cuándo conviene modificar el cableado de una protoboard?",
+        "options": [
+          "Con la alimentación desconectada",
+          "Mientras aumentas la tensión sin medir",
+          "Con los polos de la batería unidos",
+          "Sin revisar el esquema"
+        ],
+        "correct": 0,
+        "why": "Desconectar antes de modificar reduce cortocircuitos y errores de conexión.",
+        "skill": "montaje",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q7"
+      },
+      {
+        "stem": "¿Qué permite una referencia de tierra compartida en señales no aisladas?",
+        "options": [
+          "Interpretar las tensiones con una referencia común",
+          "Hacer que cualquier tensión sea segura",
+          "Eliminar toda interferencia",
+          "Sustituir la fuente de alimentación"
+        ],
+        "correct": 0,
+        "why": "Las señales eléctricas se interpretan respecto a una referencia.",
+        "skill": "referencias",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q8"
+      },
+      {
+        "stem": "Con un ADC ideal de 12 bits y rango 0–3,3 V, ¿cuál es su valor máximo?",
+        "options": [
+          "4095",
+          "12",
+          "255",
+          "65535"
+        ],
+        "correct": 0,
+        "why": "Doce bits representan 2^12 niveles, numerados de 0 a 4095.",
+        "skill": "ADC",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q9"
+      },
+      {
+        "stem": "¿Qué prueba inicial es más útil para un montaje nuevo?",
+        "options": [
+          "Revisar conexiones y alimentación, y probar una función sencilla",
+          "Conectarlo completo al agua sin verificar",
+          "Cambiar todas las piezas al mismo tiempo",
+          "Suponer que un LED encendido valida todo"
+        ],
+        "correct": 0,
+        "why": "Probar por etapas ayuda a aislar las causas de un fallo.",
+        "skill": "pruebas",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-basic-q10"
+      }
+    ],
+    "minis": [
+      [
+        "robot-basic-q1",
+        "robot-basic-q2",
+        "robot-basic-q3"
+      ],
+      [
+        "robot-basic-q4",
+        "robot-basic-q5",
+        "robot-basic-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Dibuja o simula un circuito LED con resistencia y programa una salida o lectura sencilla en Arduino/ESP32. Documenta alimentación, conexiones, una medición y qué pasa al cambiar la señal. Puedes usar un simulador si no tienes placa.",
+      "criteria": [
+        "Montaje y funcionamiento: evidencia del circuito o sistema y sus lecturas.",
+        "Medición: registra pruebas, unidades y una comparación o calibración.",
+        "Diseño responsable: alimentación adecuada, protección y respuesta ante fallos.",
+        "Explicación: documenta conexiones, código, límites y mejoras."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "robot-sensors": {
+    "key": "robot-sensors",
+    "route": "robotica",
+    "label": "Robótica · Sensores",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "¿Qué necesitas para calibrar linealmente con dos puntos?",
+        "options": [
+          "Dos referencias conocidas y sus lecturas crudas correspondientes",
+          "Dos lecturas idénticas sin referencia",
+          "Solo el color del sensor",
+          "Cambiar el valor hasta que parezca correcto"
+        ],
+        "correct": 0,
+        "why": "La calibración relaciona las lecturas con referencias independientes.",
+        "skill": "calibración",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q1"
+      },
+      {
+        "stem": "Un sensor repite 8,0 cuando la referencia es 10,0. ¿Qué indica?",
+        "options": [
+          "Puede ser repetible y aun así tener un sesgo",
+          "Tiene exactitud perfecta",
+          "No necesita calibración",
+          "La unidad deja de importar"
+        ],
+        "correct": 0,
+        "why": "Repetibilidad y exactitud son propiedades distintas.",
+        "skill": "medición",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q2"
+      },
+      {
+        "stem": "En un bus I²C, ¿qué debes revisar si dos equipos no responden correctamente?",
+        "options": [
+          "Direcciones, conexiones, alimentación y resistencias necesarias",
+          "El nombre del archivo de la gráfica",
+          "La fecha del commit únicamente",
+          "Que todos usen 5 V sin consultar especificaciones"
+        ],
+        "correct": 0,
+        "why": "El bus requiere compatibilidad eléctrica y direccionamiento correcto.",
+        "skill": "comunicación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q3"
+      },
+      {
+        "stem": "¿Por qué guardar la fecha de calibración?",
+        "options": [
+          "Para rastrear qué calibración se aplicó a los datos",
+          "Para aumentar el voltaje automáticamente",
+          "Para evitar toda deriva futura",
+          "Para sustituir una referencia"
+        ],
+        "correct": 0,
+        "why": "La trazabilidad permite interpretar mediciones y recalibraciones.",
+        "skill": "registro",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q4"
+      },
+      {
+        "stem": "¿Qué problema puede causar muestrear demasiado lentamente una señal que cambia rápido?",
+        "options": [
+          "Perder variaciones y representar mal su comportamiento",
+          "Crear más información real",
+          "Eliminar todo ruido sin costo",
+          "Aumentar siempre la exactitud"
+        ],
+        "correct": 0,
+        "why": "La frecuencia de muestreo debe adecuarse a la dinámica de interés.",
+        "skill": "muestreo",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q5"
+      },
+      {
+        "stem": "¿Cómo tratarías una lectura extrema?",
+        "options": [
+          "Guardar el original, marcarla y comprobar las condiciones",
+          "Borrarla sin explicación",
+          "Cambiarla por el resultado deseado",
+          "Promediarla con cero siempre"
+        ],
+        "correct": 0,
+        "why": "La revisión necesita distinguir fallos, ruido y fenómenos reales.",
+        "skill": "calidad",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q6"
+      },
+      {
+        "stem": "¿Qué hace falta para una comunicación UART fiable?",
+        "options": [
+          "Configuración compatible de velocidad y formato, además de conexiones correctas",
+          "Que ambos dispositivos tengan el mismo color",
+          "Que el receptor use cualquier tensión",
+          "Quitar la referencia eléctrica siempre"
+        ],
+        "correct": 0,
+        "why": "Las condiciones eléctricas y el formato deben ser compatibles.",
+        "skill": "UART",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q7"
+      },
+      {
+        "stem": "¿Por qué puede ser importante la temperatura al medir calidad del agua?",
+        "options": [
+          "Puede afectar la respuesta del sensor o el parámetro medido",
+          "Nunca tiene relación con otras mediciones",
+          "Siempre permite calcular pH sin sensor",
+          "Elimina la necesidad de unidades"
+        ],
+        "correct": 0,
+        "why": "La compensación depende del sensor y del fenómeno; debe documentarse.",
+        "skill": "sensores",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q8"
+      },
+      {
+        "stem": "¿Dónde colocarías la electrónica no impermeable?",
+        "options": [
+          "En una zona protegida, separada de la sonda que toca el agua",
+          "Sumergida porque la sonda resiste agua",
+          "Directamente sobre terminales expuestos",
+          "En cualquier lugar sin revisar el grado de protección"
+        ],
+        "correct": 0,
+        "why": "Que una sonda sea sumergible no vuelve impermeable al resto del sistema.",
+        "skill": "protección",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q9"
+      },
+      {
+        "stem": "En una lectura de MicroPython expresada explícitamente con read_u16(), el máximo de 16 bits es:",
+        "options": [
+          "65535",
+          "4095",
+          "16",
+          "255"
+        ],
+        "correct": 0,
+        "why": "Un entero sin signo de 16 bits va de 0 a 65535; comprueba la API concreta de tu placa.",
+        "skill": "MicroPython",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-sensors-q10"
+      }
+    ],
+    "minis": [
+      [
+        "robot-sensors-q1",
+        "robot-sensors-q2",
+        "robot-sensors-q3"
+      ],
+      [
+        "robot-sensors-q4",
+        "robot-sensors-q5",
+        "robot-sensors-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Construye o simula una estación con temperatura y otro parámetro. Registra al menos 10 lecturas con fecha y unidad. Documenta una calibración o comparación, un dato sospechoso y una limitación del sensor. Adjunta código y resultados.",
+      "criteria": [
+        "Montaje y funcionamiento: evidencia del circuito o sistema y sus lecturas.",
+        "Medición: registra pruebas, unidades y una comparación o calibración.",
+        "Diseño responsable: alimentación adecuada, protección y respuesta ante fallos.",
+        "Explicación: documenta conexiones, código, límites y mejoras."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "robot-integration": {
+    "key": "robot-integration",
+    "route": "robotica",
+    "label": "Robótica · Integración",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "¿Por qué no conectar normalmente un motor directamente a un GPIO?",
+        "options": [
+          "Su demanda de corriente y las cargas inductivas requieren un controlador apropiado",
+          "Porque el código tiene más de una función",
+          "Porque un GPIO nunca puede producir una señal",
+          "Porque una batería no puede mover motores"
+        ],
+        "correct": 0,
+        "why": "La etapa de potencia debe adaptarse a la carga y proteger el control.",
+        "skill": "motores",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q1"
+      },
+      {
+        "stem": "¿Para qué sirve un puente H?",
+        "options": [
+          "Controlar el sentido de giro de un motor DC compatible",
+          "Calibrar automáticamente cualquier sensor",
+          "Guardar fotos",
+          "Hacer flotar un casco por sí solo"
+        ],
+        "correct": 0,
+        "why": "El puente H permite cambiar la polaridad aplicada al motor.",
+        "skill": "control",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q2"
+      },
+      {
+        "stem": "Si se pierde el enlace de control, ¿qué respuesta debe estar definida?",
+        "options": [
+          "Una acción segura, como detener el movimiento según el entorno",
+          "Mantener indefinidamente la última orden a máxima velocidad",
+          "Inventar paquetes de mando",
+          "Ignorar el fallo siempre"
+        ],
+        "correct": 0,
+        "why": "Una respuesta ante pérdida de comunicación debe diseñarse y probarse.",
+        "skill": "fallos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q3"
+      },
+      {
+        "stem": "¿Qué ayuda a detectar paquetes repetidos?",
+        "options": [
+          "Un identificador o número de secuencia",
+          "El color del cable USB",
+          "Quitar la hora de la medición",
+          "Aumentar el tamaño del botón"
+        ],
+        "correct": 0,
+        "why": "La identificación permite distinguir mensajes nuevos y reenviados.",
+        "skill": "telemetría",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q4"
+      },
+      {
+        "stem": "¿Por qué probar por separado propulsión, radio y sensores?",
+        "options": [
+          "Para aislar fallos antes de integrarlos",
+          "Para evitar registrar cualquier resultado",
+          "Porque la integración ya no será necesaria",
+          "Para no usar unidades"
+        ],
+        "correct": 0,
+        "why": "La integración por etapas facilita localizar problemas.",
+        "skill": "integración",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q5"
+      },
+      {
+        "stem": "¿Qué afecta a la estabilidad de una plataforma flotante?",
+        "options": [
+          "Distribución de masa, flotabilidad y centro de gravedad",
+          "Solo el nombre del proyecto",
+          "Únicamente el lenguaje de programación",
+          "La cantidad de comentarios del código"
+        ],
+        "correct": 0,
+        "why": "El diseño mecánico importa tanto como el electrónico.",
+        "skill": "plataforma",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q6"
+      },
+      {
+        "stem": "¿Qué debe incluir un registro de telemetría?",
+        "options": [
+          "Identificación, tiempo, datos con unidades y estado del sistema",
+          "Solo números sin origen",
+          "Las contraseñas en cada paquete",
+          "Un promedio sin fecha como único dato"
+        ],
+        "correct": 0,
+        "why": "Los estados y el contexto ayudan a interpretar fallos y mediciones.",
+        "skill": "registro",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q7"
+      },
+      {
+        "stem": "¿Qué compruebas antes de una prueba en agua?",
+        "options": [
+          "Protección electrónica, sujeciones, alimentación y respuesta de parada",
+          "Solo que la interfaz se vea bonita",
+          "Que todo esté unido con cables sueltos",
+          "Que el motor use toda su potencia desde el inicio"
+        ],
+        "correct": 0,
+        "why": "Una prueba controlada necesita criterios de preparación y detención.",
+        "skill": "validación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q8"
+      },
+      {
+        "stem": "¿Qué permite un watchdog bien configurado?",
+        "options": [
+          "Detectar un bloqueo y activar una recuperación definida",
+          "Evitar cualquier error de diseño",
+          "Aumentar la capacidad de la batería",
+          "Medir pH sin sonda"
+        ],
+        "correct": 0,
+        "why": "Un watchdog es una parte de la estrategia de recuperación, no una solución total.",
+        "skill": "resiliencia",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q9"
+      },
+      {
+        "stem": "¿Cómo evaluarías la duración de la batería?",
+        "options": [
+          "Midiendo consumo y autonomía en condiciones representativas",
+          "Usando solo la capacidad nominal como garantía exacta",
+          "Mirando el color de la carcasa",
+          "Sin considerar los motores"
+        ],
+        "correct": 0,
+        "why": "La carga y las condiciones reales afectan a la autonomía.",
+        "skill": "energía",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-integration-q10"
+      }
+    ],
+    "minis": [
+      [
+        "robot-integration-q1",
+        "robot-integration-q2",
+        "robot-integration-q3"
+      ],
+      [
+        "robot-integration-q4",
+        "robot-integration-q5",
+        "robot-integration-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Integra o simula una plataforma con propulsión, comunicación y telemetría. Entrega un esquema de módulos, una prueba de pérdida de enlace y un registro de mediciones. Explica cómo detienes el sistema y cómo proteges la electrónica.",
+      "criteria": [
+        "Montaje y funcionamiento: evidencia del circuito o sistema y sus lecturas.",
+        "Medición: registra pruebas, unidades y una comparación o calibración.",
+        "Diseño responsable: alimentación adecuada, protección y respuesta ante fallos.",
+        "Explicación: documenta conexiones, código, límites y mejoras."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "robot-advanced": {
+    "key": "robot-advanced",
+    "route": "robotica",
+    "label": "Robótica · Avanzada",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "¿Qué puede ocurrir con la integral de un PID cuando el actuador está saturado?",
+        "options": [
+          "Acumulación excesiva de la integral (windup)",
+          "La integral desaparece siempre",
+          "La batería se calibra sola",
+          "Se garantiza error cero"
+        ],
+        "correct": 0,
+        "why": "La estrategia anti-windup limita consecuencias de la saturación.",
+        "skill": "control",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q1"
+      },
+      {
+        "stem": "¿Qué compromiso introduce un filtrado muy intenso?",
+        "options": [
+          "Menos ruido, pero posiblemente mayor retraso en la respuesta",
+          "Precisión infinita sin ningún efecto",
+          "Eliminación de toda incertidumbre",
+          "Mayor información real por sí sola"
+        ],
+        "correct": 0,
+        "why": "El retardo puede afectar al control y a la interpretación temporal.",
+        "skill": "filtrado",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q2"
+      },
+      {
+        "stem": "¿Qué debes hacer con la incertidumbre de posición?",
+        "options": [
+          "Considerarla al planificar y evaluar la navegación",
+          "Suponer que el GPS es exacto en cualquier lugar",
+          "Eliminarla del informe",
+          "Reemplazarla por cero sin medir"
+        ],
+        "correct": 0,
+        "why": "La navegación debe reconocer la calidad de su información de posición.",
+        "skill": "navegación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q3"
+      },
+      {
+        "stem": "¿Qué representa el error absoluto medio (MAE)?",
+        "options": [
+          "El promedio de las magnitudes de los errores respecto a una referencia",
+          "El mayor valor del sensor",
+          "La suma de los tiempos de batería",
+          "La garantía de ausencia de sesgo"
+        ],
+        "correct": 0,
+        "why": "El MAE resume magnitud de error, pero no describe por sí solo todos los fallos.",
+        "skill": "evaluación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q4"
+      },
+      {
+        "stem": "¿Qué ayuda a validar una fusión de sensores?",
+        "options": [
+          "Compararla con referencias y probar sesgos o datos degradados",
+          "Añadir sensores sin medir el resultado",
+          "Suponer que más sensores siempre es mejor",
+          "Borrar los datos que contradicen la hipótesis"
+        ],
+        "correct": 0,
+        "why": "La fusión requiere comprobar aportes, límites y fallos.",
+        "skill": "fusión",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q5"
+      },
+      {
+        "stem": "¿Por qué reservar energía para el regreso?",
+        "options": [
+          "Porque una misión debe considerar recuperación y variaciones de consumo",
+          "Para que los sensores no necesiten unidades",
+          "Para evitar planificar",
+          "Porque la batería nunca se descarga"
+        ],
+        "correct": 0,
+        "why": "El presupuesto energético debe incluir margen de recuperación.",
+        "skill": "misiones",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q6"
+      },
+      {
+        "stem": "Si un dato de navegación llega demasiado tarde, ¿qué conviene hacer?",
+        "options": [
+          "Detectar su antigüedad y aplicar una política definida",
+          "Tratarlo siempre como actual",
+          "Cambiar su fecha para ocultar el retraso",
+          "Acelerar sin comprobar nada"
+        ],
+        "correct": 0,
+        "why": "La frescura de los datos forma parte de su validez para el control.",
+        "skill": "tiempo real",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q7"
+      },
+      {
+        "stem": "¿Qué prueba respalda mejor una mejora del sistema?",
+        "options": [
+          "Comparaciones repetidas bajo condiciones documentadas",
+          "Una única demostración elegida sin registros",
+          "Solo una animación del prototipo",
+          "Una conclusión sin datos"
+        ],
+        "correct": 0,
+        "why": "La repetición y el control de condiciones fortalecen la evidencia.",
+        "skill": "experimentación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q8"
+      },
+      {
+        "stem": "¿Qué debe pasar si un obstáculo o fallo hace inviable el plan?",
+        "options": [
+          "Replanificar o ejecutar la respuesta segura prevista",
+          "Continuar cualquier trayectoria a cualquier costo",
+          "Desactivar todos los registros",
+          "Suponer que el obstáculo desaparecerá"
+        ],
+        "correct": 0,
+        "why": "El sistema necesita estrategias explícitas para límites y fallos.",
+        "skill": "planificación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q9"
+      },
+      {
+        "stem": "¿Qué entrega permite reproducir la evaluación de AQUA-SENTINEL?",
+        "options": [
+          "Versiones de hardware y software, calibraciones, datos y protocolo",
+          "Solo el logo",
+          "Únicamente el porcentaje final",
+          "Un video sin condiciones de prueba"
+        ],
+        "correct": 0,
+        "why": "La reproducibilidad necesita conocer la configuración y el procedimiento.",
+        "skill": "documentación",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "robot-advanced-q10"
+      }
+    ],
+    "minis": [
+      [
+        "robot-advanced-q1",
+        "robot-advanced-q2",
+        "robot-advanced-q3"
+      ],
+      [
+        "robot-advanced-q4",
+        "robot-advanced-q5",
+        "robot-advanced-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Diseña y valida una misión semiautónoma de AQUA-SENTINEL, física o simulada. Define ruta, límites, fallos y reserva de energía. Compara mediciones con una referencia, calcula errores y entrega el protocolo reproducible junto con resultados y código.",
+      "criteria": [
+        "Montaje y funcionamiento: evidencia del circuito o sistema y sus lecturas.",
+        "Medición: registra pruebas, unidades y una comparación o calibración.",
+        "Diseño responsable: alimentación adecuada, protección y respuesta ante fallos.",
+        "Explicación: documenta conexiones, código, límites y mejoras."
+      ],
+      "minSeconds": 0
+    }
+  },
+  "english-a1": {
+    "key": "english-a1",
+    "route": "ingles",
+    "label": "Inglés · A1",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "Choose the correct sentence.",
+        "options": [
+          "She is a student.",
+          "She are a student.",
+          "She am a student.",
+          "She be a student."
+        ],
+        "correct": 0,
+        "why": "Con she se usa is en el presente de be.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a1-q1"
+      },
+      {
+        "stem": "Complete: He ___ English every day.",
+        "options": [
+          "studies",
+          "study",
+          "studying",
+          "are study"
+        ],
+        "correct": 0,
+        "why": "En tercera persona singular del presente se usa studies.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a1-q2"
+      },
+      {
+        "stem": "Choose the correct question.",
+        "options": [
+          "Where do you live?",
+          "Where you live?",
+          "Where does you live?",
+          "Where are you live?"
+        ],
+        "correct": 0,
+        "why": "Con you se usa do para esta pregunta en presente.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a1-q3"
+      },
+      {
+        "stem": "Complete: There ___ two books on the table.",
+        "options": [
+          "are",
+          "is",
+          "am",
+          "be"
+        ],
+        "correct": 0,
+        "why": "Two books es plural: there are.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a1-q4"
+      },
+      {
+        "stem": "Complete: I have ___ orange bag.",
+        "options": [
+          "an",
+          "a",
+          "two",
+          "many"
+        ],
+        "correct": 0,
+        "why": "Orange comienza con sonido vocálico; corresponde an.",
+        "skill": "vocabulary",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a1-q5"
+      },
+      {
+        "stem": "On which day is the club meeting?",
+        "options": [
+          "Friday",
+          "Monday",
+          "Sunday",
+          "Thursday"
+        ],
+        "correct": 0,
+        "why": "El aviso indica Friday.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-a1-q6"
+      },
+      {
+        "stem": "Where is the meeting?",
+        "options": [
+          "In the library",
+          "At the station",
+          "In a shop",
+          "At a restaurant"
+        ],
+        "correct": 0,
+        "why": "El aviso dice que la reunión será en la biblioteca.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-a1-q7"
+      },
+      {
+        "stem": "How does Mira go to college?",
+        "options": [
+          "By bike",
+          "By train",
+          "By car",
+          "On a boat"
+        ],
+        "correct": 0,
+        "why": "Mira dice que va en bicicleta.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-a1-q8"
+      },
+      {
+        "stem": "What time does her first class start?",
+        "options": [
+          "At nine",
+          "At seven thirty",
+          "At six",
+          "At eleven"
+        ],
+        "correct": 0,
+        "why": "La primera clase empieza a las nueve.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-a1-q9"
+      },
+      {
+        "stem": "How much is the blue notebook?",
+        "options": [
+          "Three dollars",
+          "Four dollars",
+          "Two dollars",
+          "Five dollars"
+        ],
+        "correct": 0,
+        "why": "El cuaderno azul cuesta tres dólares; el rojo cuesta cuatro.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "b",
+        "id": "english-a1-q10"
+      }
+    ],
+    "minis": [
+      [
+        "english-a1-q1",
+        "english-a1-q2",
+        "english-a1-q3"
+      ],
+      [
+        "english-a1-q8",
+        "english-a1-q9",
+        "english-a1-q10"
+      ]
+    ],
+    "reading": {
+      "reading": "ENGLISH CLUB\nMeet us in the library on Friday at four p.m. Bring a notebook. The session costs two dollars."
+    },
+    "listening": {
+      "a": "Hello, my name is Mira. I live near the park. I get up at seven thirty. I go to college by bike. My first class starts at nine. After class, I read a book at home.",
+      "b": "Good morning. I need a blue notebook, please. The blue notebook is three dollars. The red one is four dollars. I will take the blue notebook. Thank you."
+    },
+    "practical": {
+      "task": "Introduce yourself. Say where you live, what you study, what you like and what you do on a normal day. Usa frases sencillas y habla al menos 45 segundos; la meta orientativa es un minuto.",
+      "criteria": [
+        "Tarea y organización: desarrolla el tema solicitado al nivel esperado.",
+        "Fluidez y claridad: comunica las ideas con pausas manejables.",
+        "Vocabulario y gramática: usa recursos adecuados al nivel y se hace entender.",
+        "Pronunciación e inteligibilidad: el oyente comprende el mensaje; no se exige un acento nativo."
+      ],
+      "minSeconds": 45
+    }
+  },
+  "english-a2": {
+    "key": "english-a2",
+    "route": "ingles",
+    "label": "Inglés · A2",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "Complete: Yesterday we ___ the museum.",
+        "options": [
+          "visited",
+          "visit",
+          "visiting",
+          "have visit"
+        ],
+        "correct": 0,
+        "why": "Yesterday sitúa la acción en el pasado: visited.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a2-q1"
+      },
+      {
+        "stem": "Choose the correct negative sentence.",
+        "options": [
+          "I did not buy it.",
+          "I did not bought it.",
+          "I not bought it.",
+          "I do not bought it yesterday."
+        ],
+        "correct": 0,
+        "why": "Después de did not se usa el verbo base buy.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a2-q2"
+      },
+      {
+        "stem": "Complete: This sensor is ___ than that one.",
+        "options": [
+          "cheaper",
+          "cheap",
+          "cheapest",
+          "more cheap than"
+        ],
+        "correct": 0,
+        "why": "La comparación regular de cheap es cheaper than.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a2-q3"
+      },
+      {
+        "stem": "Complete: Look! They ___ a robot now.",
+        "options": [
+          "are building",
+          "builds",
+          "built",
+          "is building"
+        ],
+        "correct": 0,
+        "why": "Now y look presentan una acción en curso; they are building.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a2-q4"
+      },
+      {
+        "stem": "Complete: How ___ water do we need?",
+        "options": [
+          "much",
+          "many",
+          "a few",
+          "any many"
+        ],
+        "correct": 0,
+        "why": "Water es incontable en este contexto: how much.",
+        "skill": "vocabulary",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-a2-q5"
+      },
+      {
+        "stem": "Why did Sara miss the meeting?",
+        "options": [
+          "She was ill.",
+          "She lost her book.",
+          "The library was closed.",
+          "She was on holiday."
+        ],
+        "correct": 0,
+        "why": "Sara explica que estuvo enferma.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-a2-q6"
+      },
+      {
+        "stem": "When must she return the book?",
+        "options": [
+          "Wednesday",
+          "Monday",
+          "Sunday",
+          "Friday"
+        ],
+        "correct": 0,
+        "why": "La fecha indicada para devolver el libro es Wednesday.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-a2-q7"
+      },
+      {
+        "stem": "Where should the group meet?",
+        "options": [
+          "At the bus station",
+          "Inside the museum",
+          "At the library",
+          "At the hotel"
+        ],
+        "correct": 0,
+        "why": "El punto de encuentro es la estación de autobuses.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-a2-q8"
+      },
+      {
+        "stem": "What time will they meet?",
+        "options": [
+          "Ten thirty",
+          "Eleven thirty",
+          "Nine",
+          "Twelve"
+        ],
+        "correct": 0,
+        "why": "Se reúnen a las diez y media; el museo se visita a las once.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-a2-q9"
+      },
+      {
+        "stem": "When will the order arrive now?",
+        "options": [
+          "Thursday",
+          "Wednesday",
+          "Monday",
+          "Saturday"
+        ],
+        "correct": 0,
+        "why": "La entrega cambió del miércoles al jueves.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "b",
+        "id": "english-a2-q10"
+      }
+    ],
+    "minis": [
+      [
+        "english-a2-q1",
+        "english-a2-q2",
+        "english-a2-q3"
+      ],
+      [
+        "english-a2-q8",
+        "english-a2-q9",
+        "english-a2-q10"
+      ]
+    ],
+    "reading": {
+      "reading": "Hi Leo, I missed Monday's meeting because I was ill. I am feeling better now. I will return your book on Wednesday morning. The library opens at nine and is closed on Sundays. See you soon, Sara."
+    },
+    "listening": {
+      "a": "Our trip to the museum is this Saturday. We will meet at the bus station at ten thirty. The museum visit starts at eleven. Please bring some water and your ticket. We will return by bus after lunch.",
+      "b": "Hello, this is a message about your order. It will not arrive on Wednesday. The new delivery day is Thursday. You do not need to pay again. Please call us this evening if Thursday is not convenient."
+    },
+    "practical": {
+      "task": "Describe a purchase or trip you made. Explain what happened, one problem and what you plan to do next. Habla al menos 90 segundos; intenta llegar a dos o tres minutos.",
+      "criteria": [
+        "Tarea y organización: desarrolla el tema solicitado al nivel esperado.",
+        "Fluidez y claridad: comunica las ideas con pausas manejables.",
+        "Vocabulario y gramática: usa recursos adecuados al nivel y se hace entender.",
+        "Pronunciación e inteligibilidad: el oyente comprende el mensaje; no se exige un acento nativo."
+      ],
+      "minSeconds": 90
+    }
+  },
+  "english-b1": {
+    "key": "english-b1",
+    "route": "ingles",
+    "label": "Inglés · B1",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "Complete: I have studied Python ___ two years.",
+        "options": [
+          "for",
+          "since",
+          "during since",
+          "at"
+        ],
+        "correct": 0,
+        "why": "For expresa duración; since introduce un punto de inicio.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b1-q1"
+      },
+      {
+        "stem": "Complete: If it rains tomorrow, we ___ indoors.",
+        "options": [
+          "will test the robot",
+          "tested the robot yesterday",
+          "would tested the robot",
+          "have test the robot"
+        ],
+        "correct": 0,
+        "why": "En esta primera condicional, if usa presente y la consecuencia puede llevar will.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b1-q2"
+      },
+      {
+        "stem": "Choose the correct relative clause.",
+        "options": [
+          "The sensor that we bought is waterproof.",
+          "The sensor who we bought is waterproof.",
+          "The sensor where we bought is waterproof.",
+          "The sensor when we bought is waterproof."
+        ],
+        "correct": 0,
+        "why": "That puede introducir una relativa que identifica una cosa.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b1-q3"
+      },
+      {
+        "stem": "Choose the clearest advice.",
+        "options": [
+          "You should check the connections first.",
+          "You must to check the connections first.",
+          "You should checking the connections first.",
+          "You should checked the connections first."
+        ],
+        "correct": 0,
+        "why": "Después de should se usa el verbo base.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b1-q4"
+      },
+      {
+        "stem": "What does \"reliable data\" mean?",
+        "options": [
+          "Data that can be depended on",
+          "Data that is always expensive",
+          "Data without dates",
+          "Data that is hidden"
+        ],
+        "correct": 0,
+        "why": "Reliable describe algo en lo que se puede confiar.",
+        "skill": "vocabulary",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b1-q5"
+      },
+      {
+        "stem": "Why did the team change the first design?",
+        "options": [
+          "The battery made it too heavy.",
+          "The paint was too bright.",
+          "The teacher cancelled the project.",
+          "The sensors had no names."
+        ],
+        "correct": 0,
+        "why": "El problema descrito fue el peso de la batería.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-b1-q6"
+      },
+      {
+        "stem": "What is the team planning to do next?",
+        "options": [
+          "Test the new design and compare the records.",
+          "Publish a success claim without testing.",
+          "Stop recording measurements.",
+          "Buy a heavier battery immediately."
+        ],
+        "correct": 0,
+        "why": "La próxima acción es probar y comparar, no asumir que ya se resolvió todo.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-b1-q7"
+      },
+      {
+        "stem": "Where will Friday's work take place?",
+        "options": [
+          "Indoors",
+          "On the lake",
+          "At the beach",
+          "In another city"
+        ],
+        "correct": 0,
+        "why": "La lluvia lleva al grupo a trabajar en el interior.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-b1-q8"
+      },
+      {
+        "stem": "What has been postponed until next week?",
+        "options": [
+          "Water-quality measurements outdoors",
+          "Writing the code indoors",
+          "Checking the batteries",
+          "The whole course"
+        ],
+        "correct": 0,
+        "why": "Se pospusieron las mediciones exteriores, no todas las actividades.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-b1-q9"
+      },
+      {
+        "stem": "Why does the speaker keep a journal in English?",
+        "options": [
+          "To use new language in a meaningful daily activity",
+          "To avoid ever making mistakes",
+          "To replace all speaking practice",
+          "To memorise only isolated word lists"
+        ],
+        "correct": 0,
+        "why": "El diario permite usar lo aprendido en un contexto personal.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "b",
+        "id": "english-b1-q10"
+      }
+    ],
+    "minis": [
+      [
+        "english-b1-q1",
+        "english-b1-q2",
+        "english-b1-q3"
+      ],
+      [
+        "english-b1-q8",
+        "english-b1-q9",
+        "english-b1-q10"
+      ]
+    ],
+    "reading": {
+      "reading": "The students built a small robot to measure water temperature. Their first design moved slowly because the battery made it too heavy. They reduced the weight and protected the electronics more carefully. The team has not yet claimed success: next week they will test the new design and compare their records with the first version."
+    },
+    "listening": {
+      "a": "We were going to test the platform on the lake this Friday, but the weather forecast predicts heavy rain. We will work indoors instead. We can check the code and the batteries there. The outdoor water quality measurements will wait until next week.",
+      "b": "I used to write long lists of English words, but I often forgot them. Now I keep a short journal. I describe something that happened each day and try to use a few new expressions. I still make mistakes, but the language has a real purpose. I also continue practising conversations."
+    },
+    "practical": {
+      "task": "Present a project you are building. Explain its purpose, a problem, how you tried to solve it and your next steps. Habla al menos tres minutos; intenta una presentación de cuatro o cinco minutos.",
+      "criteria": [
+        "Tarea y organización: desarrolla el tema solicitado al nivel esperado.",
+        "Fluidez y claridad: comunica las ideas con pausas manejables.",
+        "Vocabulario y gramática: usa recursos adecuados al nivel y se hace entender.",
+        "Pronunciación e inteligibilidad: el oyente comprende el mensaje; no se exige un acento nativo."
+      ],
+      "minSeconds": 180
+    }
+  },
+  "english-b2": {
+    "key": "english-b2",
+    "route": "ingles",
+    "label": "Inglés · B2",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "Complete: If we had calibrated it, we ___ the error earlier.",
+        "options": [
+          "would have detected",
+          "will detect",
+          "would detect yesterday",
+          "had detected would"
+        ],
+        "correct": 0,
+        "why": "La tercera condicional conecta una condición pasada irreal con would have + participio.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b2-q1"
+      },
+      {
+        "stem": "Choose the correct sentence.",
+        "options": [
+          "Rarely do we see such consistent results.",
+          "Rarely we do see such consistent results.",
+          "Rarely does we see such consistent results.",
+          "Rarely seeing we such results."
+        ],
+        "correct": 0,
+        "why": "Una expresión negativa inicial como rarely puede exigir inversión auxiliar-sujeto.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b2-q2"
+      },
+      {
+        "stem": "What does \"The probe might have failed\" express?",
+        "options": [
+          "A possibility about a past event",
+          "Certainty that the probe worked",
+          "A command to repair it",
+          "A future schedule"
+        ],
+        "correct": 0,
+        "why": "Might have + participio expresa una posibilidad sobre el pasado.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b2-q3"
+      },
+      {
+        "stem": "Choose the natural academic collocation.",
+        "options": [
+          "Conduct research",
+          "Make a researchs",
+          "Do a researching document",
+          "Realise researches"
+        ],
+        "correct": 0,
+        "why": "Conduct research es una combinación habitual; research suele ser incontable aquí.",
+        "skill": "vocabulary",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b2-q4"
+      },
+      {
+        "stem": "Choose the suitable passive form.",
+        "options": [
+          "The measurements were recorded automatically.",
+          "The measurements was recorded automatically.",
+          "The measurements recorded were automatically they.",
+          "The measurements were recording by themselves yesterday."
+        ],
+        "correct": 0,
+        "why": "El sujeto plural exige were y el participio recorded.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-b2-q5"
+      },
+      {
+        "stem": "Which conclusion best matches the text?",
+        "options": [
+          "The sensor is promising but needs field validation.",
+          "Laboratory accuracy guarantees field accuracy.",
+          "The sensor must never be used for any purpose.",
+          "A low price proves it is unreliable."
+        ],
+        "correct": 0,
+        "why": "El texto mantiene una conclusión condicionada por la falta de validación en campo.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-b2-q6"
+      },
+      {
+        "stem": "What is the main limitation of the evidence?",
+        "options": [
+          "The test conditions may not represent real use.",
+          "No measurements were made.",
+          "The sensor has no price.",
+          "The study used too many seasons."
+        ],
+        "correct": 0,
+        "why": "El laboratorio estable no reproduce necesariamente las condiciones variables del río.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-b2-q7"
+      },
+      {
+        "stem": "How confident is the researcher about the result?",
+        "options": [
+          "Cautiously optimistic",
+          "Certain that all users will get identical results",
+          "Completely uninterested",
+          "Convinced the study proves causation"
+        ],
+        "correct": 0,
+        "why": "La persona valora el resultado pero subraya el tamaño y los límites de la muestra.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-b2-q8"
+      },
+      {
+        "stem": "What is the proposed next step?",
+        "options": [
+          "Test with a larger, more varied sample",
+          "Remove the unsuccessful records",
+          "Claim the mechanism is proven",
+          "Stop collecting data"
+        ],
+        "correct": 0,
+        "why": "La propuesta es ampliar y diversificar la muestra.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-b2-q9"
+      },
+      {
+        "stem": "What should participants bring to the workshop?",
+        "options": [
+          "A laptop",
+          "A programming certificate",
+          "Their own boat",
+          "A published research paper"
+        ],
+        "correct": 0,
+        "why": "El taller no exige experiencia previa; sí pide llevar una computadora portátil.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "b",
+        "id": "english-b2-q10"
+      }
+    ],
+    "minis": [
+      [
+        "english-b2-q1",
+        "english-b2-q2",
+        "english-b2-q3"
+      ],
+      [
+        "english-b2-q8",
+        "english-b2-q9",
+        "english-b2-q10"
+      ]
+    ],
+    "reading": {
+      "reading": "A low-cost sensor produced readings close to a reference instrument in a quiet laboratory. However, its response drifted when temperature and water flow changed. The authors describe the device as promising rather than ready for unrestricted use. They recommend validation across representative river conditions before using its readings to support decisions."
+    },
+    "listening": {
+      "a": "The redesigned platform used less energy in our initial tests, which is encouraging. Nevertheless, the study involved only a small number of trials in similar conditions. We cannot yet establish that the redesign alone caused the improvement. Our next step is to test a larger and more varied sample while recording the relevant environmental conditions.",
+      "b": "Registration for the practical design workshop closes tomorrow. You do not need a programming certificate or previous robotics experience. Please bring a laptop, because the first session includes a guided simulation. We will provide the other materials. Participants who already have a prototype may bring it, but that is optional."
+    },
+    "practical": {
+      "task": "Give a structured presentation about AQUA-SENTINEL or another project. Compare two design choices, discuss evidence and limitations, and answer two challenging questions from a listener. Habla al menos seis minutos; apunta a ocho o diez minutos en total.",
+      "criteria": [
+        "Tarea y organización: desarrolla el tema solicitado al nivel esperado.",
+        "Fluidez y claridad: comunica las ideas con pausas manejables.",
+        "Vocabulario y gramática: usa recursos adecuados al nivel y se hace entender.",
+        "Pronunciación e inteligibilidad: el oyente comprende el mensaje; no se exige un acento nativo."
+      ],
+      "minSeconds": 360
+    }
+  },
+  "english-c1": {
+    "key": "english-c1",
+    "route": "ingles",
+    "label": "Inglés · C1",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "Choose the correct counterfactual inversion.",
+        "options": [
+          "Had we known the limitation, we would have revised the protocol.",
+          "Had we knew the limitation, we would revised the protocol.",
+          "Were we known the limitation, we had revise the protocol.",
+          "Had known we the limitation, we would revising the protocol."
+        ],
+        "correct": 0,
+        "why": "Had + sujeto + participio puede sustituir a if + past perfect en una condición pasada irreal.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-c1-q1"
+      },
+      {
+        "stem": "Which claim is most appropriately cautious?",
+        "options": [
+          "The findings are consistent with the hypothesis but do not establish causation.",
+          "The findings prove every possible version of the hypothesis.",
+          "Any correlation necessarily establishes causation.",
+          "Uncertainty means that no evidence exists."
+        ],
+        "correct": 0,
+        "why": "La formulación distingue compatibilidad con una hipótesis y demostración causal.",
+        "skill": "academic language",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-c1-q2"
+      },
+      {
+        "stem": "Choose the correct concessive structure.",
+        "options": [
+          "Despite the limited sample, the pattern warrants further investigation.",
+          "Despite of the limited sample, the pattern warrants further investigation.",
+          "Although the limited sample, the pattern warrants further investigation.",
+          "In spite the sample was limited, the pattern warrants further investigation."
+        ],
+        "correct": 0,
+        "why": "Despite puede ir seguido de un grupo nominal, sin of.",
+        "skill": "grammar",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-c1-q3"
+      },
+      {
+        "stem": "In an academic discussion, \"tentative\" usually means:",
+        "options": [
+          "Provisional and open to revision",
+          "Completely certain",
+          "Deliberately secret",
+          "Statistically impossible"
+        ],
+        "correct": 0,
+        "why": "Una conclusión tentative está sujeta a revisión con nueva evidencia.",
+        "skill": "vocabulary",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-c1-q4"
+      },
+      {
+        "stem": "Which transition introduces a qualification?",
+        "options": [
+          "That said, the evidence remains limited.",
+          "For example, all limitations disappear.",
+          "Likewise, therefore despite.",
+          "Because of however the evidence."
+        ],
+        "correct": 0,
+        "why": "That said puede introducir una reserva o matización respecto a lo anterior.",
+        "skill": "discourse",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "english-c1-q5"
+      },
+      {
+        "stem": "Why did the researchers avoid a single headline accuracy score?",
+        "options": [
+          "It could hide poorer performance in particular subgroups.",
+          "They had no observations.",
+          "Averages are never mathematically defined.",
+          "They wanted to claim universal success."
+        ],
+        "correct": 0,
+        "why": "El promedio general ocultaba errores mayores en ciertos grupos y condiciones.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-c1-q6"
+      },
+      {
+        "stem": "What analysis follows most directly from their concern?",
+        "options": [
+          "Compare errors across relevant seasons and locations.",
+          "Discard every result from difficult conditions.",
+          "Use only the most favourable site.",
+          "Remove the reference instrument."
+        ],
+        "correct": 0,
+        "why": "El análisis desagregado permite examinar los contextos donde falla el promedio.",
+        "skill": "reading",
+        "code": "",
+        "passage": "reading",
+        "listen": "",
+        "id": "english-c1-q7"
+      },
+      {
+        "stem": "How does the speaker interpret the inconsistent replication?",
+        "options": [
+          "As a reason to investigate boundary conditions",
+          "As proof that all research is pointless",
+          "As conclusive evidence of fraud",
+          "As a reason to hide the replication"
+        ],
+        "correct": 0,
+        "why": "La discrepancia se interpreta como una pista sobre condiciones de aplicación, no como una conclusión absoluta.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-c1-q8"
+      },
+      {
+        "stem": "Which factor is explicitly mentioned as potentially relevant?",
+        "options": [
+          "Differences in environmental conditions",
+          "The colour of the publication cover",
+          "The researchers' handwriting",
+          "A ban on all independent studies"
+        ],
+        "correct": 0,
+        "why": "El contexto ambiental es una diferencia mencionada expresamente.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "a",
+        "id": "english-c1-q9"
+      },
+      {
+        "stem": "Which data-access approach does the speaker favour?",
+        "options": [
+          "Tiered access with safeguards proportionate to the risk",
+          "Unrestricted release of every identifiable record",
+          "Keeping all methods permanently secret",
+          "Claiming anonymisation removes every possible risk"
+        ],
+        "correct": 0,
+        "why": "La propuesta combina acceso y salvaguardas según el riesgo.",
+        "skill": "listening",
+        "code": "",
+        "passage": "",
+        "listen": "b",
+        "id": "english-c1-q10"
+      }
+    ],
+    "minis": [
+      [
+        "english-c1-q1",
+        "english-c1-q2",
+        "english-c1-q3"
+      ],
+      [
+        "english-c1-q8",
+        "english-c1-q9",
+        "english-c1-q10"
+      ]
+    ],
+    "reading": {
+      "reading": "A monitoring system improved its average accuracy across several locations, yet a closer analysis revealed larger errors at some sites during the rainy season. Rather than publish a single favourable headline figure, the researchers reported results by location and season. They argued that practical usefulness depends on understanding where an improvement holds and where additional calibration or a different design is needed."
+    },
+    "listening": {
+      "a": "An independent team followed the published protocol but did not reproduce the original effect in its new setting. That discrepancy should not be dismissed, nor does it automatically invalidate every earlier observation. Differences in environmental conditions may reveal the boundaries within which the mechanism operates. We should compare the underlying data and test those explanations through a transparent, preregistered follow up.",
+      "b": "Making research data available can strengthen scrutiny and collaboration, but openness is not a single all or nothing decision. Even after anonymisation, some records may carry a risk of reidentification. I would favour tiered access, with safeguards proportionate to the sensitivity of the data, alongside clear documentation of the methods. This would support legitimate reuse without promising that every risk has vanished."
+    },
+    "practical": {
+      "task": "Defend a research proposal. Evaluate competing explanations, explain uncertainty and methodological limits, and respond to two critical questions. Connect your arguments clearly rather than listing facts. Habla al menos ocho minutos; la meta orientativa es diez a doce minutos.",
+      "criteria": [
+        "Tarea y organización: desarrolla el tema solicitado al nivel esperado.",
+        "Fluidez y claridad: comunica las ideas con pausas manejables.",
+        "Vocabulario y gramática: usa recursos adecuados al nivel y se hace entender.",
+        "Pronunciación e inteligibilidad: el oyente comprende el mensaje; no se exige un acento nativo."
+      ],
+      "minSeconds": 480
+    }
+  },
+  "project-general": {
+    "key": "project-general",
+    "route": "any",
+    "label": "Proyecto personal · Evaluación general",
+    "version": 1,
+    "questions": [
+      {
+        "stem": "¿Qué convierte una idea en una meta verificable?",
+        "options": [
+          "Un resultado observable y criterios claros",
+          "Una promesa sin fecha ni criterio",
+          "Solo un título atractivo",
+          "Una calificación inventada"
+        ],
+        "correct": 0,
+        "why": "Una meta debe permitir comprobar qué se consiguió.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q1"
+      },
+      {
+        "stem": "¿Qué conviene hacer antes de construir todo un proyecto?",
+        "options": [
+          "Probar primero su supuesto más importante",
+          "Comprar todo sin comprobar necesidades",
+          "Esconder las limitaciones",
+          "Borrar los requisitos"
+        ],
+        "correct": 0,
+        "why": "Una prueba pequeña reduce incertidumbre antes de comprometer más recursos.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q2"
+      },
+      {
+        "stem": "¿Qué registra una prueba útil?",
+        "options": [
+          "Condiciones, entradas, resultado esperado y resultado observado",
+          "Solo los casos que salen bien",
+          "Únicamente el nombre del autor",
+          "Un porcentaje sin procedimiento"
+        ],
+        "correct": 0,
+        "why": "La evidencia permite revisar qué se puso realmente a prueba.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q3"
+      },
+      {
+        "stem": "¿Cómo manejar una limitación conocida?",
+        "options": [
+          "Documentarla y explicar su efecto",
+          "Ocultarla en la presentación",
+          "Afirmar que no importa sin comprobarlo",
+          "Eliminar los datos relacionados"
+        ],
+        "correct": 0,
+        "why": "Reconocer límites mejora la interpretación del resultado.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q4"
+      },
+      {
+        "stem": "¿Qué permite comparar dos versiones de un proyecto?",
+        "options": [
+          "Mantener criterios y registrar qué cambió",
+          "Cambiar todos los criterios a favor de cada versión",
+          "Elegir solo una foto de cada una",
+          "No registrar fechas ni versiones"
+        ],
+        "correct": 0,
+        "why": "La comparación necesita trazabilidad y condiciones suficientemente comparables.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q5"
+      },
+      {
+        "stem": "¿Qué debes hacer si una prueba falla?",
+        "options": [
+          "Investigar la causa y repetir tras un cambio justificado",
+          "Desactivar la comprobación y declarar éxito",
+          "Cambiar el resultado esperado sin motivo",
+          "Ocultar todo el intento"
+        ],
+        "correct": 0,
+        "why": "Un fallo aporta información; no debe convertirse automáticamente en un aprobado.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q6"
+      },
+      {
+        "stem": "¿Qué es una fuente de referencia útil?",
+        "options": [
+          "Una fuente identificable y pertinente para lo que se compara",
+          "Cualquier dato inventado",
+          "La propia conclusión como única prueba",
+          "Un número sin unidad"
+        ],
+        "correct": 0,
+        "why": "La referencia debe permitir una comparación interpretable.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q7"
+      },
+      {
+        "stem": "¿Qué necesitas para comunicar un avance?",
+        "options": [
+          "Explicar el problema, la evidencia y el siguiente paso",
+          "Mostrar solo el logo",
+          "Afirmar que todo funciona sin datos",
+          "Evitar todas las preguntas"
+        ],
+        "correct": 0,
+        "why": "Comunicar progreso implica mostrar qué cambió y qué falta.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q8"
+      },
+      {
+        "stem": "¿Qué distingue un registro de una interpretación?",
+        "options": [
+          "El registro describe observaciones; la interpretación propone su significado",
+          "Son siempre idénticos",
+          "La interpretación sustituye todos los datos",
+          "Los registros no pueden guardarse"
+        ],
+        "correct": 0,
+        "why": "Separarlos permite revisar el razonamiento.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q9"
+      },
+      {
+        "stem": "¿Qué debe contener una entrega reproducible?",
+        "options": [
+          "Materiales o código, pasos, datos y límites necesarios para revisarla",
+          "Solo una frase final",
+          "Un archivo sin descripción",
+          "Un porcentaje elegido al azar"
+        ],
+        "correct": 0,
+        "why": "La revisión requiere suficiente contexto para repetir o auditar la prueba.",
+        "skill": "conceptos",
+        "code": "",
+        "passage": "",
+        "listen": "",
+        "id": "project-general-q10"
+      }
+    ],
+    "minis": [
+      [
+        "project-general-q1",
+        "project-general-q2",
+        "project-general-q3"
+      ],
+      [
+        "project-general-q4",
+        "project-general-q5",
+        "project-general-q6"
+      ]
+    ],
+    "reading": {},
+    "listening": {},
+    "practical": {
+      "task": "Realiza la prueba de progreso que escribiste para esta meta. Describe qué construiste o aprendiste, adjunta el código o las observaciones pertinentes y documenta al menos dos comprobaciones, una limitación y el siguiente paso.",
+      "criteria": [
+        "Funcionamiento: cumple la tarea y explica qué partes funcionan.",
+        "Pruebas: muestra entradas, resultados y al menos un caso de error.",
+        "Diseño: organiza la solución y documenta sus decisiones.",
+        "Comprensión: explica límites, mejoras y lo que aprendió."
+      ],
+      "minSeconds": 0
+    }
+  }
+}

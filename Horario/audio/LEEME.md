@@ -1,0 +1,1 @@
+Audios originales de práctica, sintetizados localmente con Flite (voz slt). Textos en los archivos .txt. No son grabaciones de PUCP ni ICPNA. Se incluyen también como datos dentro del HTML para funcionar sin conexión. Regeneración: python create_exam_bank.py (requiere FFmpeg con filtro flite).

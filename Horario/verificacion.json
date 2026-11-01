@@ -1,11 +1,12 @@
 {
-  "version": "2.1",
-  "dataSchema": 2,
+  "version": "3.0",
+  "dataSchema": 3,
   "result": "passed",
-  "functionalChecks": 65,
+  "functionalChecks": 94,
   "currency": "PEN",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
+  "audioRecordingTest": "Native MediaRecorder with a synthetic Web Audio signal, not a human microphone",
   "suites": [
     {
       "version": 2,
@@ -29,7 +30,7 @@
         "Inventory, expenses, payments and sales survive a complete reload",
         "Cent allocation is exact, including shipping remainders and large quantities",
         "Sales CSV is downloadable with currency, cost, collection and result columns",
-        "Version-2 backups include all business movements and goals",
+        "Current backups include all business movements and goals",
         "A complete business backup restores on an independent mobile browser",
         "All new mobile screens fit 390 pixels; wide data tables scroll inside their panel",
         "An inconsistent cost/inventory backup is rejected without losing current records",
@@ -37,12 +38,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T06:13:53.243Z",
+      "started": "2026-11-01T06:45:49.346Z",
       "result": "passed",
-      "finished": "2026-11-01T06:14:00.149Z"
+      "finished": "2026-11-01T06:45:58.036Z"
     },
     {
-      "started": "2026-11-01T06:13:56.380Z",
+      "started": "2026-11-01T06:45:50.541Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -57,7 +58,7 @@
         "Gregorian leap day exists in 2040",
         "Future events persist and invalid time ranges are rejected",
         "Future habit completion is disabled",
-        "Python, robotics and English roadmaps include persistent milestones",
+        "Python and English roadmaps show assessment levels with sequential gates",
         "JSON export contains complete habits, notes, schedule and profile",
         "Malformed import leaves existing data unchanged",
         "Backup restores on a separate mobile browser and survives reload",
@@ -66,7 +67,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T06:14:01.453Z"
+      "finished": "2026-11-01T06:45:57.405Z"
     },
     {
       "checks": [
@@ -102,15 +103,51 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T06:12:22.332Z"
+      "finished": "2026-11-01T06:46:03.041Z"
+    },
+    {
+      "feature": "level assessments",
+      "checks": [
+        "Only the first level is open; the old manual checkbox cannot bypass assessment",
+        "Mini quizzes grade three questions with feedback and never unlock the next level",
+        "An unfinished exam keeps answers and shuffled order through a full reload",
+        "Exactly 6/10 (60%) fails, remains locked and explains each mistake",
+        "An exam score of 70% is insufficient without the practical component",
+        "A 60% manual rubric fails; 13/20 (65%) plus the exam unlocks the next level",
+        "Passed levels and all previous exam, mini and practical attempts persist",
+        "Review scheduling opens an editable agenda block with the route context",
+        "All 4 python levels grade correctly and unlock sequentially with practical evidence",
+        "All 4 robotica levels grade correctly and unlock sequentially with practical evidence",
+        "All 5 ingles levels grade correctly and unlock sequentially with practical evidence",
+        "All ten embedded English MP3 clips decode; listening playback completes without a network service",
+        "An 80% English aggregate with 33% listening fails; unplayed listening cannot count as a pass",
+        "The final exam asks the learner to finish listening before submission",
+        "Denied microphone permission leaves upload and external oral review available",
+        "Native MediaRecorder captures and saves a synthetic audio stream; duration does not auto-award a grade",
+        "Voice evidence downloads, survives reload and can be deleted without erasing manual grades",
+        "Uploading a compatible audio file saves it as an alternative to microphone recording",
+        "Backup validation recomputes objective scores and rejects invalid manual rubric values",
+        "Old backups gain empty assessments and correct templates while preserving routes and financial data",
+        "JSON backup contains attempts, drafts, rubrics and audio metadata without embedding audio bytes",
+        "Mobile JSON restore retains progress and explains that the voice file must be moved separately; layouts fit 390px",
+        "Assessments and listening resources remain available offline and fit the mobile viewport",
+        "Grades export as CSV with explicit automatic and manual assessment labels",
+        "A failed grade save rolls back the attempt, preserves form fields and retries without duplicates",
+        "Custom levels receive a general exam and practical rubric, and user-entered titles are escaped",
+        "Changing an assessment template preserves history but requires a pass in the selected template",
+        "A failed objective result save retains the draft and responses and retries without duplicate attempts",
+        "No uncaught JavaScript errors during assessment, audio, import or offline use"
+      ],
+      "errors": [],
+      "result": "passed",
+      "finished": "2026-11-01T06:46:29.366Z"
     }
   ],
-  "sourceSha256": {
-    "app.js": "0a12142cafbfe4d5dcea7b9756e99801368322d49c37d9bd5eec7182d33ba464",
-    "extras.js": "932cd77a41c9bc5715b31863dd09d953456a5d2aec181336f0f4ac5530f36f9d",
-    "allocation.js": "9c229a2ef0b47b9cde4ed0e12c15355a80b74b4484aaccb953c7f8d45fba8c1b",
-    "style.css": "b3338bec9cf653282b6b1808c880dbebf180c5b13aa61fd5e1bd005ef2f9679d",
-    "extras.css": "c1e3891847fbd0647bd65959e0c2fe22b514d0d93e35128fdf86caa4706188ef",
-    "allocation.css": "bc0e92c633f26ee8e6a3d86849dcd0afa36d3e34b084ca2174a076a489709890"
+  "artifactVerification": {
+    "zipRebuildMatchesPublicFiles": true,
+    "extractedPackageLocalhostAndOffline": "passed",
+    "directFileURLTested": false,
+    "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",
+    "networkServicesRequiredForListening": false
   }
 }

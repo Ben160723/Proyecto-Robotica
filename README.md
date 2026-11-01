@@ -48,3 +48,9 @@ La actualización convierte los datos de la versión 1 sin borrar horario, hábi
 ### Repartir ganancias
 
 En **Ventas → Repartir ganancias** puedes ver lo invertido y ajustar el plan inicial de **50% reinversión, 20% ahorro personal, 20% reserva del negocio y 10% diversión**. Los porcentajes deben sumar 100% y los cuatro importes conservan exactamente los céntimos de la ganancia disponible en caja. El plan se guarda y se incluye en las copias JSON. Es una propuesta de organización: no crea transferencias ni retiros.
+
+### Rumbo 3 · Exámenes y pruebas por nivel
+
+**Mi ruta** incluye exámenes de 10 preguntas y dos mini pruebas en cada uno de los 13 niveles de Python, Robótica e Inglés A1–C1. Para abrir el siguiente nivel necesitas **más de 60% en el examen y en la prueba práctica/oral**, por separado; en Inglés también más de 60% en listening en el mismo examen aprobado. Un 60% exacto no aprueba.
+
+El listening lleva diez audios originales incluidos sin conexión. Para speaking puedes grabarte, subir un audio o documentar una revisión externa. Las rúbricas de speaking y proyectos son **manuales**; la app no evalúa la pronunciación ni ejecuta el código. Las prácticas son originales y orientativas, sin afiliación a PUCP o ICPNA. Incluye borradores, historial, explicaciones, repasos en el horario y calificaciones CSV. Los datos pasan a formato 3 sin perder los registros anteriores. Las copias JSON guardan el avance; descarga los archivos de voz por separado.
