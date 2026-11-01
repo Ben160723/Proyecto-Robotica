@@ -60,3 +60,9 @@ El listening lleva diez audios originales incluidos sin conexión. Para speaking
 Cada ruta añade tres prácticas semanales de unos 25 minutos en total, adaptadas a un nivel disponible: Python, Robótica e Inglés con escritura, listening y speaking. Permite notas, marcas corregibles, programación en el horario, gráfico de ocho semanas y exportación CSV. Los registros conservan el nivel y sus consignas originales al avanzar o editar una meta. Hay cuatro bloques rotativos por nivel y se mantiene el requisito de más de 60% en las evaluaciones para avanzar.
 
 Se corrigieron listening `null%` y transcripciones vacías en rutas técnicas, el mensaje de la última etapa, fallos de inicio del grabador y la subida de audio sin MIME desde el celular. Las copias pasan a formato 4 y conservan los datos de versiones anteriores.
+
+### Rumbo 5 · Papelera de productos y edición de costos
+
+En Productos, cada fila incorpora una papelera recuperable para productos sin inventario ni pedidos pendientes. Sus movimientos y cobros siguen en el historial; si una devolución restaura unidades, el producto reaparece. El lápiz del producto permite corregir el costo unitario y envío de cada lote; Compras / pedidos también tiene un lápiz por compra. La vista previa y el historial de correcciones explican cómo cambian inversión, inventario, costo de ventas anteriores, ganancias, caja y reparto, conservando cantidades, precios de venta y cobros.
+
+Se reforzó el guardado del archivado y la recuperación de copias locales ilegibles. Los datos usan formato 5 y conservan las copias anteriores.

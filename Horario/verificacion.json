@@ -1,12 +1,12 @@
 {
-  "version": "4.0",
-  "dataSchema": 4,
+  "version": "5.0",
+  "dataSchema": 5,
   "result": "passed",
-  "functionalChecks": 112,
+  "functionalChecks": 129,
   "currency": "PEN",
   "testedPlatform": "Chromium desktop and 390px mobile viewport on Linux",
   "physicalAndroidOrIOSTested": false,
-  "audioRecordingTest": "Native MediaRecorder with a synthetic Web Audio signal, plus startup failure, cancelled permission and invalid-file tests",
+  "audioRecordingTest": "Native MediaRecorder with a synthetic Web Audio signal; no personal microphone data",
   "suites": [
     {
       "version": 2,
@@ -38,12 +38,12 @@
         "No uncaught browser errors"
       ],
       "errors": [],
-      "started": "2026-11-01T07:03:42.401Z",
+      "started": "2026-11-01T17:50:15.190Z",
       "result": "passed",
-      "finished": "2026-11-01T07:03:50.553Z"
+      "finished": "2026-11-01T17:50:23.882Z"
     },
     {
-      "started": "2026-11-01T07:03:44.176Z",
+      "started": "2026-11-01T17:50:14.882Z",
       "checks": [
         "IndexedDB persistent storage initializes",
         "Daily habit mark survives full reload",
@@ -67,7 +67,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T07:03:50.553Z"
+      "finished": "2026-11-01T17:50:22.217Z"
     },
     {
       "checks": [
@@ -103,7 +103,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T07:03:55.158Z"
+      "finished": "2026-11-01T17:50:28.361Z"
     },
     {
       "feature": "level assessments",
@@ -140,7 +140,7 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T07:04:21.981Z"
+      "finished": "2026-11-01T17:51:05.924Z"
     },
     {
       "feature": "weekly practices and route fixes",
@@ -156,7 +156,7 @@
         "Weekly navigation reaches both calendar boundaries and four-week rotations remain stable across daylight-saving changes",
         "Weekly notes render as text and CSV export quotes multiline fields and neutralizes spreadsheet formulas",
         "Backup validation preserves weekly records and rejects duplicated route/week entries",
-        "Version-3 data migrates to format 4 without losing exams, financial records or habits",
+        "Version-3 data migrates to the current format without losing exams, financial records or habits",
         "Technical routes no longer show a null listening percentage or an empty transcripts panel",
         "A recorder startup error releases the microphone stream and restores a usable recording button",
         "Closing the oral form while microphone permission is pending does not leave a recording or live stream behind",
@@ -166,15 +166,41 @@
       ],
       "errors": [],
       "result": "passed",
-      "finished": "2026-11-01T07:02:45.532Z"
+      "finished": "2026-11-01T17:51:11.873Z"
+    },
+    {
+      "feature": "product trash and purchase-cost corrections",
+      "checks": [
+        "The product row has a trash icon; a two-lot partial-sale fixture preserves FIFO and shipping cents",
+        "Editing costs inside the product previews and updates investment, COGS, inventory, profit and cash without changing sales or collections",
+        "Corrected FIFO allocations plus remaining stock conserve every cent, and the profit plan excludes unavailable cash",
+        "Edited purchase prices and their from/to audit trail survive a complete reload",
+        "Purchase-table editing also recalculates voided sale references, while returned units and current profit remain consistent",
+        "A failed cost save restores all ledger data, retains the editor draft and retries once without duplicate corrections",
+        "Unused products move to a recoverable trash view and are excluded from new purchase/sale choices",
+        "The trash action explains remaining stock and refuses to hide inventory assets",
+        "Pending orders can have their cost corrected, must be cancelled with a refund before trash, and retain the cancelled purchase history",
+        "Trashing a sold-out product preserves sales, profit, payments and outstanding customer balances",
+        "A returned sale automatically recovers its trashed product so restored inventory is visible",
+        "Archiving also rolls back on save failure rather than showing unsaved catalog changes as successful",
+        "Backup validation rejects broken cost-audit chains and trashed inventory while accepting old format-4 data",
+        "Trash and corrected costs restore on a separate mobile browser, fit 390px and survive offline reload",
+        "A stale cost editor cannot overwrite a newer tab or append an uncommitted correction",
+        "Unreadable localStorage data remains untouched and exports the original object or text instead of a fresh empty planner",
+        "No uncaught errors in cost corrections, trash, returns, recovery, mobile or offline flows"
+      ],
+      "errors": [],
+      "result": "passed",
+      "finished": "2026-11-01T17:50:31.318Z"
     }
   ],
   "artifactVerification": {
     "zipRebuildMatchesPublicFiles": true,
     "extractedPackageLocalhostAndOffline": "passed",
-    "weeklyCompletionAndReloadInExtractedPackage": "passed",
+    "purchaseCostCorrectionAndReload": "passed",
+    "trashInventoryGuard": "passed",
     "directFileURLTested": false,
     "directFileURLLimitation": "Managed Chromium policy blocks file:// navigation",
-    "networkServicesRequiredForListening": false
+    "externalServicesRequired": false
   }
 }

@@ -2,6 +2,27 @@
 
 Tu horario, hábitos y aprendizaje en una aplicación en español, adaptable a celular y computadora.
 
+## Novedades de la versión 5 · Productos y costos de compra
+
+En **Ventas → Productos**, cada fila tiene una **papelera** junto al lápiz. Puedes retirar productos sin unidades disponibles ni pedidos vigentes pendientes y recuperarlos con **Papelera → Recuperar producto**. Las compras anuladas, ventas, saldos pendientes e historial de costos se conservan. Retirar un producto del catálogo no anula sus movimientos ni modifica las cuentas.
+
+Si todavía tiene inventario o pedidos en camino, la app muestra qué queda por resolver. Si solo quieres ocultarlo, usa **Archivar**. Si cancelaste una compra, recuperaste su importe y no hay unidades de ese lote asignadas a ventas vigentes, anula la compra desde **Compras / pedidos** antes de enviar el producto a la papelera. No registres un reembolso que no recibiste; los gastos no recuperados se registran en Gastos. Al anular con devolución una venta de un producto retirado, el producto se recupera automáticamente para que sus unidades vuelvan a ser visibles.
+
+Para corregir cuánto pagaste por cada unidad:
+
+1. Pulsa el **lápiz del producto**. El editor separa **Precio de venta por unidad** y **Lo que pagaste al comprar**.
+2. En cada lote puedes corregir **Costo de compra por unidad** y **Envío / impuestos del lote**. Si las unidades se compraron a distintos precios, regístralas como lotes separados. El editor de costos no cambia cantidades.
+3. Revisa la vista previa de **inversión, ganancia neta, saldo de caja y ganancia disponible para repartir**. Puedes indicar el motivo de la corrección.
+4. Pulsa **Guardar producto**. También puedes abrir el **lápiz de una compra** en Compras / pedidos para corregir únicamente ese lote.
+
+**Corregir el costo actualiza también el costo de ventas anteriores que tomaron unidades de ese lote.** Es una corrección del dato original, no una compra nueva, un gasto adicional ni un reembolso. El sistema recalcula las asignaciones por lote y sus céntimos de envío, el inventario, la inversión, las ganancias, la caja y las metas ligadas a la ganancia. Las cantidades vendidas, los precios históricos de venta y los cobros conservan sus valores. El precio sugerido del producto solo se usa para nuevas ventas.
+
+El **Historial de correcciones** guarda fecha, importe anterior y nuevo y motivo por lote. Se incluye en las copias JSON. Si falla el guardado o existe una versión más reciente en otra pestaña, los costos vuelven a su estado anterior y los campos quedan disponibles para reintentar; no se duplica la corrección. El archivado también espera el guardado y revierte el cambio si falla.
+
+Se corrigió además la recuperación de almacenamiento local ilegible cuando IndexedDB no está disponible: la app conserva y exporta el objeto o texto original en lugar de sustituirlo por un planificador vacío. En ese caso usa **Exportar copia de recuperación** o la exportación que muestra Ajustes antes de restaurar otra copia.
+
+La versión actual usa **formato 5** y acepta copias de las versiones 1 a 4. Conserva tus datos anteriores; usa siempre el archivo actualizado para restaurar una copia nueva. Exporta una copia desde Ajustes antes de actualizar.
+
 ## Novedades de la versión 4 · Prácticas semanales
 
 Al entrar en **Mi ruta**, cada ruta muestra **tres prácticas cortas para la semana**, con unos **25 minutos orientativos en total**. Puedes repartirlas entre varios días y elegir uno de tus niveles disponibles antes de guardar el primer resultado.
@@ -79,7 +100,7 @@ Cada categoría muestra su porcentaje y su importe en soles. El cálculo reparte
 
 Exporta una copia desde **Ajustes** antes de actualizar. Cierra las pestañas de la versión anterior. Si usas el archivo, sustituye `Rumbo.html` **en la misma carpeta** y ábrelo con el mismo navegador. Si usas GitHub Pages, abre la misma dirección y recarga; el aviso **Actualizar** permite cargar la nueva versión. No hace falta borrar los datos del navegador.
 
-La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1, 2 y 3. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
+La versión actual convierte automáticamente los formatos anteriores, conservando horario, hábitos, marcas, notas, perfil y rutas. Acepta copias JSON de las versiones 1 a 4. Si abres desde otra dirección o dispositivo, utiliza **Importar copia**. Las copias nuevas incluyen además todas las metas, los movimientos del negocio, papelera y correcciones de costo, tus evaluaciones y las prácticas semanales; usa la versión actualizada para restaurarlas.
 
 ### Registrar tus ventas de Temu
 
@@ -173,7 +194,7 @@ Exporta regularmente, especialmente antes de cambiar de teléfono o borrar datos
 ## Código y comprobaciones
 
 - `index.html` / `Rumbo.html`: aplicación completa lista para usar; el mismo contenido en dos nombres.
-- `app.js`, `extras.js`, `allocation.js`, `learning.js`, `weekly.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones y los archivos `weekly` las prácticas y su historial.
+- `app.js`, `extras.js`, `allocation.js`, `learning.js`, `weekly.js`, `inventory.js` y sus CSS, `index.template.html`: fuentes editables. Los archivos `learning` incorporan las evaluaciones, `weekly` las prácticas y su historial, e `inventory` la papelera y la corrección de costos por lote.
 - `exam-bank.json` / `exam-bank.js`: 140 preguntas originales, 13 plantillas por nivel y una plantilla general. El JavaScript incluye el audio codificado para el HTML autónomo.
 - `audio/`: diez MP3 de listening, sus textos y licencia de Flite. Para regenerar el banco y los audios, ejecuta opcionalmente `python create_exam_bank.py` con FFmpeg y su filtro Flite instalados; el uso normal de la app y `build.py` no requieren FFmpeg.
 - `build.py`: reconstruye ambos HTML y el caché usando solamente Python estándar: `python build.py`.
@@ -185,3 +206,5 @@ Se probaron persistencia tras recargar, porcentajes, cambios históricos de frec
 También se probaron las evaluaciones de los 13 niveles, el rechazo de 60% exacto, las rúbricas, la condición separada de listening, borradores, reproducción de los MP3 incluidos, grabación MediaRecorder con una señal sintética, subida/descarga/eliminación de audio, migración de copias, uso sin conexión y fallos de guardado. No se evaluó una voz humana ni se validó pedagógicamente una certificación MCER. El ZIP extraído se reconstruyó y se probó mediante localhost y caché sin conexión; la política del Chromium administrado impidió comprobar la apertura directa con una dirección file://.
 
 Las prácticas semanales se comprobaron con recarga, edición de marcas, independencia de rutas, cambio de nivel, conservación de consignas anteriores, extremos del calendario, cambio de horario estacional, CSV, migración de formato 3, errores de almacenamiento y restauración en un contexto móvil independiente. Se verificaron también fallos de inicio del grabador, cancelación de un permiso pendiente y subida de archivos sin MIME o que no contienen audio válido.
+
+Se comprobaron también correcciones de costo con ventas parciales de varios lotes, céntimos de envío, ventas anuladas, cantidades devueltas, recálculo de ganancias y caja, historial de cambios, fallos de guardado y pestañas desactualizadas. Se probaron productos vacíos, pedidos cancelados y productos agotados con cobros pendientes en la papelera, recuperación automática al devolver una venta, copias en otro contexto móvil y recuperación del texto local original cuando una copia es ilegible.
