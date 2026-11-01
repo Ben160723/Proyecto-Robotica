@@ -1,0 +1,81 @@
+{
+  "version": "1.1.0",
+  "result": "passed",
+  "automatedChecks": 39,
+  "nodeTests": {
+    "result": "passed",
+    "checks": [
+      "Spanish commands preserve spaces, accents, quoted names and distinguish bulk moves",
+      "Authorization only covers selected folders and can be revoked then restored for undo",
+      "Organization is preview-only until code and review, preserves subfolders and resolves duplicate names",
+      "Trash is a reversible move, survives restart and restores exact bytes",
+      "Explicit folders can move and trash without altering their contents",
+      "Renames never overwrite and searches include nested names but skip links and hidden data",
+      "Traversal, absolute paths, NTFS streams, symbolic links and system folders are rejected",
+      "Stale files, changed roots and newly occupied targets stop a prepared operation",
+      "Undo refuses modified destination bytes or occupied original names",
+      "Plans expire and a replayed confirmation never repeats a completed operation",
+      "A filesystem error returns completed moves, and an unsuccessful rollback is reported as partial",
+      "Batch limit avoids silently processing part of an oversized folder",
+      "An app extracted inside Downloads does not prevent authorizing Downloads, but app files stay protected",
+      "Cross-volume fallback makes an exclusive verified copy and preserves bytes through undo",
+      "A changed source during cross-volume copying is kept and the incomplete destination is removed",
+      "An interrupted journal is reported for manual review and never silently replays a move",
+      "Only installed local models are selectable; cloud-labelled models and missing models are rejected",
+      "Local model sees only the user request and folder aliases, and its response is a proposed structured action",
+      "Model output cannot authorize folders, execute code, confirm plans or introduce unknown fields",
+      "A model may not infer deletion from a vague cleanup request; unavailable or malformed responses keep files untouched",
+      "Loopback UI does not grant unauthenticated filesystem access; forged origins and hosts are rejected",
+      "HTTP command previews, explicit confirmation, cancellation and undo operate on synthetic files",
+      "Native speech events require the wake word, adequate confidence and the current confirmation code",
+      "Removing a folder invalidates the pending plan and prevents any later file access through its alias",
+      "Optional local AI prepares a normal reviewed plan and cannot confirm or delete from model instructions",
+      "Stopping recognition while its native process is starting kills the late process",
+      "Two start requests cannot leave a second microphone process running",
+      "Native recognition forwards data but errors do not leave microphone state active",
+      "Closing while speech output starts never reopens the microphone afterwards"
+    ]
+  },
+  "browser": {
+    "checks": [
+      "Local session starts and removes the access token from the browser URL",
+      "Folder picking and explicit authorization add two synthetic local folders",
+      "The UI previews destinations, requires review and moves actual synthetic files only after confirmation",
+      "Undo is a separate reviewed plan that restores real file contents",
+      "Searching, recoverable trash and history persist through reload without losing session access",
+      "Synthetic native voice events prepare and confirm an undo through the real server and update microphone state",
+      "Untrusted filenames render as text rather than executable HTML",
+      "The Spanish interface and a full file-operation preview fit a 390px viewport",
+      "Optional Ollama configuration and a natural-language proposal use the reviewed file pipeline with a simulated local model",
+      "Cancelling a preview preserves files and the browser uses no external requests or APIs"
+    ],
+    "errors": [],
+    "externalRequests": [],
+    "nativeWindowsMicrophoneTested": false,
+    "liveOllamaModelTested": false,
+    "result": "passed"
+  },
+  "testedHost": "Linux; Chromium desktop and 390px viewport; synthetic temporary files only",
+  "windowsNativeExecutionTested": false,
+  "physicalMicrophoneTested": false,
+  "realOllamaInferenceTested": false,
+  "windowsVoice": "System.Speech native recognizer and synthesizer; Spanish recognizer installation required; adapter lifecycle and voice events tested with stubs",
+  "optionalLocalModel": "Ollama at fixed http://127.0.0.1:11434, no redirects. No model bundled or downloaded automatically. Structured actions validated and reviewed; model cannot confirm or execute. Tests use simulated responses.",
+  "runtime": "Official Node.js v24.22.2 Windows x64 ZIP, verified SHA-256 in runtime-manifest.json",
+  "network": "Loopback-only authenticated API; browser made no external requests; no paid or cloud voice/AI API",
+  "limitations": [
+    "Native speech, Windows launcher and a real local model must be checked on the user Windows computer.",
+    "Multi-file operations journal progress and attempt rollback; interrupted or partial jobs require reviewing recorded paths.",
+    "Full directories across volumes use Windows Explorer; individual files support verified cross-volume copy."
+  ],
+  "artifactVerification": {
+    "extractedPackageCoreServerAndAdapters": 29,
+    "extractedPackageBrowserChecks": 10,
+    "result": "passed",
+    "officialRuntimeZipSHA256Verified": true,
+    "runtimeNodeExeSHA256": "1c331340fa6cac5e4294725959070a143fa0507195a78ad77eed7943f719aac9",
+    "runtimePEArchitecture": "Windows x64 (0x8664)",
+    "windowsNativeVoiceAndLauncherTested": false,
+    "realOllamaInferenceTested": false
+  }
+}

@@ -27,6 +27,16 @@ para que siga adelante y no se deje influenciar por las criticas mals hacia el.
   
 
 
+## Mini Jarvis local para Windows 10 y 11
+
+Asistente de archivos con comandos de voz en español o texto. Permite buscar nombres, organizar por tipo o fecha, mover, renombrar, enviar a una papelera propia y deshacer. Se ejecuta en tu computadora, con las carpetas que elijas, vista previa y confirmación por código. No da acceso a tu PC a esta conversación ni usa una API de pago. Incluye un conector **opcional de IA local con Ollama**, cuyo modelo se descarga por separado, para interpretar frases más libres sin permitirle ejecutar ni confirmar cambios por su cuenta.
+
+- [Descargar MiniJarvis-Windows.zip](MiniJarvis-Windows.zip?raw=true): extrae todo y abre **Iniciar Mini Jarvis.bat**. Incluye el runtime oficial para Windows x64.
+- [Instrucciones, voz de Windows y límites](MiniJarvis/LEEME.md).
+- [Código y pruebas](MiniJarvis/).
+
+La voz necesita el reconocedor de español instalado en Windows. El micrófono nativo no se puede verificar desde este entorno Linux; las pruebas usan archivos sintéticos y un adaptador de voz simulado. Los comandos escritos funcionan sin ese componente. Mini Jarvis es una aplicación local separada de Rumbo.
+
 ## Rumbo — horario y hábitos
 
 Esta rama contiene **Rumbo**, un horario editable para celular y computadora, con hábitos diarios, gráficas semanales y mensuales y calendario de 2026 a 2051.
